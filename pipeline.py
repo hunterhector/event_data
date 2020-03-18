@@ -11,7 +11,8 @@ pl.set_reader(EventReader())
 pl.add_processor(
     DocIdJsonPackWriter(),
     {
-        'output_dir': output_path
+        'output_dir': output_path,
+        'indent': 2
     },
 )
 
