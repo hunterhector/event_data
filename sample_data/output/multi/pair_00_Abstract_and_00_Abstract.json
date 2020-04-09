@@ -1,0 +1,76 @@
+{
+  "py/object": "forte.data.multi_pack.MultiPack",
+  "py/state": {
+    "_BasePack__control_component": "forte.processors.writers.DocIdMultiPackWriter",
+    "_MultiPack__default_pack_prefix": "_pack",
+    "_MultiPack__name_index": {
+      "_pack_1": 0,
+      "_pack_2": 1
+    },
+    "_inverse_pack_ref": {
+      "1": 0,
+      "2": 1
+    },
+    "_pack_names": [
+      "_pack_1",
+      "_pack_2"
+    ],
+    "_pack_ref": [
+      1,
+      2
+    ],
+    "creation_records": {
+      "__main__.SameTextCoreferencer": {
+        "py/set": [
+          0
+        ]
+      }
+    },
+    "field_records": {
+      "__main__.SameTextCoreferencer": {
+        "py/set": [
+          {
+            "py/tuple": [
+              0,
+              "_rel_type"
+            ]
+          }
+        ]
+      }
+    },
+    "generics": [],
+    "groups": [],
+    "links": [
+      {
+        "py/object": "ft.onto.base_ontology.CrossDocEventRelation",
+        "py/state": {
+          "_child": {
+            "py/tuple": [
+              1,
+              0
+            ]
+          },
+          "_embedding": [],
+          "_parent": {
+            "py/tuple": [
+              0,
+              0
+            ]
+          },
+          "_tid": 0,
+          "rel_type": "coreference"
+        }
+      }
+    ],
+    "meta": {
+      "py/object": "forte.data.multi_pack.MultiPackMeta",
+      "py/state": {
+        "_pack_id": 0,
+        "doc_id": "pair_00_Abstract_and_00_Abstract"
+      }
+    },
+    "serialization": {
+      "next_id": 1
+    }
+  }
+}
