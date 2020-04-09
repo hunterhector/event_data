@@ -3,14 +3,6 @@
   "py/state": {
     "_BasePack__control_component": "forte.processors.writers.DocIdMultiPackWriter",
     "_MultiPack__default_pack_prefix": "_pack",
-    "_MultiPack__name_index": {
-      "_pack_1": 0,
-      "_pack_2": 1
-    },
-    "_inverse_pack_ref": {
-      "1": 0,
-      "2": 1
-    },
     "_pack_names": [
       "_pack_1",
       "_pack_2"
