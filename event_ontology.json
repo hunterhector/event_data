@@ -1,0 +1,23 @@
+{
+  "name": "pet_shop_ontology",
+  "imports": [
+    "ft.onto.base_ontology"
+  ],
+  "additional_prefixes": [
+    "edu.cmu"
+  ],
+  "description": "An Ontology Used to manage the pet shop assets and pets",
+  "definitions": [
+    {
+      "entry_name": "edu.cmu.event_relation",
+      "parent_entry": "ft.onto.base_ontology.CrossDocEventRelation",
+      "description": "Represent relation cross documents.",
+      "attributes": [
+        {
+          "name": "evidence",
+          "type": "str"
+        }
+      ]
+    }
+  ]
+}

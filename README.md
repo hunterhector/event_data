@@ -8,7 +8,7 @@ pip install texar-pytorch
 
 Install Forte:
 ```bash
-git clone git@github.com:hunterhector/forte.git
+git clone git@github.com:asyml/forte.git
 cd forte
 pip install -e .
 ```
