@@ -43,8 +43,8 @@
     "meta": {
       "py/object": "forte.data.data_pack.Meta",
       "py/state": {
-        "_pack_id": 1,
-        "doc_id": "00_Abstract",
+        "_pack_id": 2,
+        "doc_id": "01_Abstract",
         "language": "eng",
         "span_unit": "character"
       }

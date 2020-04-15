@@ -5,8 +5,9 @@ from forte.data.multi_pack import MultiPack
 from forte.pipeline import Pipeline
 from forte.processors.base import MultiPackProcessor
 from forte.processors.writers import DocIdMultiPackWriter
-from ft.onto.base_ontology import EventMention, CrossDocEventRelation
+from ft.onto.base_ontology import EventMention
 
+from edu.cmu import CrossEventRelation
 from readers.event_reader import TwoDocumentEventReader
 
 
@@ -26,7 +27,7 @@ class SameTextCoreferencer(MultiPackProcessor):
 
         for evm in pack_j.get_entries(EventMention):
             if evm.text in lemma_events:
-                link = CrossDocEventRelation(
+                link = CrossEventRelation(
                     input_pack, lemma_events[evm.text], evm)
                 link.rel_type = 'coreference'
                 input_pack.add_entry(link)
@@ -49,7 +50,7 @@ pl.add(
 pl.initialize()
 
 # Here we specify the pairs of documents to be used.
-pairs = [('00_Abstract', '00_Abstract')]
+pairs = [('00_Abstract', '01_Abstract')]
 
 logging.basicConfig(
     level=logging.INFO,

@@ -1,15 +1,26 @@
 {
-  "name": "pet_shop_ontology",
+  "name": "event_coref_ontology",
   "imports": [
     "ft.onto.base_ontology"
   ],
   "additional_prefixes": [
     "edu.cmu"
   ],
-  "description": "An Ontology Used to manage the pet shop assets and pets",
+  "description": "An ontology definition for the event relation.",
   "definitions": [
     {
-      "entry_name": "edu.cmu.event_relation",
+      "entry_name": "edu.cmu.EventMention",
+      "parent_entry": "ft.onto.base_ontology.EventMention",
+      "description": "A span based annotation `EventMention`, used to refer to a mention of an event.",
+      "attributes": [
+        {
+          "name": "is_valid",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "entry_name": "edu.cmu.CrossEventRelation",
       "parent_entry": "ft.onto.base_ontology.CrossDocEventRelation",
       "description": "Represent relation cross documents.",
       "attributes": [
@@ -17,7 +28,9 @@
           "name": "evidence",
           "type": "str"
         }
-      ]
+      ],
+      "parent_type": "edu.cmu.EventMention",
+      "child_type": "edu.cmu.EventMention"
     }
   ]
 }

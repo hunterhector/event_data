@@ -4,7 +4,8 @@ from typing import Iterator, Tuple, List
 from forte.data.data_pack import DataPack
 from forte.data.multi_pack import MultiPack
 from forte.data.readers.base_reader import PackReader, MultiPackReader
-from ft.onto.base_ontology import EventMention
+
+from edu.cmu import EventMention
 
 
 def create_pack(doc_name, text_file, anno_file):
@@ -19,8 +20,8 @@ def create_pack(doc_name, text_file, anno_file):
         # Add the annotation into the data pack.
         for line in anno.readlines():
             event_type, begin, end = line.strip().split()
-            event_mention: EventMention = EventMention(
-                pack, int(begin), int(end))
+
+            event_mention = EventMention(pack, int(begin), int(end))
             event_mention.event_type = event_type
 
             pack.add_entry(event_mention)
@@ -72,7 +73,7 @@ class TwoDocumentEventReader(MultiPackReader):
         p1 = create_pack(*doc1)
         p2 = create_pack(*doc2)
 
-        mp.add_pack(p1)
-        mp.add_pack(p2)
+        mp.add_pack_(p1)
+        mp.add_pack_(p2)
 
         yield mp

@@ -1,7 +1,6 @@
 {
   "py/object": "forte.data.multi_pack.MultiPack",
   "py/state": {
-    "_BasePack__control_component": "forte.processors.writers.DocIdMultiPackWriter",
     "_MultiPack__default_pack_prefix": "_pack",
     "_pack_names": [
       "_pack_1",
@@ -34,7 +33,7 @@
     "groups": [],
     "links": [
       {
-        "py/object": "ft.onto.base_ontology.CrossDocEventRelation",
+        "py/object": "edu.cmu.CrossEventRelation",
         "py/state": {
           "_child": {
             "py/tuple": [
@@ -50,6 +49,7 @@
             ]
           },
           "_tid": 0,
+          "evidence": null,
           "rel_type": "coreference"
         }
       }
@@ -58,7 +58,7 @@
       "py/object": "forte.data.multi_pack.MultiPackMeta",
       "py/state": {
         "_pack_id": 0,
-        "doc_id": "pair_00_Abstract_and_00_Abstract"
+        "doc_id": "pair_00_Abstract_and_01_Abstract"
       }
     },
     "serialization": {
