@@ -33,12 +33,53 @@ class SameTextCoreferencer(MultiPackProcessor):
                 input_pack.add_entry(link)
 
 
+class BaseCoreferencePruner(MultiPackProcessor):
+    """
+    Mark some example coreference relations.
+    """
+
+    def _process(self, input_pack: MultiPack):
+        pack_i = input_pack.get_pack_at(0)
+        pack_j = input_pack.get_pack_at(1)
+
+        for evm_i in pack_i.get_entries(EventMention):
+            for evm_j in pack_j.get_entries(EventMention):
+                if self.use_this_pair(evm_i, evm_j):
+                    link = CrossEventRelation(input_pack, evm_i, evm_j)
+                    link.rel_type = 'to_be_annotated'
+                    input_pack.add_entry(link)
+
+    def use_this_pair(self, evm_i, evm_j) -> bool:
+        return True
+
+
+class LemmaCoreferencePruner(MultiPackProcessor):
+    """
+    Mark some example coreference relations.
+    """
+
+    def _process(self, input_pack: MultiPack):
+        pack_i = input_pack.get_pack_at(0)
+        pack_j = input_pack.get_pack_at(1)
+
+        for evm_i in pack_i.get_entries(EventMention):
+            for evm_j in pack_j.get_entries(EventMention):
+                if self.use_this_pair(evm_i, evm_j):
+                    link = CrossEventRelation(input_pack, evm_i, evm_j)
+                    link.rel_type = 'to_be_annotated'
+                    input_pack.add_entry(link)
+
+    def use_this_pair(self, evm_i, evm_j) -> bool:
+        if evm_i.text == evm_j.text:
+            return True
+
+
 input_path = 'sample_data/input'
 output_path = 'sample_data/output'
 
 pl = Pipeline()
 pl.set_reader(TwoDocumentEventReader())
-pl.add(SameTextCoreferencer())
+pl.add(BaseCoreferencePruner())
 
 pl.add(
     DocIdMultiPackWriter(), {
