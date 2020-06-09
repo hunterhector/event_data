@@ -1,7 +1,7 @@
 {
   "name": "event_coref_ontology",
   "imports": [
-    "ft.onto.base_ontology"
+    "base_ontology.json"
   ],
   "additional_prefixes": [
     "edu.cmu"
@@ -20,6 +20,62 @@
       ]
     },
     {
+      "entry_name": "edu.cmu.EvidenceSpan",
+      "parent_entry": "forte.data.ontology.top.Annotation",
+      "description": "A span based annotation, used to refer to an evidence span."
+    },
+    {
+      "entry_name": "edu.cmu.Question",
+      "parent_entry": "forte.data.ontology.top.MultiPackGeneric",
+      "description": "Represent questions.",
+      "attributes": [
+        {
+          "name": "question_body",
+          "type": "str"
+        },
+        {
+          "name": "options",
+          "type": "List",
+          "item_type": "str"
+        }
+      ]
+    },
+    {
+      "entry_name": "edu.cmu.QuestionAnswers",
+      "parent_entry": "forte.data.ontology.top.MultiPackGeneric",
+      "description": "Store answers of the questions.",
+      "attributes": [
+        {
+          "name": "question",
+          "type": "edu.cmu.Question"
+        },
+        {
+          "name": "answer",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "entry_name": "edu.cmu.CorefQuestion",
+      "parent_entry": "edu.cmu.Question",
+      "description": "Represent questions to ask for coreference evidence"
+    },
+    {
+      "entry_name": "edu.cmu.CorefQuestionAnswers",
+      "parent_entry": "edu.cmu.QuestionAnswers",
+      "description": "Store answers of the coref questions."
+    },
+    {
+      "entry_name": "edu.cmu.SuggestionQuestion",
+      "parent_entry": "edu.cmu.Question",
+      "description": "Represent questions when providing suggestions."
+    },
+    {
+      "entry_name": "edu.cmu.SuggestionQuestionAnswers",
+      "parent_entry": "edu.cmu.QuestionAnswers",
+      "description": "Store answers of the suggestion questions."
+    },
+    {
       "entry_name": "edu.cmu.CrossEventRelation",
       "parent_entry": "ft.onto.base_ontology.CrossDocEventRelation",
       "description": "Represent relation cross documents.",
@@ -27,6 +83,21 @@
         {
           "name": "evidence",
           "type": "str"
+        },
+        {
+          "name": "span_evidences",
+          "type": "List",
+          "item_type": "edu.cmu.EvidenceSpan"
+        },
+        {
+          "name": "coref_answers",
+          "type": "List",
+          "item_type": "edu.cmu.CorefQuestionAnswers"
+        },
+        {
+          "name": "suggest_answers",
+          "type": "List",
+          "item_type": "edu.cmu.CorefQuestionAnswers"
         }
       ],
       "parent_type": "edu.cmu.EventMention",
