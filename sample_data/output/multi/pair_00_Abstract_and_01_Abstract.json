@@ -59,331 +59,13 @@
         "py/set": [
           {
             "py/tuple": [
-              2,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              0,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              12,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              10,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              1,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
               3,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              1,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              3,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              13,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              4,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              9,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              11,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              16,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              9,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              12,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              1,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              15,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              7,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              14,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              10,
               "span_evidences"
             ]
           },
           {
             "py/tuple": [
               14,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              8,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              3,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              7,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              7,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              14,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              6,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              11,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              16,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              13,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              4,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              14,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              5,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              16,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              1,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              13,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              2,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              4,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              2,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              9,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              8,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              5,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              3,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              1,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              0,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              7,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              13,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              3,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              8,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              6,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              0,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              11,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              2,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              12,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              6,
               "coref_answers"
             ]
           },
@@ -395,14 +77,212 @@
           },
           {
             "py/tuple": [
-              14,
+              1,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              13,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              11,
               "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              0,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              8,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              12,
+              "coref_answers"
             ]
           },
           {
             "py/tuple": [
               5,
               "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              3,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              2,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              3,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              2,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              10,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              6,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              0,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              4,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              7,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              3,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              1,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              6,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              1,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              5,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              14,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              0,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              11,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              5,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              7,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              1,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              4,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              14,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              11,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              16,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              4,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              7,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              13,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              11,
+              "suggest_answers"
             ]
           },
           {
@@ -419,62 +299,8 @@
           },
           {
             "py/tuple": [
-              13,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              11,
+              8,
               "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              15,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              11,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              16,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              6,
-              "span_evidences"
-            ]
-          },
-          {
-            "py/tuple": [
-              4,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
-              9,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              0,
-              "suggest_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              0,
-              "rel_type"
             ]
           },
           {
@@ -486,13 +312,73 @@
           {
             "py/tuple": [
               12,
-              "rel_type"
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              0,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              4,
+              "span_evidences"
             ]
           },
           {
             "py/tuple": [
               15,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              6,
               "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              4,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              16,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              13,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              14,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              1,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              5,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              9,
+              "suggest_answers"
             ]
           },
           {
@@ -503,26 +389,14 @@
           },
           {
             "py/tuple": [
-              8,
-              "evidence"
-            ]
-          },
-          {
-            "py/tuple": [
               15,
-              "evidence"
+              "span_evidences"
             ]
           },
           {
             "py/tuple": [
-              5,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              15,
-              "suggest_answers"
+              9,
+              "rel_type"
             ]
           },
           {
@@ -534,24 +408,42 @@
           {
             "py/tuple": [
               2,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              12,
-              "coref_answers"
-            ]
-          },
-          {
-            "py/tuple": [
-              10,
               "evidence"
             ]
           },
           {
             "py/tuple": [
-              6,
+              3,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              2,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              0,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              16,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              12,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              8,
               "evidence"
             ]
           },
@@ -563,8 +455,116 @@
           },
           {
             "py/tuple": [
-              4,
+              9,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              9,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              2,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              13,
               "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              16,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              10,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              15,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              6,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              12,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              7,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              12,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              8,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              15,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              11,
+              "coref_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              10,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              13,
+              "span_evidences"
+            ]
+          },
+          {
+            "py/tuple": [
+              14,
+              "evidence"
+            ]
+          },
+          {
+            "py/tuple": [
+              15,
+              "suggest_answers"
+            ]
+          },
+          {
+            "py/tuple": [
+              6,
+              "rel_type"
             ]
           }
         ]
@@ -573,13 +573,49 @@
         "py/set": [
           {
             "py/tuple": [
-              20,
+              21,
+              "question_body"
+            ]
+          },
+          {
+            "py/tuple": [
+              17,
+              "options"
+            ]
+          },
+          {
+            "py/tuple": [
+              19,
               "options"
             ]
           },
           {
             "py/tuple": [
               18,
+              "question_body"
+            ]
+          },
+          {
+            "py/tuple": [
+              19,
+              "question_body"
+            ]
+          },
+          {
+            "py/tuple": [
+              18,
+              "options"
+            ]
+          },
+          {
+            "py/tuple": [
+              20,
+              "options"
+            ]
+          },
+          {
+            "py/tuple": [
+              21,
               "options"
             ]
           },
@@ -592,42 +628,6 @@
           {
             "py/tuple": [
               20,
-              "question_body"
-            ]
-          },
-          {
-            "py/tuple": [
-              21,
-              "question_body"
-            ]
-          },
-          {
-            "py/tuple": [
-              19,
-              "options"
-            ]
-          },
-          {
-            "py/tuple": [
-              17,
-              "options"
-            ]
-          },
-          {
-            "py/tuple": [
-              18,
-              "question_body"
-            ]
-          },
-          {
-            "py/tuple": [
-              21,
-              "options"
-            ]
-          },
-          {
-            "py/tuple": [
-              19,
               "question_body"
             ]
           }
@@ -637,26 +637,14 @@
         "py/set": [
           {
             "py/tuple": [
-              23,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
-              24,
+              36,
               "answer"
             ]
           },
           {
             "py/tuple": [
-              28,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
-              30,
-              "answer"
+              10,
+              "rel_type"
             ]
           },
           {
@@ -667,14 +655,8 @@
           },
           {
             "py/tuple": [
-              24,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
-              23,
-              "answer"
+              7,
+              "rel_type"
             ]
           },
           {
@@ -685,13 +667,25 @@
           },
           {
             "py/tuple": [
-              6,
+              37,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              4,
               "rel_type"
             ]
           },
           {
             "py/tuple": [
-              33,
+              27,
+              "answer"
+            ]
+          },
+          {
+            "py/tuple": [
+              34,
               "answer"
             ]
           },
@@ -703,26 +697,20 @@
           },
           {
             "py/tuple": [
-              30,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
-              29,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
-              16,
+              14,
               "rel_type"
             ]
           },
           {
             "py/tuple": [
-              35,
+              26,
               "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              26,
+              "answer"
             ]
           },
           {
@@ -739,74 +727,14 @@
           },
           {
             "py/tuple": [
-              25,
+              36,
               "question"
             ]
           },
           {
             "py/tuple": [
-              7,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              26,
-              "answer"
-            ]
-          },
-          {
-            "py/tuple": [
-              12,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              22,
-              "answer"
-            ]
-          },
-          {
-            "py/tuple": [
-              4,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              32,
-              "answer"
-            ]
-          },
-          {
-            "py/tuple": [
-              9,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              27,
-              "answer"
-            ]
-          },
-          {
-            "py/tuple": [
-              37,
-              "answer"
-            ]
-          },
-          {
-            "py/tuple": [
-              38,
-              "answer"
-            ]
-          },
-          {
-            "py/tuple": [
-              13,
-              "rel_type"
+              29,
+              "question"
             ]
           },
           {
@@ -817,14 +745,14 @@
           },
           {
             "py/tuple": [
-              36,
-              "question"
+              33,
+              "answer"
             ]
           },
           {
             "py/tuple": [
-              14,
-              "rel_type"
+              25,
+              "question"
             ]
           },
           {
@@ -835,55 +763,61 @@
           },
           {
             "py/tuple": [
-              22,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
-              10,
-              "rel_type"
-            ]
-          },
-          {
-            "py/tuple": [
-              27,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
-              26,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
-              32,
-              "question"
-            ]
-          },
-          {
-            "py/tuple": [
               25,
               "answer"
             ]
           },
           {
             "py/tuple": [
+              31,
+              "answer"
+            ]
+          },
+          {
+            "py/tuple": [
               38,
+              "answer"
+            ]
+          },
+          {
+            "py/tuple": [
+              33,
               "question"
             ]
           },
           {
             "py/tuple": [
-              37,
+              35,
               "question"
             ]
           },
           {
             "py/tuple": [
-              36,
+              28,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              23,
+              "answer"
+            ]
+          },
+          {
+            "py/tuple": [
+              30,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              23,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              30,
               "answer"
             ]
           },
@@ -895,13 +829,67 @@
           },
           {
             "py/tuple": [
-              34,
+              9,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              12,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              24,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              22,
               "answer"
             ]
           },
           {
             "py/tuple": [
-              31,
+              38,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              32,
+              "answer"
+            ]
+          },
+          {
+            "py/tuple": [
+              37,
+              "answer"
+            ]
+          },
+          {
+            "py/tuple": [
+              32,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              27,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              22,
+              "question"
+            ]
+          },
+          {
+            "py/tuple": [
+              24,
               "answer"
             ]
           },
@@ -913,8 +901,20 @@
           },
           {
             "py/tuple": [
-              33,
-              "question"
+              16,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              6,
+              "rel_type"
+            ]
+          },
+          {
+            "py/tuple": [
+              13,
+              "rel_type"
             ]
           }
         ]
@@ -937,7 +937,6 @@
             ]
           },
           "_tid": 0,
-          "_embedding": [],
           "rel_type": "suggested",
           "evidence": null,
           "span_evidences": {
@@ -983,7 +982,6 @@
             ]
           },
           "_tid": 1,
-          "_embedding": [],
           "rel_type": "suggested",
           "evidence": null,
           "span_evidences": {
@@ -1029,7 +1027,6 @@
             ]
           },
           "_tid": 2,
-          "_embedding": [],
           "rel_type": "suggested",
           "evidence": null,
           "span_evidences": {
@@ -1075,7 +1072,6 @@
             ]
           },
           "_tid": 3,
-          "_embedding": [],
           "rel_type": "suggested",
           "evidence": null,
           "span_evidences": {
@@ -1121,7 +1117,6 @@
             ]
           },
           "_tid": 4,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1167,7 +1162,6 @@
             ]
           },
           "_tid": 5,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1213,7 +1207,6 @@
             ]
           },
           "_tid": 6,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1259,7 +1252,6 @@
             ]
           },
           "_tid": 7,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1305,7 +1297,6 @@
             ]
           },
           "_tid": 8,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1351,7 +1342,6 @@
             ]
           },
           "_tid": 9,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1397,7 +1387,6 @@
             ]
           },
           "_tid": 10,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1443,7 +1432,6 @@
             ]
           },
           "_tid": 11,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1489,7 +1477,6 @@
             ]
           },
           "_tid": 12,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1535,7 +1522,6 @@
             ]
           },
           "_tid": 13,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1581,7 +1567,6 @@
             ]
           },
           "_tid": 14,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1627,7 +1612,6 @@
             ]
           },
           "_tid": 15,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1673,7 +1657,6 @@
             ]
           },
           "_tid": 16,
-          "_embedding": [],
           "rel_type": "coref",
           "evidence": null,
           "span_evidences": {
@@ -1725,7 +1708,6 @@
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
           "_tid": 17,
-          "_embedding": [],
           "question_body": "Do you find both location are identical?",
           "options": [
             "Yes",
@@ -1740,7 +1722,6 @@
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
           "_tid": 18,
-          "_embedding": [],
           "question_body": "Do you find the time on both events are identical?",
           "options": [
             "Yes",
@@ -1755,7 +1736,6 @@
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
           "_tid": 19,
-          "_embedding": [],
           "question_body": "Do you find the participants are the same?",
           "options": [
             "Yes",
@@ -1770,7 +1750,6 @@
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
           "_tid": 20,
-          "_embedding": [],
           "question_body": "Do you think one of the event may include another one?",
           "options": [
             "Yes",
@@ -1785,7 +1764,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 26,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1799,7 +1777,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 27,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1813,7 +1790,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 28,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1827,7 +1803,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 29,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1841,7 +1816,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 30,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1855,7 +1829,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 31,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1869,7 +1842,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 32,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1883,7 +1855,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 33,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1897,7 +1868,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 34,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1911,7 +1881,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 35,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1925,7 +1894,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 36,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1939,7 +1907,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 37,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1953,7 +1920,6 @@
         "py/object": "edu.cmu.CorefQuestionAnswers",
         "py/state": {
           "_tid": 38,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
@@ -1967,7 +1933,6 @@
         "py/object": "edu.cmu.SuggestionQuestion",
         "py/state": {
           "_tid": 21,
-          "_embedding": [],
           "question_body": "Why do you think these two events are different?",
           "options": [
             "They are not really relevant.",
@@ -1980,56 +1945,52 @@
         "py/object": "edu.cmu.SuggestionQuestionAnswers",
         "py/state": {
           "_tid": 22,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
               "_tid": 21
             }
           },
-          "answer": 0
+          "answer": 1
         }
       },
       {
         "py/object": "edu.cmu.SuggestionQuestionAnswers",
         "py/state": {
           "_tid": 23,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
               "_tid": 21
             }
           },
-          "answer": 0
+          "answer": 1
         }
       },
       {
         "py/object": "edu.cmu.SuggestionQuestionAnswers",
         "py/state": {
           "_tid": 24,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
               "_tid": 21
             }
           },
-          "answer": 0
+          "answer": 1
         }
       },
       {
         "py/object": "edu.cmu.SuggestionQuestionAnswers",
         "py/state": {
           "_tid": 25,
-          "_embedding": [],
           "question": {
             "py/object": "forte.data.ontology.core.Pointer",
             "py/state": {
               "_tid": 21
             }
           },
-          "answer": 0
+          "answer": 1
         }
       }
     ],
