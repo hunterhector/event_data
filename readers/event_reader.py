@@ -39,11 +39,9 @@ class TwoDocumentPackReader(MultiPackReader):
         p1 = mp.add_pack()
         p1.doc_id = doc1_name
         p1.set_text(doc1_text)
-        mp.add_pack_(p1)
 
         p2 = mp.add_pack()
         p2.doc_id = doc2_name
         p2.set_text(doc2_text)
-        mp.add_pack_(p2)
 
         yield mp
