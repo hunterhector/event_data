@@ -1,7 +1,6 @@
 import os
 from typing import Iterator, Tuple, List
 
-from forte.data.data_pack import DataPack
 from forte.data.multi_pack import MultiPack
 from forte.data.readers.base_reader import MultiPackReader
 
@@ -29,7 +28,7 @@ class TwoDocumentPackReader(MultiPackReader):
             self,
             doc_path_pair: Tuple[str, str]
     ) -> Iterator[MultiPack]:
-        mp = MultiPack()
+        mp = self.new_pack()
         doc1, doc2 = doc_path_pair
 
         doc1_name, doc2_name = doc_name(doc1), doc_name(doc2)
@@ -37,11 +36,11 @@ class TwoDocumentPackReader(MultiPackReader):
 
         mp.meta.doc_id = f'pair_{doc1_name}_and_{doc2_name}'
 
-        p1 = DataPack(doc1_name)
+        p1 = mp.add_pack(doc1_name)
         p1.set_text(doc1_text)
         mp.add_pack_(p1)
 
-        p2 = DataPack(doc2_name)
+        p2 = mp.add_pack(doc2_name)
         p2.set_text(doc2_text)
         mp.add_pack_(p2)
 
