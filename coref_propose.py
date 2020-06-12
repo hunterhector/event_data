@@ -32,3 +32,19 @@ class SameLemmaSuggestionProvider(BaseSuggestionProvider):
     def use_this_pair(self, evm_i, evm_j) -> bool:
         if evm_i.text == evm_j.text:
             return True
+
+
+import spacy
+nlp = spacy.load("en_core_web_md")
+class EmbeddingSimilaritySuggestionProvider(BaseSuggestionProvider):
+    """
+    Mark some example coreference relations using embedding.
+    """
+    def __init__(self, threshold=0.45):
+        super().__init__()
+        self.threshold = threshold
+
+    def use_this_pair(self, evm_i, evm_j) -> bool:
+        sim = nlp(evm_i.text).similarity(nlp(evm_j.text))
+        if sim >= self.threshold:
+            return True

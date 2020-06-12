@@ -131,3 +131,6 @@ dmypy.json
 # Some project data
 resources.json
 en/
+
+# vscode
+.vscode

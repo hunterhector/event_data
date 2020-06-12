@@ -1,96 +1,96 @@
 {
   "py/object": "forte.data.multi_pack.MultiPack",
   "py/state": {
-    "creation_records": {},
-    "field_records": {},
-    "links": [],
-    "groups": [],
-    "meta": {
-      "py/object": "forte.data.multi_pack.MultiPackMeta",
-      "py/state": {
-        "pack_name": "pair_00_Abstract_and_01_Abstract",
-        "_pack_id": 0
-      }
-    },
-    "_pack_ref": [
-      1,
-      2
-    ],
+    "_MultiPack__default_pack_prefix": "_pack",
     "_pack_names": [
       "_pack_1",
       "_pack_2"
     ],
+    "_pack_ref": [
+      1,
+      2
+    ],
+    "creation_records": {},
+    "field_records": {},
     "generics": [
       {
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
           "_tid": 0,
-          "question_body": "Do you find both location are identical?",
           "options": [
             "Yes",
             "No",
             "Probably",
             "Cannot determine",
             "I don't think they are the same anymore."
-          ]
+          ],
+          "question_body": "Do you find both location are identical?"
         }
       },
       {
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
           "_tid": 1,
-          "question_body": "Do you find the time on both events are identical?",
           "options": [
             "Yes",
             "No",
             "Probably",
             "Cannot determine",
             "I don't think they are the same anymore."
-          ]
+          ],
+          "question_body": "Do you find the time on both events are identical?"
         }
       },
       {
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
           "_tid": 2,
-          "question_body": "Do you find the participants are the same?",
           "options": [
             "Yes",
             "No",
             "Probably",
             "Cannot determine",
             "I don't think they are the same anymore."
-          ]
+          ],
+          "question_body": "Do you find the participants are the same?"
         }
       },
       {
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
           "_tid": 3,
-          "question_body": "Do you think one of the event may include another one?",
           "options": [
             "Yes",
             "No",
             "Probably",
             "Cannot determine",
             "I don't think they are the same anymore."
-          ]
+          ],
+          "question_body": "Do you think one of the event may include another one?"
         }
       },
       {
         "py/object": "edu.cmu.SuggestionQuestion",
         "py/state": {
           "_tid": 4,
-          "question_body": "Why do you think these two events are different?",
           "options": [
             "They are not really relevant.",
             "There is no enough information to determine that.",
             "Some event details are conflicting."
-          ]
+          ],
+          "question_body": "Why do you think these two events are different?"
         }
       }
     ],
-    "_MultiPack__default_pack_prefix": "_pack",
+    "groups": [],
+    "links": [],
+    "meta": {
+      "py/object": "forte.data.multi_pack.MultiPackMeta",
+      "py/state": {
+        "_pack_id": 0,
+        "pack_name": "pair_00_Abstract_and_01_Abstract"
+      }
+    },
     "serialization": {
       "next_id": 5
     }

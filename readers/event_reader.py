@@ -10,7 +10,7 @@ def doc_name(doc_path):
 
 
 def doc_text(doc_path):
-    with open(doc_path) as d:
+    with open(doc_path, encoding="utf-8") as d:
         return d.read()
 
 
