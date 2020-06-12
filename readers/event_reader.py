@@ -34,14 +34,14 @@ class TwoDocumentPackReader(MultiPackReader):
         doc1_name, doc2_name = doc_name(doc1), doc_name(doc2)
         doc1_text, doc2_text = doc_text(doc1), doc_text(doc2)
 
-        mp.meta.doc_id = f'pair_{doc1_name}_and_{doc2_name}'
+        mp.pack_name = f'pair_{doc1_name}_and_{doc2_name}'
 
         p1 = mp.add_pack()
-        p1.doc_id = doc1_name
+        p1.pack_name = doc1_name
         p1.set_text(doc1_text)
 
         p2 = mp.add_pack()
-        p2.doc_id = doc2_name
+        p2.pack_name = doc2_name
         p2.set_text(doc2_text)
 
         yield mp

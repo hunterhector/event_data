@@ -38,6 +38,7 @@ pl.add(
         'output_dir': output_path,
         'indent': 2,
         'overwrite': True,
+        'drop_record': True
     })
 
 pl.initialize()
