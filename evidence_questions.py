@@ -32,5 +32,6 @@ class QuestionCreator(MultiPackProcessor):
             'They are not really relevant.',
             'There is no enough information to determine that.',
             'Some event details are conflicting.',
+            'Now I think they are the same.'
         ]
         input_pack.add_entry(q)
