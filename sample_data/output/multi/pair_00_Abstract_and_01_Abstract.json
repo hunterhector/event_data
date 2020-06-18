@@ -21,32 +21,29 @@
           },
           "_tid": 0,
           "rel_type": "suggested",
-          "evidence": null,
-          "span_evidences": {
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "coref_answers": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "coref_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": [
                 {
                   "py/object": "forte.data.ontology.core.Pointer",
                   "py/state": {
-                    "_tid": 10
+                    "_tid": 9
                   }
                 }
               ]
             }
-          }
+          },
+          "suggest_answers": [
+            0
+          ]
         }
       },
       {
@@ -66,32 +63,29 @@
           },
           "_tid": 1,
           "rel_type": "suggested",
-          "evidence": null,
-          "span_evidences": {
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "coref_answers": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "coref_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": [
                 {
                   "py/object": "forte.data.ontology.core.Pointer",
                   "py/state": {
-                    "_tid": 11
+                    "_tid": 9
                   }
                 }
               ]
             }
-          }
+          },
+          "suggest_answers": [
+            1
+          ]
         }
       },
       {
@@ -111,32 +105,29 @@
           },
           "_tid": 2,
           "rel_type": "suggested",
-          "evidence": null,
-          "span_evidences": {
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "coref_answers": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "coref_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": [
                 {
                   "py/object": "forte.data.ontology.core.Pointer",
                   "py/state": {
-                    "_tid": 12
+                    "_tid": 9
                   }
                 }
               ]
             }
-          }
+          },
+          "suggest_answers": [
+            1
+          ]
         }
       },
       {
@@ -156,32 +147,29 @@
           },
           "_tid": 3,
           "rel_type": "suggested",
-          "evidence": null,
-          "span_evidences": {
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "coref_answers": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "coref_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": [
                 {
                   "py/object": "forte.data.ontology.core.Pointer",
                   "py/state": {
-                    "_tid": 13
+                    "_tid": 9
                   }
                 }
               ]
             }
-          }
+          },
+          "suggest_answers": [
+            0
+          ]
         }
       },
       {
@@ -200,33 +188,60 @@
             ]
           },
           "_tid": 4,
-          "rel_type": "coref",
-          "evidence": null,
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "coref_answers": {
+          "rel_type": "suggested",
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": [
                 {
                   "py/object": "forte.data.ontology.core.Pointer",
                   "py/state": {
-                    "_tid": 14
+                    "_tid": 8
+                  }
+                },
+                {
+                  "py/object": "forte.data.ontology.core.Pointer",
+                  "py/state": {
+                    "_tid": 5
+                  }
+                },
+                {
+                  "py/object": "forte.data.ontology.core.Pointer",
+                  "py/state": {
+                    "_tid": 6
+                  }
+                },
+                {
+                  "py/object": "forte.data.ontology.core.Pointer",
+                  "py/state": {
+                    "_tid": 7
                   }
                 }
               ]
             }
           },
-          "suggest_answers": {
+          "coref_answers": [
+            2,
+            3,
+            1,
+            2
+          ],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
-              "_FList__data": []
+              "_FList__data": [
+                {
+                  "py/object": "forte.data.ontology.core.Pointer",
+                  "py/state": {
+                    "_tid": 9
+                  }
+                }
+              ]
             }
-          }
+          },
+          "suggest_answers": [
+            2
+          ]
         }
       }
     ],
@@ -304,19 +319,6 @@
         }
       },
       {
-        "py/object": "edu.cmu.CorefQuestionAnswers",
-        "py/state": {
-          "_tid": 14,
-          "question": {
-            "py/object": "forte.data.ontology.core.Pointer",
-            "py/state": {
-              "_tid": 7
-            }
-          },
-          "answer": 0
-        }
-      },
-      {
         "py/object": "edu.cmu.SuggestionQuestion",
         "py/state": {
           "_tid": 9,
@@ -327,63 +329,11 @@
             "Some event details are conflicting."
           ]
         }
-      },
-      {
-        "py/object": "edu.cmu.SuggestionQuestionAnswers",
-        "py/state": {
-          "_tid": 10,
-          "question": {
-            "py/object": "forte.data.ontology.core.Pointer",
-            "py/state": {
-              "_tid": 9
-            }
-          },
-          "answer": 1
-        }
-      },
-      {
-        "py/object": "edu.cmu.SuggestionQuestionAnswers",
-        "py/state": {
-          "_tid": 11,
-          "question": {
-            "py/object": "forte.data.ontology.core.Pointer",
-            "py/state": {
-              "_tid": 9
-            }
-          },
-          "answer": 1
-        }
-      },
-      {
-        "py/object": "edu.cmu.SuggestionQuestionAnswers",
-        "py/state": {
-          "_tid": 12,
-          "question": {
-            "py/object": "forte.data.ontology.core.Pointer",
-            "py/state": {
-              "_tid": 9
-            }
-          },
-          "answer": 1
-        }
-      },
-      {
-        "py/object": "edu.cmu.SuggestionQuestionAnswers",
-        "py/state": {
-          "_tid": 13,
-          "question": {
-            "py/object": "forte.data.ontology.core.Pointer",
-            "py/state": {
-              "_tid": 9
-            }
-          },
-          "answer": 1
-        }
       }
     ],
     "_MultiPack__default_pack_prefix": "_pack",
     "serialization": {
-      "next_id": 15
+      "next_id": 10
     }
   }
 }

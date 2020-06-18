@@ -41,29 +41,9 @@
       ]
     },
     {
-      "entry_name": "edu.cmu.QuestionAnswers",
-      "parent_entry": "forte.data.ontology.top.MultiPackGeneric",
-      "description": "Store answers of the questions.",
-      "attributes": [
-        {
-          "name": "question",
-          "type": "edu.cmu.Question"
-        },
-        {
-          "name": "answer",
-          "type": "int"
-        }
-      ]
-    },
-    {
       "entry_name": "edu.cmu.CorefQuestion",
       "parent_entry": "edu.cmu.Question",
       "description": "Represent questions to ask for coreference evidence"
-    },
-    {
-      "entry_name": "edu.cmu.CorefQuestionAnswers",
-      "parent_entry": "edu.cmu.QuestionAnswers",
-      "description": "Store answers of the coref questions."
     },
     {
       "entry_name": "edu.cmu.SuggestionQuestion",
@@ -71,33 +51,29 @@
       "description": "Represent questions when providing suggestions."
     },
     {
-      "entry_name": "edu.cmu.SuggestionQuestionAnswers",
-      "parent_entry": "edu.cmu.QuestionAnswers",
-      "description": "Store answers of the suggestion questions."
-    },
-    {
       "entry_name": "edu.cmu.CrossEventRelation",
       "parent_entry": "ft.onto.base_ontology.CrossDocEventRelation",
       "description": "Represent relation cross documents.",
       "attributes": [
         {
-          "name": "evidence",
-          "type": "str"
-        },
-        {
-          "name": "span_evidences",
+          "name": "coref_questions",
           "type": "List",
-          "item_type": "edu.cmu.EvidenceSpan"
+          "item_type": "edu.cmu.CorefQuestion"
         },
         {
           "name": "coref_answers",
           "type": "List",
-          "item_type": "edu.cmu.CorefQuestionAnswers"
+          "item_type": "int"
+        },
+        {
+          "name": "suggest_questions",
+          "type": "List",
+          "item_type": "edu.cmu.SuggestionQuestion"
         },
         {
           "name": "suggest_answers",
           "type": "List",
-          "item_type": "edu.cmu.CorefQuestionAnswers"
+          "item_type": "int"
         }
       ],
       "parent_type": "edu.cmu.EventMention",
