@@ -22,7 +22,6 @@ class QuestionCreator(MultiPackProcessor):
             q.question_body = q_t
             q.options = [
                 'Yes', 'No', 'Probably', 'Cannot determine',
-                "I don't think they are the same anymore."
             ]
             input_pack.add_entry(q)
 
@@ -32,6 +31,5 @@ class QuestionCreator(MultiPackProcessor):
             'They are not really relevant.',
             'There is no enough information to determine that.',
             'Some event details are conflicting.',
-            'Now I think they are the same.'
         ]
         input_pack.add_entry(q)

@@ -37,9 +37,10 @@ class ExampleQuestionAnswerer(MultiPackProcessor):
             elif i == 5:
                 # Let's accept system suggestion on the 5th one.
                 for q in input_pack.get(SuggestionQuestion):
-                    # First, take the system's suggestion.
+                    # First, take the system's suggestion. Use -1 here to
+                    #  accept suggestion.
                     link.suggest_questions.append(q)
-                    link.suggest_answers.append(len(q.options) - 1)
+                    link.suggest_answers.append(-1)
 
                 # Second, answer the coreference questions again
                 for q in input_pack.get(CorefQuestion):
