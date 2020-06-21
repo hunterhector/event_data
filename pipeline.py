@@ -30,8 +30,8 @@ pl.add(SameLemmaSuggestionProvider())
 # Create coreference questions
 pl.add(QuestionCreator())
 
-# Answer the questions
-pl.add(ExampleQuestionAnswerer())
+# # Answer the questions
+# pl.add(ExampleQuestionAnswerer())
 
 pl.add(
     DocIdMultiPackWriter(), {
