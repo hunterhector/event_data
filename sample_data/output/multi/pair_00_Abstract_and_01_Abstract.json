@@ -16,43 +16,14 @@
       {
         "py/object": "edu.cmu.CorefQuestion",
         "py/state": {
-          "_tid": 0,
-          "options": [
-            "Yes",
-            "No",
-            "Probably",
-            "Cannot determine",
-            "I don't think they are the same anymore."
-          ],
-          "question_body": "Do you find both location are identical?"
-        }
-      },
-      {
-        "py/object": "edu.cmu.CorefQuestion",
-        "py/state": {
-          "_tid": 1,
-          "options": [
-            "Yes",
-            "No",
-            "Probably",
-            "Cannot determine",
-            "I don't think they are the same anymore."
-          ],
-          "question_body": "Do you find the time on both events are identical?"
-        }
-      },
-      {
-        "py/object": "edu.cmu.CorefQuestion",
-        "py/state": {
           "_tid": 2,
           "options": [
             "Yes",
             "No",
             "Probably",
-            "Cannot determine",
-            "I don't think they are the same anymore."
+            "Cannot determine"
           ],
-          "question_body": "Do you find the participants are the same?"
+          "question_body": "Do you find both location are identical?"
         }
       },
       {
@@ -63,8 +34,33 @@
             "Yes",
             "No",
             "Probably",
-            "Cannot determine",
-            "I don't think they are the same anymore."
+            "Cannot determine"
+          ],
+          "question_body": "Do you find the time on both events are identical?"
+        }
+      },
+      {
+        "py/object": "edu.cmu.CorefQuestion",
+        "py/state": {
+          "_tid": 4,
+          "options": [
+            "Yes",
+            "No",
+            "Probably",
+            "Cannot determine"
+          ],
+          "question_body": "Do you find the participants are the same?"
+        }
+      },
+      {
+        "py/object": "edu.cmu.CorefQuestion",
+        "py/state": {
+          "_tid": 5,
+          "options": [
+            "Yes",
+            "No",
+            "Probably",
+            "Cannot determine"
           ],
           "question_body": "Do you think one of the event may include another one?"
         }
@@ -72,7 +68,7 @@
       {
         "py/object": "edu.cmu.SuggestionQuestion",
         "py/state": {
-          "_tid": 4,
+          "_tid": 6,
           "options": [
             "They are not really relevant.",
             "There is no enough information to determine that.",
@@ -83,7 +79,74 @@
       }
     ],
     "groups": [],
-    "links": [],
+    "links": [
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_child": {
+            "py/tuple": [
+              1,
+              420
+            ]
+          },
+          "_parent": {
+            "py/tuple": [
+              0,
+              729
+            ]
+          },
+          "_tid": 0,
+          "coref_answers": [],
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "rel_type": "suggested",
+          "suggest_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          }
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_child": {
+            "py/tuple": [
+              1,
+              421
+            ]
+          },
+          "_parent": {
+            "py/tuple": [
+              0,
+              730
+            ]
+          },
+          "_tid": 1,
+          "coref_answers": [],
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "rel_type": "suggested",
+          "suggest_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          }
+        }
+      }
+    ],
     "meta": {
       "py/object": "forte.data.multi_pack.MultiPackMeta",
       "py/state": {
@@ -92,7 +155,7 @@
       }
     },
     "serialization": {
-      "next_id": 5
+      "next_id": 7
     }
   }
 }

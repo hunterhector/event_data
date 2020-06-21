@@ -21,8 +21,7 @@
             "Yes",
             "No",
             "Probably",
-            "Cannot determine",
-            "I don't think they are the same anymore."
+            "Cannot determine"
           ],
           "question_body": "Do you find both location are identical?"
         }
@@ -35,8 +34,7 @@
             "Yes",
             "No",
             "Probably",
-            "Cannot determine",
-            "I don't think they are the same anymore."
+            "Cannot determine"
           ],
           "question_body": "Do you find the time on both events are identical?"
         }
@@ -49,8 +47,7 @@
             "Yes",
             "No",
             "Probably",
-            "Cannot determine",
-            "I don't think they are the same anymore."
+            "Cannot determine"
           ],
           "question_body": "Do you find the participants are the same?"
         }
@@ -63,8 +60,7 @@
             "Yes",
             "No",
             "Probably",
-            "Cannot determine",
-            "I don't think they are the same anymore."
+            "Cannot determine"
           ],
           "question_body": "Do you think one of the event may include another one?"
         }
@@ -100,21 +96,16 @@
             ]
           },
           "_tid": 0,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -138,21 +129,16 @@
             ]
           },
           "_tid": 1,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -176,21 +162,16 @@
             ]
           },
           "_tid": 2,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -214,21 +195,16 @@
             ]
           },
           "_tid": 3,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -252,21 +228,16 @@
             ]
           },
           "_tid": 4,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -290,21 +261,16 @@
             ]
           },
           "_tid": 5,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -328,21 +294,16 @@
             ]
           },
           "_tid": 6,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -366,21 +327,16 @@
             ]
           },
           "_tid": 7,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -404,21 +360,16 @@
             ]
           },
           "_tid": 8,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -442,21 +393,16 @@
             ]
           },
           "_tid": 9,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -480,21 +426,16 @@
             ]
           },
           "_tid": 10,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -518,21 +459,16 @@
             ]
           },
           "_tid": 11,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -556,21 +492,16 @@
             ]
           },
           "_tid": 12,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -594,21 +525,16 @@
             ]
           },
           "_tid": 13,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -632,21 +558,16 @@
             ]
           },
           "_tid": 14,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -670,21 +591,16 @@
             ]
           },
           "_tid": 15,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -708,21 +624,16 @@
             ]
           },
           "_tid": 16,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -746,21 +657,16 @@
             ]
           },
           "_tid": 17,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -784,21 +690,16 @@
             ]
           },
           "_tid": 18,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -822,21 +723,16 @@
             ]
           },
           "_tid": 19,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -860,21 +756,16 @@
             ]
           },
           "_tid": 20,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -898,21 +789,16 @@
             ]
           },
           "_tid": 21,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -936,21 +822,16 @@
             ]
           },
           "_tid": 22,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -974,21 +855,16 @@
             ]
           },
           "_tid": 23,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1012,21 +888,16 @@
             ]
           },
           "_tid": 24,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1050,21 +921,16 @@
             ]
           },
           "_tid": 25,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1088,21 +954,16 @@
             ]
           },
           "_tid": 26,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1126,21 +987,16 @@
             ]
           },
           "_tid": 27,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1164,21 +1020,16 @@
             ]
           },
           "_tid": 28,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1202,21 +1053,16 @@
             ]
           },
           "_tid": 29,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1240,21 +1086,16 @@
             ]
           },
           "_tid": 30,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1278,21 +1119,16 @@
             ]
           },
           "_tid": 31,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1316,21 +1152,16 @@
             ]
           },
           "_tid": 32,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1354,21 +1185,16 @@
             ]
           },
           "_tid": 33,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1392,21 +1218,16 @@
             ]
           },
           "_tid": 34,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1430,21 +1251,16 @@
             ]
           },
           "_tid": 35,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1468,21 +1284,16 @@
             ]
           },
           "_tid": 36,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1506,21 +1317,16 @@
             ]
           },
           "_tid": 37,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1544,21 +1350,16 @@
             ]
           },
           "_tid": 38,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1582,21 +1383,16 @@
             ]
           },
           "_tid": 39,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1620,21 +1416,16 @@
             ]
           },
           "_tid": 40,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1658,21 +1449,16 @@
             ]
           },
           "_tid": 41,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1696,21 +1482,16 @@
             ]
           },
           "_tid": 42,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1734,21 +1515,16 @@
             ]
           },
           "_tid": 43,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1772,21 +1548,16 @@
             ]
           },
           "_tid": 44,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1810,21 +1581,16 @@
             ]
           },
           "_tid": 45,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1848,21 +1614,16 @@
             ]
           },
           "_tid": 46,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1886,21 +1647,16 @@
             ]
           },
           "_tid": 47,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1924,21 +1680,16 @@
             ]
           },
           "_tid": 48,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -1962,21 +1713,16 @@
             ]
           },
           "_tid": 49,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2000,21 +1746,16 @@
             ]
           },
           "_tid": 50,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2038,21 +1779,16 @@
             ]
           },
           "_tid": 51,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2076,21 +1812,16 @@
             ]
           },
           "_tid": 52,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2114,21 +1845,16 @@
             ]
           },
           "_tid": 53,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2152,21 +1878,16 @@
             ]
           },
           "_tid": 54,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2190,21 +1911,16 @@
             ]
           },
           "_tid": 55,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2228,21 +1944,16 @@
             ]
           },
           "_tid": 56,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2266,21 +1977,16 @@
             ]
           },
           "_tid": 57,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2304,21 +2010,16 @@
             ]
           },
           "_tid": 58,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2342,21 +2043,16 @@
             ]
           },
           "_tid": 59,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2380,21 +2076,16 @@
             ]
           },
           "_tid": 60,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2418,21 +2109,16 @@
             ]
           },
           "_tid": 61,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2456,21 +2142,16 @@
             ]
           },
           "_tid": 62,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2494,21 +2175,16 @@
             ]
           },
           "_tid": 63,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2532,21 +2208,16 @@
             ]
           },
           "_tid": 64,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2570,21 +2241,16 @@
             ]
           },
           "_tid": 65,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2608,21 +2274,16 @@
             ]
           },
           "_tid": 66,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2646,21 +2307,16 @@
             ]
           },
           "_tid": 67,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2684,21 +2340,16 @@
             ]
           },
           "_tid": 68,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2722,21 +2373,16 @@
             ]
           },
           "_tid": 69,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2760,21 +2406,16 @@
             ]
           },
           "_tid": 70,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2798,21 +2439,16 @@
             ]
           },
           "_tid": 71,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2836,21 +2472,16 @@
             ]
           },
           "_tid": 72,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2874,21 +2505,16 @@
             ]
           },
           "_tid": 73,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2912,21 +2538,16 @@
             ]
           },
           "_tid": 74,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2950,21 +2571,16 @@
             ]
           },
           "_tid": 75,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -2988,21 +2604,16 @@
             ]
           },
           "_tid": 76,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3026,21 +2637,16 @@
             ]
           },
           "_tid": 77,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3064,21 +2670,16 @@
             ]
           },
           "_tid": 78,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3102,21 +2703,16 @@
             ]
           },
           "_tid": 79,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3140,21 +2736,16 @@
             ]
           },
           "_tid": 80,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3178,21 +2769,16 @@
             ]
           },
           "_tid": 81,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3216,21 +2802,16 @@
             ]
           },
           "_tid": 82,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3254,21 +2835,16 @@
             ]
           },
           "_tid": 83,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3292,21 +2868,16 @@
             ]
           },
           "_tid": 84,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3330,21 +2901,16 @@
             ]
           },
           "_tid": 85,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3368,21 +2934,16 @@
             ]
           },
           "_tid": 86,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3406,21 +2967,16 @@
             ]
           },
           "_tid": 87,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3444,21 +3000,16 @@
             ]
           },
           "_tid": 88,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3482,21 +3033,16 @@
             ]
           },
           "_tid": 89,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3520,21 +3066,16 @@
             ]
           },
           "_tid": 90,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3558,21 +3099,16 @@
             ]
           },
           "_tid": 91,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3596,21 +3132,16 @@
             ]
           },
           "_tid": 92,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3634,21 +3165,16 @@
             ]
           },
           "_tid": 93,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3672,21 +3198,16 @@
             ]
           },
           "_tid": 94,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3710,21 +3231,16 @@
             ]
           },
           "_tid": 95,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3748,21 +3264,16 @@
             ]
           },
           "_tid": 96,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
@@ -3786,21 +3297,16 @@
             ]
           },
           "_tid": 97,
-          "coref_answers": {
+          "coref_answers": [],
+          "coref_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []
             }
           },
-          "evidence": null,
           "rel_type": "suggested",
-          "span_evidences": {
-            "py/object": "forte.data.ontology.core.FList",
-            "py/state": {
-              "_FList__data": []
-            }
-          },
-          "suggest_answers": {
+          "suggest_answers": [],
+          "suggest_questions": {
             "py/object": "forte.data.ontology.core.FList",
             "py/state": {
               "_FList__data": []

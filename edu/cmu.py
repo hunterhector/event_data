@@ -24,11 +24,8 @@ __all__ = [
     "EventMention",
     "EvidenceSpan",
     "Question",
-    "QuestionAnswers",
     "CorefQuestion",
-    "CorefQuestionAnswers",
     "SuggestionQuestion",
-    "SuggestionQuestionAnswers",
     "CrossEventRelation",
 ]
 
@@ -77,37 +74,9 @@ class Question(MultiPackGeneric):
 
 
 @dataclass
-class QuestionAnswers(MultiPackGeneric):
-    """
-    Store answers of the questions.
-    Attributes:
-        question (Optional[Question])
-        answer (Optional[int])
-    """
-
-    question: Optional[Question]
-    answer: Optional[int]
-
-    def __init__(self, pack: MultiPack):
-        super().__init__(pack)
-        self.question: Optional[Question] = None
-        self.answer: Optional[int] = None
-
-
-@dataclass
 class CorefQuestion(Question):
     """
     Represent questions to ask for coreference evidence
-    """
-
-    def __init__(self, pack: MultiPack):
-        super().__init__(pack)
-
-
-@dataclass
-class CorefQuestionAnswers(QuestionAnswers):
-    """
-    Store answers of the coref questions.
     """
 
     def __init__(self, pack: MultiPack):
@@ -125,37 +94,27 @@ class SuggestionQuestion(Question):
 
 
 @dataclass
-class SuggestionQuestionAnswers(QuestionAnswers):
-    """
-    Store answers of the suggestion questions.
-    """
-
-    def __init__(self, pack: MultiPack):
-        super().__init__(pack)
-
-
-@dataclass
 class CrossEventRelation(CrossDocEventRelation):
     """
     Represent relation cross documents.
     Attributes:
-        evidence (Optional[str])
-        span_evidences (FList[EvidenceSpan])
-        coref_answers (FList[CorefQuestionAnswers])
-        suggest_answers (FList[CorefQuestionAnswers])
+        coref_questions (FList[CorefQuestion])
+        coref_answers (List[int])
+        suggest_questions (FList[SuggestionQuestion])
+        suggest_answers (List[int])
     """
 
-    evidence: Optional[str]
-    span_evidences: FList[EvidenceSpan]
-    coref_answers: FList[CorefQuestionAnswers]
-    suggest_answers: FList[CorefQuestionAnswers]
+    coref_questions: FList[CorefQuestion]
+    coref_answers: List[int]
+    suggest_questions: FList[SuggestionQuestion]
+    suggest_answers: List[int]
 
     ParentType = EventMention
     ChildType = EventMention
 
     def __init__(self, pack: MultiPack, parent: Optional[Entry] = None, child: Optional[Entry] = None):
         super().__init__(pack, parent, child)
-        self.evidence: Optional[str] = None
-        self.span_evidences: FList[EvidenceSpan] = FList(self)
-        self.coref_answers: FList[CorefQuestionAnswers] = FList(self)
-        self.suggest_answers: FList[CorefQuestionAnswers] = FList(self)
+        self.coref_questions: FList[CorefQuestion] = FList(self)
+        self.coref_answers: List[int] = []
+        self.suggest_questions: FList[SuggestionQuestion] = FList(self)
+        self.suggest_answers: List[int] = []

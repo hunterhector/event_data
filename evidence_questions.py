@@ -22,7 +22,6 @@ class QuestionCreator(MultiPackProcessor):
             q.question_body = q_t
             q.options = [
                 'Yes', 'No', 'Probably', 'Cannot determine',
-                "I don't think they are the same anymore."
             ]
             input_pack.add_entry(q)
 

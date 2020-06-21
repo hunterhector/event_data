@@ -1,7 +1,7 @@
 {
   "py/object": "forte.data.data_pack.DataPack",
   "py/state": {
-    "_text": "During the annual Boston Marathon on April 15, 2013, two homemade pressure cooker bombs detonated 14 seconds and 210 yards (190 m) apart at 2:49 p.m., near the finish line of the race, killing three people and injuring several hundred others, including 16 who lost limbs.\n\nThree days later, the Federal Bureau of Investigation (FBI) released images of two suspects, who were later identified as Chechen Kyrgyzstani-American brothers Dzhokhar Tsarnaev and Tamerlan Tsarnaev. They killed an MIT policeman, kidnapped a man in his car, and had a shootout with the police in nearby Watertown, during which two officers were severely injured, one of whom died a year later. Tamerlan was shot several times, and his brother ran him over while escaping in the stolen car; Tamerlan died soon after.\n",
+    "_text": "During the annual Boston Marathon on April 15, 2013, two homemade pressure cooker bombs detonated 14 seconds and 210 yards (190 m) apart at 2:49 p.m., near the finish line of the race, killing three people and injuring several hundred others, including 16 who lost limbs.\n\nThree days later, the Federal Bureau of Investigation (FBI) released images of two suspects, who were later identified as Chechen Kyrgyzstani-American brothers Dzhokhar Tsarnaev and Tamerlan Tsarnaev. They killed an MIT policeman, kidnapped a man in his car, and had a shootout with the police in nearby Watertown, during which two officers were severely injured, one of whom died a year later. Tamerlan was shot several times, and his brother ran him over while escaping in the stolen car; Tamerlan died soon after.\n\nAn unprecedented manhunt for Dzhokhar ensued on April 19, with thousands of law enforcement officers searching a 20-block area of Watertown; residents of Watertown and surrounding communities were asked to stay indoors, and the transportation system and most businesses and public places closed. Around 6:00 p.m., a Watertown resident discovered Dzhokhar hiding in a boat in his backyard. He was shot and wounded by police before being taken into custody.\n\nDuring questioning, Dzhokhar said that he and his brother were motivated by extremist Islamist beliefs and the wars in Iraq and Afghanistan, that they were self-radicalized and unconnected to any outside terrorist groups, and that he was following his brother's lead. He said they learned to build explosive devices from an online magazine of the al-Qaeda affiliate in Yemen. He also said they had intended to travel to New York City to bomb Times Square. On April 8, 2015, he was convicted of 30 charges, including use of a weapon of mass destruction and malicious destruction of property resulting in death. Two months later, he was sentenced to death.\n",
     "annotations": [
       {
         "py/object": "ft.onto.base_ontology.Token",
@@ -1359,7 +1359,7 @@
             "end": 341,
             "py/object": "forte.data.span.Span"
           },
-          "_tid": 310,
+          "_tid": 728,
           "event_type": null,
           "is_valid": null
         }
@@ -3111,6 +3111,4244 @@
           "ud_misc": {},
           "ud_xpos": "."
         }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 791,
+            "end": 793,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 309,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "a",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Sentence",
+        "py/state": {
+          "_span": {
+            "begin": 791,
+            "end": 1086,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 308,
+          "part_id": null,
+          "sentiment": {},
+          "speaker": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 794,
+            "end": 807,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 310,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "unprecedented",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 808,
+            "end": 815,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 311,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "manhunt",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 816,
+            "end": 819,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 312,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "for",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 820,
+            "end": 828,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 313,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Dzhokhar",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 829,
+            "end": 835,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 314,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "ensue",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 836,
+            "end": 838,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 315,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "on",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 839,
+            "end": 844,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 316,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "April",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 845,
+            "end": 847,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 317,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "19",
+          "ner": null,
+          "pos": "NUM",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 847,
+            "end": 848,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 318,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 849,
+            "end": 853,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 319,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "with",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 854,
+            "end": 863,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 320,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "thousand",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 864,
+            "end": 866,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 321,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "of",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 867,
+            "end": 870,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 322,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "law",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 871,
+            "end": 882,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 323,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "enforcement",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 883,
+            "end": 891,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 324,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "officer",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 892,
+            "end": 901,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 325,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "search",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBG"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 902,
+            "end": 903,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 326,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "a",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 904,
+            "end": 906,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 327,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "20",
+          "ner": null,
+          "pos": "NUM",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 906,
+            "end": 907,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 328,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "-",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "HYPH"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 907,
+            "end": 912,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 329,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "block",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 913,
+            "end": 917,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 330,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "area",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 918,
+            "end": 920,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 331,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "of",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 921,
+            "end": 930,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 332,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Watertown",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 930,
+            "end": 931,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 333,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ";",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 932,
+            "end": 941,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 334,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "resident",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 942,
+            "end": 944,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 335,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "of",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 945,
+            "end": 954,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 336,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Watertown",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 955,
+            "end": 958,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 337,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 959,
+            "end": 970,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 338,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "surround",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBG"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 971,
+            "end": 982,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 339,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "community",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 983,
+            "end": 987,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 340,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "be",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 988,
+            "end": 993,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 341,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "ask",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 994,
+            "end": 996,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 342,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "to",
+          "ner": null,
+          "pos": "PART",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "TO"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 997,
+            "end": 1001,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 343,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "stay",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VB"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1002,
+            "end": 1009,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 344,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "indoors",
+          "ner": null,
+          "pos": "ADV",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "RB"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1009,
+            "end": 1010,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 345,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1011,
+            "end": 1014,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 346,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1015,
+            "end": 1018,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 347,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "the",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1019,
+            "end": 1033,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 348,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "transportation",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1034,
+            "end": 1040,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 349,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "system",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1041,
+            "end": 1044,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 350,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1045,
+            "end": 1049,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 351,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "most",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1050,
+            "end": 1060,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 352,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "business",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1061,
+            "end": 1064,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 353,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1065,
+            "end": 1071,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 354,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "public",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1072,
+            "end": 1078,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 355,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "place",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1079,
+            "end": 1085,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 356,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "close",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1085,
+            "end": 1086,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 357,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ".",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "."
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1087,
+            "end": 1093,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 408,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "around",
+          "ner": null,
+          "pos": "ADV",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "RB"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Sentence",
+        "py/state": {
+          "_span": {
+            "begin": 1087,
+            "end": 1179,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 407,
+          "part_id": null,
+          "sentiment": {},
+          "speaker": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1094,
+            "end": 1098,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 409,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "6:00",
+          "ner": null,
+          "pos": "NUM",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1099,
+            "end": 1103,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 410,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "p.m.",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1103,
+            "end": 1104,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 411,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1105,
+            "end": 1106,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 412,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "a",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1107,
+            "end": 1116,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 413,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Watertown",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1117,
+            "end": 1125,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 414,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "resident",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1126,
+            "end": 1136,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 415,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "discover",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1137,
+            "end": 1145,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 416,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Dzhokhar",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1146,
+            "end": 1152,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 417,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "hide",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBG"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1153,
+            "end": 1155,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 418,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "in",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1156,
+            "end": 1157,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 419,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "a",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1158,
+            "end": 1162,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 420,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "boat",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1163,
+            "end": 1165,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 421,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "in",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1166,
+            "end": 1169,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 422,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP$"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1170,
+            "end": 1178,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 423,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "backyard",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1178,
+            "end": 1179,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 424,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ".",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "."
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1180,
+            "end": 1182,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 443,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Sentence",
+        "py/state": {
+          "_span": {
+            "begin": 1180,
+            "end": 1246,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 442,
+          "part_id": null,
+          "sentiment": {},
+          "speaker": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1183,
+            "end": 1186,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 444,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "be",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1187,
+            "end": 1191,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 445,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "shoot",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1192,
+            "end": 1195,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 446,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1196,
+            "end": 1203,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 447,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "wounded",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1204,
+            "end": 1206,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 448,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "by",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1207,
+            "end": 1213,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 449,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "police",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1214,
+            "end": 1220,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 450,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "before",
+          "ner": null,
+          "pos": "SCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1221,
+            "end": 1226,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 451,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "be",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBG"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1227,
+            "end": 1232,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 452,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "take",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1233,
+            "end": 1237,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 453,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "into",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1238,
+            "end": 1245,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 454,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "custody",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1245,
+            "end": 1246,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 455,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ".",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "."
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1248,
+            "end": 1254,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 470,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "during",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Sentence",
+        "py/state": {
+          "_span": {
+            "begin": 1248,
+            "end": 1515,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 469,
+          "part_id": null,
+          "sentiment": {},
+          "speaker": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1255,
+            "end": 1266,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 471,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "question",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBG"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1266,
+            "end": 1267,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 472,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1268,
+            "end": 1276,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 473,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Dzhokhar",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1277,
+            "end": 1281,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 474,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "say",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1282,
+            "end": 1286,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 475,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "that",
+          "ner": null,
+          "pos": "SCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1287,
+            "end": 1289,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 476,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1290,
+            "end": 1293,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 477,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1294,
+            "end": 1297,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 478,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP$"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1298,
+            "end": 1305,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 479,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "brother",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1306,
+            "end": 1310,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 480,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "be",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1311,
+            "end": 1320,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 481,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "motivate",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1321,
+            "end": 1323,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 482,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "by",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1324,
+            "end": 1333,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 483,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "extremist",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1334,
+            "end": 1342,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 484,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Islamist",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1343,
+            "end": 1350,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 485,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "belief",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1351,
+            "end": 1354,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 486,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1355,
+            "end": 1358,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 487,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "the",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1359,
+            "end": 1363,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 488,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "war",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1364,
+            "end": 1366,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 489,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "in",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1367,
+            "end": 1371,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 490,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Iraq",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1372,
+            "end": 1375,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 491,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1376,
+            "end": 1387,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 492,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Afghanistan",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1387,
+            "end": 1388,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 493,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1389,
+            "end": 1393,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 494,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "that",
+          "ner": null,
+          "pos": "SCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1394,
+            "end": 1398,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 495,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "they",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1399,
+            "end": 1403,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 496,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "be",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "edu.cmu.EventMention",
+        "py/state": {
+          "_span": {
+            "begin": 1404,
+            "end": 1408,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 729,
+          "event_type": null,
+          "is_valid": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1404,
+            "end": 1408,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 497,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "self",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1408,
+            "end": 1409,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 498,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "-",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "HYPH"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1409,
+            "end": 1420,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 499,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "radicalize",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1421,
+            "end": 1424,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 500,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1425,
+            "end": 1436,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 501,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "unconnected",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1437,
+            "end": 1439,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 502,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "to",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1440,
+            "end": 1443,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 503,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "any",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1444,
+            "end": 1451,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 504,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "outside",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1452,
+            "end": 1461,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 505,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "terrorist",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1462,
+            "end": 1468,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 506,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "group",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1468,
+            "end": 1469,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 507,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1470,
+            "end": 1473,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 508,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1474,
+            "end": 1478,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 509,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "that",
+          "ner": null,
+          "pos": "SCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1479,
+            "end": 1481,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 510,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1482,
+            "end": 1485,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 511,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "be",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1486,
+            "end": 1495,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 512,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "follow",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBG"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1496,
+            "end": 1499,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 513,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP$"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1500,
+            "end": 1507,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 514,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "brother",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1507,
+            "end": 1509,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 515,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "'s",
+          "ner": null,
+          "pos": "PART",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "POS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1510,
+            "end": 1514,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 516,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "lead",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1514,
+            "end": 1515,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 517,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ".",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "."
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1516,
+            "end": 1518,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 567,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Sentence",
+        "py/state": {
+          "_span": {
+            "begin": 1516,
+            "end": 1623,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 566,
+          "part_id": null,
+          "sentiment": {},
+          "speaker": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1519,
+            "end": 1523,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 568,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "say",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1524,
+            "end": 1528,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 569,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "they",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1529,
+            "end": 1536,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 570,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "learn",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1537,
+            "end": 1539,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 571,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "to",
+          "ner": null,
+          "pos": "PART",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "TO"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1540,
+            "end": 1545,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 572,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "build",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VB"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1546,
+            "end": 1555,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 573,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "explosive",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1556,
+            "end": 1563,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 574,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "device",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1564,
+            "end": 1568,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 575,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "from",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1569,
+            "end": 1571,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 576,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "a",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1572,
+            "end": 1578,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 577,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "online",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1579,
+            "end": 1587,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 578,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "magazine",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1588,
+            "end": 1590,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 579,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "of",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1591,
+            "end": 1594,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 580,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "the",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1595,
+            "end": 1597,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 581,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "al",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1597,
+            "end": 1598,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 582,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "-",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "HYPH"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1598,
+            "end": 1603,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 583,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Qaeda",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1604,
+            "end": 1613,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 584,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "affiliate",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1614,
+            "end": 1616,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 585,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "in",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1617,
+            "end": 1622,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 586,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Yemen",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1622,
+            "end": 1623,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 587,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ".",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "."
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1624,
+            "end": 1626,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 610,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Sentence",
+        "py/state": {
+          "_span": {
+            "begin": 1624,
+            "end": 1703,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 609,
+          "part_id": null,
+          "sentiment": {},
+          "speaker": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1627,
+            "end": 1631,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 611,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "also",
+          "ner": null,
+          "pos": "ADV",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "RB"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1632,
+            "end": 1636,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 612,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "say",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1637,
+            "end": 1641,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 613,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "they",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1642,
+            "end": 1645,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 614,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "have",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1646,
+            "end": 1654,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 615,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "intend",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1655,
+            "end": 1657,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 616,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "to",
+          "ner": null,
+          "pos": "PART",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "TO"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1658,
+            "end": 1664,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 617,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "travel",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VB"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1665,
+            "end": 1667,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 618,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "to",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1668,
+            "end": 1671,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 619,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "New",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1672,
+            "end": 1676,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 620,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "York",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1677,
+            "end": 1681,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 621,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "City",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1682,
+            "end": 1684,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 622,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "to",
+          "ner": null,
+          "pos": "PART",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "TO"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1685,
+            "end": 1689,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 623,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "bomb",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VB"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1690,
+            "end": 1695,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 624,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Times",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1696,
+            "end": 1702,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 625,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "Square",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1702,
+            "end": 1703,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 626,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ".",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "."
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1704,
+            "end": 1706,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 645,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "on",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Sentence",
+        "py/state": {
+          "_span": {
+            "begin": 1704,
+            "end": 1857,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 644,
+          "part_id": null,
+          "sentiment": {},
+          "speaker": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1707,
+            "end": 1712,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 646,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "April",
+          "ner": null,
+          "pos": "PROPN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1713,
+            "end": 1714,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 647,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "8",
+          "ner": null,
+          "pos": "NUM",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1714,
+            "end": 1715,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 648,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1716,
+            "end": 1720,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 649,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "2015",
+          "ner": null,
+          "pos": "NUM",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1720,
+            "end": 1721,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 650,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1722,
+            "end": 1724,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 651,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1725,
+            "end": 1728,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 652,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "be",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1729,
+            "end": 1738,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 653,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "convict",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1739,
+            "end": 1741,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 654,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "of",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1742,
+            "end": 1744,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 655,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "30",
+          "ner": null,
+          "pos": "NUM",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1745,
+            "end": 1752,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 656,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "charge",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1752,
+            "end": 1753,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 657,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1754,
+            "end": 1763,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 658,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "include",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBG"
+        }
+      },
+      {
+        "py/object": "edu.cmu.EventMention",
+        "py/state": {
+          "_span": {
+            "begin": 1764,
+            "end": 1767,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 730,
+          "event_type": null,
+          "is_valid": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1764,
+            "end": 1767,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 659,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "use",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1768,
+            "end": 1770,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 660,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "of",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1771,
+            "end": 1772,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 661,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "a",
+          "ner": null,
+          "pos": "DET",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "DT"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1773,
+            "end": 1779,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 662,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "weapon",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1780,
+            "end": 1782,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 663,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "of",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1783,
+            "end": 1787,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 664,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "mass",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1788,
+            "end": 1799,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 665,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "destruction",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1800,
+            "end": 1803,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 666,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "and",
+          "ner": null,
+          "pos": "CCONJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CC"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1804,
+            "end": 1813,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 667,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "malicious",
+          "ner": null,
+          "pos": "ADJ",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "JJ"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1814,
+            "end": 1825,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 668,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "destruction",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1826,
+            "end": 1828,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 669,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "of",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1829,
+            "end": 1837,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 670,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "property",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1838,
+            "end": 1847,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 671,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "result",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBG"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1848,
+            "end": 1850,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 672,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "in",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1851,
+            "end": 1856,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 673,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "death",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1856,
+            "end": 1857,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 674,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ".",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "."
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1858,
+            "end": 1861,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 706,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "two",
+          "ner": null,
+          "pos": "NUM",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "CD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Sentence",
+        "py/state": {
+          "_span": {
+            "begin": 1858,
+            "end": 1902,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 705,
+          "part_id": null,
+          "sentiment": {},
+          "speaker": null
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1862,
+            "end": 1868,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 707,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "month",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NNS"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1869,
+            "end": 1874,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 708,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "later",
+          "ner": null,
+          "pos": "ADV",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "RBR"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1874,
+            "end": 1875,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 709,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ",",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": ","
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1876,
+            "end": 1878,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 710,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "he",
+          "ner": null,
+          "pos": "PRON",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "PRP"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1879,
+            "end": 1882,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 711,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "be",
+          "ner": null,
+          "pos": "AUX",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBD"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1883,
+            "end": 1892,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 712,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "sentence",
+          "ner": null,
+          "pos": "VERB",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "VBN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1893,
+            "end": 1895,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 713,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "to",
+          "ner": null,
+          "pos": "ADP",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "IN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1896,
+            "end": 1901,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 714,
+          "chunk": null,
+          "is_root": null,
+          "lemma": "death",
+          "ner": null,
+          "pos": "NOUN",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "NN"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Token",
+        "py/state": {
+          "_span": {
+            "begin": 1901,
+            "end": 1902,
+            "py/object": "forte.data.span.Span"
+          },
+          "_tid": 715,
+          "chunk": null,
+          "is_root": null,
+          "lemma": ".",
+          "ner": null,
+          "pos": "PUNCT",
+          "sense": null,
+          "ud_features": {},
+          "ud_misc": {},
+          "ud_xpos": "."
+        }
       }
     ],
     "creation_records": {},
@@ -4637,6 +8875,2056 @@
           "dep_label": null,
           "rel_type": "punct"
         }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 309,
+          "_parent": 311,
+          "_tid": 358,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 310,
+          "_parent": 311,
+          "_tid": 359,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 311,
+          "_parent": 314,
+          "_tid": 360,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 312,
+          "_parent": 313,
+          "_tid": 361,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 313,
+          "_parent": 311,
+          "_tid": 362,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 314,
+          "_parent": 357,
+          "_tid": 363,
+          "dep_label": null,
+          "rel_type": "root"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 315,
+          "_parent": 316,
+          "_tid": 364,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 316,
+          "_parent": 314,
+          "_tid": 365,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 317,
+          "_parent": 316,
+          "_tid": 366,
+          "dep_label": null,
+          "rel_type": "nummod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 318,
+          "_parent": 314,
+          "_tid": 367,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 319,
+          "_parent": 320,
+          "_tid": 368,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 320,
+          "_parent": 314,
+          "_tid": 369,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 321,
+          "_parent": 324,
+          "_tid": 370,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 322,
+          "_parent": 323,
+          "_tid": 371,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 323,
+          "_parent": 324,
+          "_tid": 372,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 324,
+          "_parent": 320,
+          "_tid": 373,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 325,
+          "_parent": 320,
+          "_tid": 374,
+          "dep_label": null,
+          "rel_type": "acl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 326,
+          "_parent": 330,
+          "_tid": 375,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 327,
+          "_parent": 329,
+          "_tid": 376,
+          "dep_label": null,
+          "rel_type": "nummod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 328,
+          "_parent": 329,
+          "_tid": 377,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 329,
+          "_parent": 330,
+          "_tid": 378,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 330,
+          "_parent": 325,
+          "_tid": 379,
+          "dep_label": null,
+          "rel_type": "obj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 331,
+          "_parent": 332,
+          "_tid": 380,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 332,
+          "_parent": 330,
+          "_tid": 381,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 333,
+          "_parent": 314,
+          "_tid": 382,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 334,
+          "_parent": 341,
+          "_tid": 383,
+          "dep_label": null,
+          "rel_type": "nsubj:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 335,
+          "_parent": 336,
+          "_tid": 384,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 336,
+          "_parent": 334,
+          "_tid": 385,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 337,
+          "_parent": 339,
+          "_tid": 386,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 338,
+          "_parent": 339,
+          "_tid": 387,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 339,
+          "_parent": 336,
+          "_tid": 388,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 340,
+          "_parent": 341,
+          "_tid": 389,
+          "dep_label": null,
+          "rel_type": "aux:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 341,
+          "_parent": 314,
+          "_tid": 390,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 342,
+          "_parent": 343,
+          "_tid": 391,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 343,
+          "_parent": 341,
+          "_tid": 392,
+          "dep_label": null,
+          "rel_type": "xcomp"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 344,
+          "_parent": 343,
+          "_tid": 393,
+          "dep_label": null,
+          "rel_type": "advmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 345,
+          "_parent": 356,
+          "_tid": 394,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 346,
+          "_parent": 356,
+          "_tid": 395,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 347,
+          "_parent": 349,
+          "_tid": 396,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 348,
+          "_parent": 349,
+          "_tid": 397,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 349,
+          "_parent": 356,
+          "_tid": 398,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 350,
+          "_parent": 352,
+          "_tid": 399,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 351,
+          "_parent": 352,
+          "_tid": 400,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 352,
+          "_parent": 349,
+          "_tid": 401,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 353,
+          "_parent": 355,
+          "_tid": 402,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 354,
+          "_parent": 355,
+          "_tid": 403,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 355,
+          "_parent": 352,
+          "_tid": 404,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 356,
+          "_parent": 341,
+          "_tid": 405,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 357,
+          "_parent": 314,
+          "_tid": 406,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 408,
+          "_parent": 410,
+          "_tid": 425,
+          "dep_label": null,
+          "rel_type": "advmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 409,
+          "_parent": 410,
+          "_tid": 426,
+          "dep_label": null,
+          "rel_type": "nummod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 410,
+          "_parent": 415,
+          "_tid": 427,
+          "dep_label": null,
+          "rel_type": "obl:tmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 411,
+          "_parent": 415,
+          "_tid": 428,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 412,
+          "_parent": 414,
+          "_tid": 429,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 413,
+          "_parent": 414,
+          "_tid": 430,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 414,
+          "_parent": 415,
+          "_tid": 431,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 415,
+          "_parent": 424,
+          "_tid": 432,
+          "dep_label": null,
+          "rel_type": "root"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 416,
+          "_parent": 417,
+          "_tid": 433,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 417,
+          "_parent": 415,
+          "_tid": 434,
+          "dep_label": null,
+          "rel_type": "ccomp"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 418,
+          "_parent": 420,
+          "_tid": 435,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 419,
+          "_parent": 420,
+          "_tid": 436,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 420,
+          "_parent": 417,
+          "_tid": 437,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 421,
+          "_parent": 423,
+          "_tid": 438,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 422,
+          "_parent": 423,
+          "_tid": 439,
+          "dep_label": null,
+          "rel_type": "nmod:poss"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 423,
+          "_parent": 417,
+          "_tid": 440,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 424,
+          "_parent": 415,
+          "_tid": 441,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 443,
+          "_parent": 445,
+          "_tid": 456,
+          "dep_label": null,
+          "rel_type": "nsubj:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 444,
+          "_parent": 445,
+          "_tid": 457,
+          "dep_label": null,
+          "rel_type": "aux:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 445,
+          "_parent": 455,
+          "_tid": 458,
+          "dep_label": null,
+          "rel_type": "root"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 446,
+          "_parent": 447,
+          "_tid": 459,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 447,
+          "_parent": 445,
+          "_tid": 460,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 448,
+          "_parent": 449,
+          "_tid": 461,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 449,
+          "_parent": 447,
+          "_tid": 462,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 450,
+          "_parent": 452,
+          "_tid": 463,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 451,
+          "_parent": 452,
+          "_tid": 464,
+          "dep_label": null,
+          "rel_type": "aux:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 452,
+          "_parent": 445,
+          "_tid": 465,
+          "dep_label": null,
+          "rel_type": "advcl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 453,
+          "_parent": 454,
+          "_tid": 466,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 454,
+          "_parent": 452,
+          "_tid": 467,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 455,
+          "_parent": 445,
+          "_tid": 468,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 470,
+          "_parent": 471,
+          "_tid": 518,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 471,
+          "_parent": 474,
+          "_tid": 519,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 472,
+          "_parent": 474,
+          "_tid": 520,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 473,
+          "_parent": 474,
+          "_tid": 521,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 474,
+          "_parent": 517,
+          "_tid": 522,
+          "dep_label": null,
+          "rel_type": "root"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 475,
+          "_parent": 481,
+          "_tid": 523,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 476,
+          "_parent": 481,
+          "_tid": 524,
+          "dep_label": null,
+          "rel_type": "nsubj:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 477,
+          "_parent": 479,
+          "_tid": 525,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 478,
+          "_parent": 479,
+          "_tid": 526,
+          "dep_label": null,
+          "rel_type": "nmod:poss"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 479,
+          "_parent": 476,
+          "_tid": 527,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 480,
+          "_parent": 481,
+          "_tid": 528,
+          "dep_label": null,
+          "rel_type": "aux:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 481,
+          "_parent": 474,
+          "_tid": 529,
+          "dep_label": null,
+          "rel_type": "ccomp"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 482,
+          "_parent": 485,
+          "_tid": 530,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 483,
+          "_parent": 485,
+          "_tid": 531,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 484,
+          "_parent": 485,
+          "_tid": 532,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 485,
+          "_parent": 481,
+          "_tid": 533,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 486,
+          "_parent": 488,
+          "_tid": 534,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 487,
+          "_parent": 488,
+          "_tid": 535,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 488,
+          "_parent": 485,
+          "_tid": 536,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 489,
+          "_parent": 490,
+          "_tid": 537,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 490,
+          "_parent": 488,
+          "_tid": 538,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 491,
+          "_parent": 492,
+          "_tid": 539,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 492,
+          "_parent": 490,
+          "_tid": 540,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 493,
+          "_parent": 481,
+          "_tid": 541,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 494,
+          "_parent": 499,
+          "_tid": 542,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 495,
+          "_parent": 499,
+          "_tid": 543,
+          "dep_label": null,
+          "rel_type": "nsubj:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 496,
+          "_parent": 499,
+          "_tid": 544,
+          "dep_label": null,
+          "rel_type": "aux:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 497,
+          "_parent": 499,
+          "_tid": 545,
+          "dep_label": null,
+          "rel_type": "obl:npmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 498,
+          "_parent": 499,
+          "_tid": 546,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 499,
+          "_parent": 481,
+          "_tid": 547,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 500,
+          "_parent": 501,
+          "_tid": 548,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 501,
+          "_parent": 499,
+          "_tid": 549,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 502,
+          "_parent": 506,
+          "_tid": 550,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 503,
+          "_parent": 506,
+          "_tid": 551,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 504,
+          "_parent": 506,
+          "_tid": 552,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 505,
+          "_parent": 506,
+          "_tid": 553,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 506,
+          "_parent": 499,
+          "_tid": 554,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 507,
+          "_parent": 512,
+          "_tid": 555,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 508,
+          "_parent": 512,
+          "_tid": 556,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 509,
+          "_parent": 512,
+          "_tid": 557,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 510,
+          "_parent": 512,
+          "_tid": 558,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 511,
+          "_parent": 512,
+          "_tid": 559,
+          "dep_label": null,
+          "rel_type": "aux"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 512,
+          "_parent": 499,
+          "_tid": 560,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 513,
+          "_parent": 514,
+          "_tid": 561,
+          "dep_label": null,
+          "rel_type": "nmod:poss"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 514,
+          "_parent": 516,
+          "_tid": 562,
+          "dep_label": null,
+          "rel_type": "nmod:poss"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 515,
+          "_parent": 514,
+          "_tid": 563,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 516,
+          "_parent": 512,
+          "_tid": 564,
+          "dep_label": null,
+          "rel_type": "obj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 517,
+          "_parent": 474,
+          "_tid": 565,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 567,
+          "_parent": 568,
+          "_tid": 588,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 568,
+          "_parent": 587,
+          "_tid": 589,
+          "dep_label": null,
+          "rel_type": "root"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 569,
+          "_parent": 570,
+          "_tid": 590,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 570,
+          "_parent": 568,
+          "_tid": 591,
+          "dep_label": null,
+          "rel_type": "ccomp"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 571,
+          "_parent": 572,
+          "_tid": 592,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 572,
+          "_parent": 570,
+          "_tid": 593,
+          "dep_label": null,
+          "rel_type": "xcomp"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 573,
+          "_parent": 574,
+          "_tid": 594,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 574,
+          "_parent": 572,
+          "_tid": 595,
+          "dep_label": null,
+          "rel_type": "obj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 575,
+          "_parent": 578,
+          "_tid": 596,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 576,
+          "_parent": 578,
+          "_tid": 597,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 577,
+          "_parent": 578,
+          "_tid": 598,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 578,
+          "_parent": 572,
+          "_tid": 599,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 579,
+          "_parent": 584,
+          "_tid": 600,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 580,
+          "_parent": 584,
+          "_tid": 601,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 581,
+          "_parent": 583,
+          "_tid": 602,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 582,
+          "_parent": 583,
+          "_tid": 603,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 583,
+          "_parent": 584,
+          "_tid": 604,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 584,
+          "_parent": 578,
+          "_tid": 605,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 585,
+          "_parent": 586,
+          "_tid": 606,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 586,
+          "_parent": 584,
+          "_tid": 607,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 587,
+          "_parent": 568,
+          "_tid": 608,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 610,
+          "_parent": 612,
+          "_tid": 627,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 611,
+          "_parent": 612,
+          "_tid": 628,
+          "dep_label": null,
+          "rel_type": "advmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 612,
+          "_parent": 626,
+          "_tid": 629,
+          "dep_label": null,
+          "rel_type": "root"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 613,
+          "_parent": 615,
+          "_tid": 630,
+          "dep_label": null,
+          "rel_type": "nsubj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 614,
+          "_parent": 615,
+          "_tid": 631,
+          "dep_label": null,
+          "rel_type": "aux"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 615,
+          "_parent": 612,
+          "_tid": 632,
+          "dep_label": null,
+          "rel_type": "ccomp"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 616,
+          "_parent": 617,
+          "_tid": 633,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 617,
+          "_parent": 615,
+          "_tid": 634,
+          "dep_label": null,
+          "rel_type": "xcomp"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 618,
+          "_parent": 621,
+          "_tid": 635,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 619,
+          "_parent": 620,
+          "_tid": 636,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 620,
+          "_parent": 621,
+          "_tid": 637,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 621,
+          "_parent": 617,
+          "_tid": 638,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 622,
+          "_parent": 623,
+          "_tid": 639,
+          "dep_label": null,
+          "rel_type": "mark"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 623,
+          "_parent": 617,
+          "_tid": 640,
+          "dep_label": null,
+          "rel_type": "advcl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 624,
+          "_parent": 625,
+          "_tid": 641,
+          "dep_label": null,
+          "rel_type": "compound"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 625,
+          "_parent": 623,
+          "_tid": 642,
+          "dep_label": null,
+          "rel_type": "obj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 626,
+          "_parent": 612,
+          "_tid": 643,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 645,
+          "_parent": 646,
+          "_tid": 675,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 646,
+          "_parent": 653,
+          "_tid": 676,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 647,
+          "_parent": 646,
+          "_tid": 677,
+          "dep_label": null,
+          "rel_type": "nummod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 648,
+          "_parent": 646,
+          "_tid": 678,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 649,
+          "_parent": 646,
+          "_tid": 679,
+          "dep_label": null,
+          "rel_type": "nummod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 650,
+          "_parent": 653,
+          "_tid": 680,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 651,
+          "_parent": 653,
+          "_tid": 681,
+          "dep_label": null,
+          "rel_type": "nsubj:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 652,
+          "_parent": 653,
+          "_tid": 682,
+          "dep_label": null,
+          "rel_type": "aux:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 653,
+          "_parent": 674,
+          "_tid": 683,
+          "dep_label": null,
+          "rel_type": "root"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 654,
+          "_parent": 656,
+          "_tid": 684,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 655,
+          "_parent": 656,
+          "_tid": 685,
+          "dep_label": null,
+          "rel_type": "nummod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 656,
+          "_parent": 653,
+          "_tid": 686,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 657,
+          "_parent": 656,
+          "_tid": 687,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 658,
+          "_parent": 659,
+          "_tid": 688,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 659,
+          "_parent": 656,
+          "_tid": 689,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 660,
+          "_parent": 662,
+          "_tid": 690,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 661,
+          "_parent": 662,
+          "_tid": 691,
+          "dep_label": null,
+          "rel_type": "det"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 662,
+          "_parent": 659,
+          "_tid": 692,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 663,
+          "_parent": 665,
+          "_tid": 693,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 664,
+          "_parent": 665,
+          "_tid": 694,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 665,
+          "_parent": 662,
+          "_tid": 695,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 666,
+          "_parent": 668,
+          "_tid": 696,
+          "dep_label": null,
+          "rel_type": "cc"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 667,
+          "_parent": 668,
+          "_tid": 697,
+          "dep_label": null,
+          "rel_type": "amod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 668,
+          "_parent": 662,
+          "_tid": 698,
+          "dep_label": null,
+          "rel_type": "conj"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 669,
+          "_parent": 670,
+          "_tid": 699,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 670,
+          "_parent": 668,
+          "_tid": 700,
+          "dep_label": null,
+          "rel_type": "nmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 671,
+          "_parent": 668,
+          "_tid": 701,
+          "dep_label": null,
+          "rel_type": "acl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 672,
+          "_parent": 673,
+          "_tid": 702,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 673,
+          "_parent": 671,
+          "_tid": 703,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 674,
+          "_parent": 653,
+          "_tid": 704,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 706,
+          "_parent": 707,
+          "_tid": 716,
+          "dep_label": null,
+          "rel_type": "nummod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 707,
+          "_parent": 708,
+          "_tid": 717,
+          "dep_label": null,
+          "rel_type": "obl:npmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 708,
+          "_parent": 712,
+          "_tid": 718,
+          "dep_label": null,
+          "rel_type": "advmod"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 709,
+          "_parent": 712,
+          "_tid": 719,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 710,
+          "_parent": 712,
+          "_tid": 720,
+          "dep_label": null,
+          "rel_type": "nsubj:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 711,
+          "_parent": 712,
+          "_tid": 721,
+          "dep_label": null,
+          "rel_type": "aux:pass"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 712,
+          "_parent": 715,
+          "_tid": 722,
+          "dep_label": null,
+          "rel_type": "root"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 713,
+          "_parent": 714,
+          "_tid": 723,
+          "dep_label": null,
+          "rel_type": "case"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 714,
+          "_parent": 712,
+          "_tid": 724,
+          "dep_label": null,
+          "rel_type": "obl"
+        }
+      },
+      {
+        "py/object": "ft.onto.base_ontology.Dependency",
+        "py/state": {
+          "_child": 715,
+          "_parent": 712,
+          "_tid": 725,
+          "dep_label": null,
+          "rel_type": "punct"
+        }
       }
     ],
     "meta": {
@@ -4648,11 +10936,11 @@
         "span_unit": "character"
       }
     },
-    "orig_text_len": 790,
+    "orig_text_len": 1903,
     "processed_original_spans": [],
     "replace_back_operations": [],
     "serialization": {
-      "next_id": 313
+      "next_id": 733
     }
   }
 }

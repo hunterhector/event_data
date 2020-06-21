@@ -1,0 +1,1 @@
+generate_ontology create -i event_ontology.json -o . -r -m full.json

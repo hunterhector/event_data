@@ -12,10 +12,10 @@ from evidence_questions import QuestionCreator
 from pseudo_answer import ExampleQuestionAnswerer
 from readers.event_reader import TwoDocumentPackReader
 
-input_path = 'brat_data/input'
-output_path = 'brat_data/output'
-# input_path = 'sample_data/input'
-# output_path = 'sample_data/output'
+# input_path = 'brat_data/input'
+# output_path = 'brat_data/output'
+input_path = 'sample_data/input'
+output_path = 'sample_data/output'
 
 pl = Pipeline()
 # Read raw text.
