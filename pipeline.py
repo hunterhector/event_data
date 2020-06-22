@@ -1,3 +1,4 @@
+import os
 import logging
 
 from forte.data.selector import AllPackSelector
@@ -8,11 +9,10 @@ from forte.processors.writers import DocIdMultiPackWriter
 from coref_propose import SameLemmaSuggestionProvider
 from event_detector import EventDetector
 from evidence_questions import QuestionCreator
-from pseudo_answer import ExampleQuestionAnswerer
 from readers.event_reader import TwoDocumentPackReader
 
-input_path = 'sample_data/input'
-output_path = 'sample_data/output'
+input_path = os.path.join('sample_data', 'input')
+output_path = os.path.join('sample_data', 'output')
 
 pl = Pipeline()
 # Read raw text.
