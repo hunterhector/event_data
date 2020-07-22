@@ -4,7 +4,7 @@ import logging
 from forte.data.selector import AllPackSelector
 from forte.pipeline import Pipeline
 from forte.processors.stanfordnlp_processor import StandfordNLPProcessor
-from forte.processors.writers import DocIdMultiPackWriter
+from forte.processors.writers import PackNameMultiPackWriter
 
 from coref_propose import SameLemmaSuggestionProvider
 from event_detector import EventDetector
@@ -34,7 +34,7 @@ pl.add(QuestionCreator())
 # pl.add(ExampleQuestionAnswerer())
 
 pl.add(
-    DocIdMultiPackWriter(), {
+    PackNameMultiPackWriter(), {
         'output_dir': output_path,
         'indent': 2,
         'overwrite': True,
