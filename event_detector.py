@@ -17,3 +17,5 @@ class EventDetector(PackProcessor):
         for token in pack.get(Token):
             if token.lemma in self.event_dict:
                 evm = EventMention(pack, token.begin, token.end)
+                # You can set the importance score easily.
+                evm.importance = 0.9

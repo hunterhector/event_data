@@ -35,14 +35,14 @@ class EventMention(EventMention):
     """
     A span based annotation `EventMention`, used to refer to a mention of an event.
     Attributes:
-        is_valid (Optional[bool])
+        importance (Optional[float])
     """
 
-    is_valid: Optional[bool]
+    importance: Optional[float]
 
     def __init__(self, pack: DataPack, begin: int, end: int):
         super().__init__(pack, begin, end)
-        self.is_valid: Optional[bool] = None
+        self.importance: Optional[float] = None
 
 
 @dataclass

@@ -14,8 +14,8 @@
       "description": "A span based annotation `EventMention`, used to refer to a mention of an event.",
       "attributes": [
         {
-          "name": "is_valid",
-          "type": "bool"
+          "name": "importance",
+          "type": "float"
         }
       ]
     },
