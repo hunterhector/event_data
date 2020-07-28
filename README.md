@@ -16,13 +16,17 @@ cd forte
 pip install -e .
 ```
 
-(kimi) 
 Install open-domain event detection system (Araki and Mitamura, coling 2018):
 ```bash
 git clone https://bitbucket.org/junaraki/coling2018-event.git
 cd coling2018-event
 ```
+
 Install python packages listed in coling2018-event/requirements.txt (Conda users)
+```bash
+conda env create --file myenv.yaml
+```
+or 
 ```bash
 conda install -c anaconda nltk==3.3
 conda install -c conda-forge beautifulsoup4
@@ -34,11 +38,7 @@ pip install polyglot
 conda install -c conda-forge tqdm
 pip install stanfordcorenlp
 
-sh download.sh
-```
 
-(Memo) Also run these commands (Conda users):
-```bash
 conda install -c conda-forge spacy
 python -m spacy download en_core_web_sm
 python -m spacy download en_core_web_md
@@ -67,6 +67,7 @@ Now you can run the script to check out the sample data:
 ```bash
 mv run_coling2018-event.sh coling2018-event/run_coling2018-event.sh
 cd coling2018-event
+sh download.sh
 sh run_coling2018-event.sh
 
 cd ../
