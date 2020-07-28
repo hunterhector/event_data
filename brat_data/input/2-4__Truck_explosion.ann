@@ -1,0 +1,104 @@
+T1	Event 6 11	drove
+E1	Event:T1
+T2	Event 64 73	explosion
+E2	Event:T2
+T3	Event 78 81	saw
+E3	Event:T3
+T4	Event 107 115	summoned
+E4	Event:T4
+T5	Event 154 163	testified
+E5	Event:T5
+T6	Event 171 178	inquest
+E6	Event:T6
+T7	Event 187 190	saw
+E7	Event:T7
+T8	Event 203 210	grapple
+E8	Event:T8
+T9	Event 251 260	detonated
+E9	Event:T9
+T10	Event 274 280	stored
+E10	Event:T10
+T11	Event 295 302	killing
+E11	Event:T11
+T12	Event 338 345	retired
+E12	Event:T12
+T13	Event 414 422	survived
+E13	Event:T13
+T14	Event 433 438	blast
+E14	Event:T14
+T15	Event 447 455	wandered
+E15	Event:T15
+T16	Event 498 504	killed
+E16	Event:T16
+T17	Event 512 525	fragmentation
+E17	Event:T17
+T18	Event 535 544	exploding
+E18	Event:T18
+T19	Event 558 567	explosion
+E19	Event:T19
+T20	Event 582 589	wounded
+E20	Event:T20
+T21	Event 621 625	lost
+E21	Event:T21
+T22	Event 636 640	died
+E22	Event:T22
+T23	Event 663 669	wounds
+E23	Event:T23
+T24	Event 675 682	injured
+E24	Event:T24
+T25	Event 720 728	exploded
+E25	Event:T25
+T26	Event 740 749	recounted
+E26	Event:T26
+T27	Event 754 757	saw
+E27	Event:T27
+T28	Event 788 795	sitting
+E28	Event:T28
+T29	Event 889 896	holding
+E29	Event:T29
+T30	Event 922 926	died
+E30	Event:T30
+T31	Event 951 954	got
+E31	Event:T31
+T32	Event 1006 1010	blew
+E32	Event:T32
+T33	Event 1046 1054	wounding
+E33	Event:T33
+T34	Event 1140 1148	recalled
+E34	Event:T34
+T35	Event 1175 1184	explosion
+E35	Event:T35
+T36	Event 1189 1194	began
+E36	Event:T36
+T37	Event 1198 1202	feel
+E37	Event:T37
+T38	Event 1227 1233	coming
+E38	Event:T38
+T39	Event 1240 1243	end
+E39	Event:T39
+T40	Event 1247 1252	guess
+E40	Event:T40
+T41	Event 1288 1293	thing
+E41	Event:T41
+T42	Event 1296 1304	remember
+E42	Event:T42
+T43	Event 1349 1356	binding
+E43	Event:T43
+T44	Event 1364 1370	wounds
+E44	Event:T44
+T45	Event 1420 1425	blown
+E45	Event:T45
+T46	Event 1433 1437	went
+E46	Event:T46
+T47	Event 1463 1469	helped
+E47	Event:T47
+T48	Event 1486 1490	work
+E48	Event:T48
+T49	Event 1505 1512	ordered
+E49	Event:T49
+T50	Event 1516 1520	stop
+E50	Event:T50
+T51	Event 1529 1535	search
+E51	Event:T51
+T52	Event 1540 1544	made
+E52	Event:T52

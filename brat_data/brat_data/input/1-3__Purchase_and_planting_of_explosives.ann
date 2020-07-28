@@ -1,0 +1,86 @@
+T1	Event 40 49	conceived
+E1	Event:T1
+T2	Event 54 61	planned
+E2	Event:T2
+T3	Event 72 79	leading
+E3	Event:T3
+T4	Event 87 95	massacre
+E4	Event:T4
+T5	Event 164 171	thought
+E5	Event:T5
+T6	Event 183 192	conceived
+E6	Event:T6
+T7	Event 214 222	defeated
+E7	Event:T7
+T8	Event 245 253	election
+E8	Event:T8
+T9	Event 281 290	consensus
+E9	Event:T9
+T10	Event 326 332	worked
+E10	Event:T10
+T11	Event 422 428	quoted
+E11	Event:T11
+T12	Event 455 459	have
+E12	Event:T12
+T13	Event 463 468	doubt
+E13	Event:T13
+T14	Event 477 481	made
+E14	Event:T14
+T15	Event 512 516	blow
+E15	Event:T15
+T16	Event 542 553	experienced
+E16	Event:T16
+T17	Event 580 588	employed
+E17	Event:T17
+T18	Event 608 612	make
+E18	Event:T18
+T19	Event 618 625	repairs
+E19	Event:T19
+T20	Event 733 741	touching
+E20	Event:T20
+T21	Event 660 663	had
+E21	Event:T21
+T22	Event 670 681	opportunity
+E22	Event:T22
+T23	Event 690 695	plant
+E23	Event:T23
+T24	Event 715 718	lay
+E24	Event:T24
+T25	Event 757 760	had
+E25	Event:T25
+T26	Event 843 848	began
+E26	Event:T26
+T27	Event 849 855	buying
+E27	Event:T27
+T28	Event 908 912	used
+E28	Event:T28
+T29	Event 943 953	excavation
+E29	Event:T29
+T30	Event 995 1000	drove
+E30	Event:T30
+T31	Event 1016 1022	bought
+E31	Event:T31
+T32	Event 1050 1058	sporting
+E32	Event:T32
+T33	Event 1099 1103	used
+E33	Event:T33
+T34	Event 1121 1129	purchase
+E34	Event:T34
+T35	Event 1212 1217	raise
+E35	Event:T35
+T36	Event 1244 1252	reported
+E36	Event:T36
+T37	Event 1253 1260	hearing
+E37	Event:T37
+T38	Event 1261 1271	explosions
+E38	Event:T38
+T39	Event 1272 1275	set
+E39	Event:T39
+T40	Event 1307 1314	calling
+E40	Event:T40
+T41	Event 1349 1358	purchased
+E41	Event:T41
+T42	Event 1420 1429	according
+E42	Event:T42
+T43	Event 1540 1546	Safety
+E43	Event:T43

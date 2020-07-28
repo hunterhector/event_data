@@ -134,3 +134,14 @@ en/
 
 # vscode
 .vscode
+
+# kimi
+jupyter_notebooks/
+nohup.out
+forte/
+stave/
+brat_data/sample_July25/
+brat_data/output_sample_July25/
+brat_data/input_/
+brat_data/output_/
+coling2018-event/

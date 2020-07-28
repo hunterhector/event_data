@@ -1,0 +1,68 @@
+T1	Event 27 33	loaded
+E1	Event:T1
+T2	Event 90 99	producing
+E2	Event:T2
+T3	Event 119 128	explosion
+E3	Event:T3
+T4	Event 138 144	bought
+E4	Event:T4
+T5	Event 181 186	avoid
+E5	Event:T5
+T6	Event 187 195	breaking
+E6	Event:T6
+T7	Event 206 218	transporting
+E7	Event:T7
+T8	Event 238 242	made
+E8	Event:T8
+T9	Event 248 253	trips
+E9	Event:T9
+T10	Event 344 357	allegedly saw
+E10	Event:T10
+T11	Event 364 372	carrying
+E11	Event:T11
+T12	Event 440 447	thought
+E12	Event:T12
+T13	Event 451 458	mention
+E13	Event:T13
+T14	Event 485 495	discharged
+E14	Event:T14
+T15	Event 552 560	murdered
+E15	Event:T15
+T16	Event 598 605	release
+E16	Event:T16
+T17	Event 614 622	bombings
+E17	Event:T17
+T18	Event 645 648	put
+E18	Event:T18
+T19	Event 675 682	located
+E19	Event:T19
+T20	Event 736 741	found
+E20	Event:T20
+T21	Event 755 762	charred
+E21	Event:T21
+T22	Event 763 772	condition
+E22	Event:T22
+T23	Event 788 798	explosions
+E23	Event:T23
+T24	Event 803 807	fire
+E24	Event:T24
+T25	Event 809 814	Piled
+E25	Event:T25
+T26	Event 906 910	seen
+E26	Event:T26
+T27	Event 953 959	placed
+E27	Event:T27
+T28	Event 964 969	wired
+E28	Event:T28
+T29	Event 1049 1055	burned
+E29	Event:T29
+T30	Event 1087 1097	found tied
+E30	Event:T30
+T31	Event 1134 1139	wired
+E31	Event:T31
+T32	Event 1152 1159	prevent
+E32	Event:T32
+T33	Event 1166 1172	rescue
+E33	Event:T33
+T34	Event 1184 1188	fire
+E34	Event:T34

@@ -7,15 +7,15 @@ from forte.processors.stanfordnlp_processor import StandfordNLPProcessor
 from forte.processors.writers import DocIdMultiPackWriter
 
 from coref_propose import SameLemmaSuggestionProvider, EmbeddingSimilaritySuggestionProvider
-from event_detector import SameLemmaEventDetector
+from event_detector import SameLemmaEventDetector, LemmaMatchAndCOLING2018OEDEventDetector
 from evidence_questions import QuestionCreator
 from pseudo_answer import ExampleQuestionAnswerer
 from readers.event_reader import TwoDocumentPackReader
 
-# input_path = 'brat_data/input'
-# output_path = 'brat_data/output'
-input_path = 'sample_data/input'
-output_path = 'sample_data/output'
+input_path = 'brat_data/input'
+output_path = 'brat_data/output'
+# input_path = 'sample_data/input'
+# output_path = 'sample_data/output'
 
 pl = Pipeline()
 # Read raw text.
@@ -25,7 +25,8 @@ pl.set_reader(TwoDocumentPackReader())
 pl.add(StandfordNLPProcessor(), selector=AllPackSelector())
 
 # Call the event detector
-pl.add(SameLemmaEventDetector(event_lemma_list_filename="event_lemma.txt"), selector=AllPackSelector())
+# pl.add(SameLemmaEventDetector(event_lemma_list_filename="./lemma_match/event_lemma.txt"), selector=AllPackSelector())
+pl.add(LemmaMatchAndCOLING2018OEDEventDetector(event_lemma_list_filename="./lemma_match/event_lemma.txt", coling2018_event_output_path='./brat_data/input/'), selector=AllPackSelector())
 
 # Create event relation suggestions
 pl.add(EmbeddingSimilaritySuggestionProvider())
@@ -58,4 +59,5 @@ logging.basicConfig(
     handlers=[logging.StreamHandler()]
 )
 
+print('start pipeline')
 pl.run(input_path, pairs)

@@ -15,9 +15,49 @@ cd forte
 pip install -e .
 ```
 
+(kimi) 
+Install open-domain event detection system (Araki and Mitamura, coling 2018):
+```bash
+git clone https://bitbucket.org/junaraki/coling2018-event.git
+cd coling2018-event
+# install python packages listed in coling2018-event/requirements.txt
+pip install -r requirements.txt
+sh download.sh
+```
+
+(Memo) Also run these commands (Conda users):
+```bash
+conda install -c conda-forge spacy
+python -m spacy download en_core_web_sm
+python -m spacy download en_core_web_md
+
+conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
+
+pip install stanza
+
+# for coling2018-event
+conda install -c anaconda openjdk=8
+```
+
+Some modification in coling2018-event/preprocess.py:
+```python
+# l72~73
+for dirpath, dirs, files in os.walk(input_dir):
+    for f in files:
+        txt_file = os.path.join(dirpath, f)
+->
+for f in os.listdir(input_dir):
+    txt_file = os.path.join(input_dir, f)
+```
+
 ## Create Some Data
 Now you can run the script to check out the sample data:
 ```bash
+mv run_coling2018-event.sh coling2018-event/run_coling2018-event.sh
+cd coling2018-event
+sh run_coling2018-event.sh
+
+cd ../
 python pipeline.py
 ```
 
