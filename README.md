@@ -11,6 +11,7 @@ pip install texar-pytorch
 Install Forte:
 ```bash
 git clone git@github.com:asyml/forte.git
+# or git clone https://github.com/asyml/forte.git
 cd forte
 pip install -e .
 ```
@@ -20,8 +21,19 @@ Install open-domain event detection system (Araki and Mitamura, coling 2018):
 ```bash
 git clone https://bitbucket.org/junaraki/coling2018-event.git
 cd coling2018-event
-# install python packages listed in coling2018-event/requirements.txt
-pip install -r requirements.txt
+```
+Install python packages listed in coling2018-event/requirements.txt (Conda users)
+```bash
+conda install -c anaconda nltk==3.3
+conda install -c conda-forge beautifulsoup4
+conda install -c conda-forge pattern==3.6
+conda install -c conda-forge pyicu
+pip install pycld2
+conda install -c conda-forge morfessor==2.0.4
+pip install polyglot
+conda install -c conda-forge tqdm
+pip install stanfordcorenlp
+
 sh download.sh
 ```
 

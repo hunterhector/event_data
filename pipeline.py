@@ -4,7 +4,7 @@ import os, glob, itertools
 from forte.data.selector import AllPackSelector
 from forte.pipeline import Pipeline
 from forte.processors.stanfordnlp_processor import StandfordNLPProcessor
-from forte.processors.writers import DocIdMultiPackWriter
+from forte.processors.writers import PackNameMultiPackWriter
 
 from coref_propose import SameLemmaSuggestionProvider, EmbeddingSimilaritySuggestionProvider
 from event_detector import SameLemmaEventDetector, LemmaMatchAndCOLING2018OEDEventDetector
@@ -38,7 +38,7 @@ pl.add(QuestionCreator())
 # pl.add(ExampleQuestionAnswerer())
 
 pl.add(
-    DocIdMultiPackWriter(), {
+    PackNameMultiPackWriter(), {
         'output_dir': output_path,
         'indent': 2,
         'overwrite': True,
