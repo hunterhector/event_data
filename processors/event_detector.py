@@ -4,7 +4,7 @@ from ft.onto.base_ontology import Token
 from edu.cmu import EventMention
 
 
-class EventDetector(PackProcessor):
+class KeywordEventDetector(PackProcessor):
     """
     An example event proposer that propose events based on a dictionary.
     """

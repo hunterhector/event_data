@@ -15,10 +15,16 @@ cd forte
 pip install -e .
 ```
 
-## Create Some Data
+## Run Event Detection
 Now you can run the script to check out the sample data:
 ```bash
-python pipeline.py
+python detection_pipeline.py
+```
+
+## Create Event Pairs
+Now you can run the script to find the pairs:
+```bash
+python pair_pipeline.py
 ```
 
 ## To Start the Stave UI
