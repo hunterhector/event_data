@@ -4,7 +4,8 @@ from forte.pipeline import Pipeline
 from forte.processors.stanfordnlp_processor import StandfordNLPProcessor
 from forte.processors.writers import PackNameJsonPackWriter
 
-from processors.event_detector import KeywordEventDetector
+# from processors.event_detector import KeywordEventDetector
+from event_detector import KeywordEventDetector
 from readers.event_reader import DocumentReader
 from utils import set_logging
 
