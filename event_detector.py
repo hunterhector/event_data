@@ -5,6 +5,20 @@ from edu.cmu import EventMention
 import brat_tool
 import sys
 
+class KeywordEventDetector(PackProcessor):
+    """
+    An example event proposer that propose events based on a dictionary.
+    """
+    event_dict = {
+        'bomb', 'detonate', 'kill', 'injure', 'kidnap', 'shootout', 'die',
+        'explode', 'death'
+    }
+    def _process(self, pack: DataPack):
+        for token in pack.get(Token):
+            if token.lemma in self.event_dict:
+                evm = EventMention(pack, token.begin, token.end)
+                # You can set the importance score easily.
+                evm.importance = 0.9
 
 class SameLemmaEventDetector(PackProcessor):
     """
