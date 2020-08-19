@@ -80,14 +80,14 @@ class LemmaMatchAndCOLING2018OEDEventDetector(PackProcessor):
             for sub_idx in sub_idx_list:
                 if all([not body_events[idx] for idx in sub_idx]):
 #                     evm = EventMention(pack, body_tokens[sub_idx[0]].begin, body_tokens[sub_idx[-1]].end)
-                    detected_events_lemma_match.append((body_tokens[sub_idx[0]].begin, body_tokens[sub_idx[-1]].end))
+                    detected_events_lemma_match.append((body_tokens[sub_idx[0]].begin, body_tokens[sub_idx[-1]].end, ev_seq))
                     for idx in sub_idx:
                         body_events[idx] = True
 
         for token, token_is_event in zip(body_tokens, body_events):
             if not token_is_event and token.lemma in self.event_lemma_list_single: # single word match
 #                 evm = EventMention(pack, token.begin, token.end)
-                detected_events_lemma_match.append((token.begin, token.end))
+                detected_events_lemma_match.append((token.begin, token.end, token.lemma))
         
         # event detection result from coling2018-event
         with open(self.coling2018_event_output_path+pack.pack_name+'.ann', 'r', encoding="utf-8") as f:
@@ -95,7 +95,8 @@ class LemmaMatchAndCOLING2018OEDEventDetector(PackProcessor):
         ann = brat_tool.BratAnnotations(ann_data)
         events = ann.getEventAnnotationList()
         for event in events:
-            detected_events_coling2018.append((event.textbound.start_pos, event.textbound.end_pos))
+            detected_events_coling2018.append((event.textbound.start_pos, event.textbound.end_pos, event.textbound.text))
+            sys.exit('force')
         
         # remove redundant 
         for d in detected_events_lemma_match:
@@ -108,7 +109,14 @@ class LemmaMatchAndCOLING2018OEDEventDetector(PackProcessor):
         
         # store events
         for event in detected_events_coling2018:
+            # event[0]: start, event[1]: end
             evm = EventMention(pack, event[0], event[1])
+            # You can set the importance score easily.
+            if type(event[-1]) is list:
+                print('seq:', event[-1])
+            else:
+                print('single:', event[-1])  
+            evm.importance = 0.9
 
     def subfinder(self, mylist, pattern):
         matches = []
