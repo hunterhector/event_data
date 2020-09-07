@@ -5,6 +5,7 @@ from forte.processors.stanfordnlp_processor import StandfordNLPProcessor
 from forte.processors.writers import PackNameJsonPackWriter
 
 from processors.event_detector import KeywordEventDetector
+from processors.openie_processor import AllenNLPEventProcessor
 from readers.event_reader import DocumentReader
 from utils import set_logging
 
@@ -19,7 +20,8 @@ detection_pipeline.set_reader(DocumentReader())
 detection_pipeline.add(StandfordNLPProcessor())
 
 # Call the event detector.
-detection_pipeline.add(KeywordEventDetector())
+# detection_pipeline.add(KeywordEventDetector())
+detection_pipeline.add(AllenNLPEventProcessor())
 
 # Write out the events.
 input_path = os.path.join('sample_data', 'raw_text')
