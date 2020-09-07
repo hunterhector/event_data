@@ -7,6 +7,10 @@ import sys
 import math
 import gzip
 import json
+import os
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 class KeywordEventDetector(PackProcessor):
     """
@@ -73,11 +77,13 @@ class LemmaMatchAndCOLING2018OEDEventDetector(PackProcessor):
     This is the combined method: lemma-match (Matz) and coling2018-event(Araki and Mitamura).
     """
     
-    def __init__(self, event_lemma_list_filename, coling2018_event_output_path, df_file, tokenizer):
+    def __init__(self, event_lemma_list_filename, coling2018_event_output_path, nombank_propositions, df_file, tokenizer):
         with open(event_lemma_list_filename, encoding="utf-8") as f:
             event_lemmas = f.read().splitlines()
             self.event_lemma_list_single = [elm for elm in event_lemmas if " " not in elm]
             self.event_lemma_list_sequence = [elm.split(" ") for elm in event_lemmas if " " in elm]
+        with open(nombank_propositions, 'r') as f:
+            self.nombank_lemma_list = json.load(f)
         self.coling2018_event_output_path = coling2018_event_output_path
         self.tokenizer = tokenizer
         with gzip.open(df_file, 'rt', encoding='utf-8') as f:
@@ -86,8 +92,9 @@ class LemmaMatchAndCOLING2018OEDEventDetector(PackProcessor):
         self.event_lemma_list_sequence = sorted(self.event_lemma_list_sequence, key=lambda x: len(x), reverse=True)
 
     def _process(self, pack: DataPack):
-        print('pack.pack_name', pack.pack_name+'.txt')
-
+        print('pack.pack_name {}'.format(pack.pack_name+'.txt'))
+        logging.info('pack.pack_name {}'.format(pack.pack_name+'.txt'))
+        
         body_tokens = [token for token in pack.get(Token)]
         body_lemmas = [token.lemma for token in body_tokens]
         body_events = [False] * len(body_tokens)
@@ -104,7 +111,8 @@ class LemmaMatchAndCOLING2018OEDEventDetector(PackProcessor):
                         body_events[idx] = True
 
         for token, token_is_event in zip(body_tokens, body_events):
-            if not token_is_event and token.lemma in self.event_lemma_list_single: # single word match
+            if (not token_is_event and (token.lemma in self.event_lemma_list_single)) \
+                or (not token_is_event and (token.lemma in self.nombank_lemma_list)): # single word match
                 detected_events_lemma_match.append((token.begin, token.end, token.lemma))
         
         # event detection result from coling2018-event
@@ -144,23 +152,20 @@ class LemmaMatchAndCOLING2018OEDEventDetector(PackProcessor):
         # store events + importance(tf-idf) calculation
         for event in detected_events_coling2018:
             evm = EventMention(pack, event[0], event[1])  # event[0]: start, event[1]: end
-            print('evm:', evm)
             # set the importance score
             if type(event[-1]) is list:
-                print('seq:', event[-1])
                 evm.importance = - 2.0
             else:
                 doc = self.tokenizer(event[-1])
-                assert len(doc) == 1
-                lemma = doc[0].lemma_
-                if lemma in table_word_frequency and lemma in self.df_table:
-                    tf = table_word_frequency[lemma] / len(table_word_frequency)
-                    idf = len(self.df_table) / self.df_table[lemma]
-                    evm.importance = tf * math.log(idf)
-                    print('single:', event[-1])
-                    print('importance', evm.importance)
-                else:  # the word not found in tables
-                    print('single not found:', event[-1])
+                if len(doc) == 1:
+                    lemma = doc[0].lemma_
+                    if lemma in table_word_frequency and lemma in self.df_table:
+                        tf = table_word_frequency[lemma] / len(table_word_frequency)
+                        idf = len(self.df_table) / self.df_table[lemma]
+                        evm.importance = float('{0:.3g}'.format(tf * math.log(idf)))
+                    else:  # the word not found in tables (including stop words)
+                        evm.importance = - 1.0
+                else:  # if its a multiple word
                     evm.importance = - 1.0
 
     def subfinder(self, mylist, pattern):

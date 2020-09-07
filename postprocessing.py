@@ -26,13 +26,23 @@ def replace_discontinuous_event_with_its_head(ann_file_path):
             """
             root = str()
             root_idx = 0
+#             print('event.text:', event.text)
+#             print('event.textbound:', event.textbound)
+#             print([t.text+',' for t in nlp(event.text)])
             for idx, token in enumerate(nlp(event.text)): 
                 if token.head == token:
                     root = token
                     root_idx = idx
             event.textbound.text = root.text
-            event.textbound.start_pos = event.textbound.start_pos[root_idx]
-            event.textbound.end_pos = event.textbound.end_pos[root_idx]
+#             print('root idx:', root_idx)
+#             print('root.text:', root.text)
+            if root_idx > len(event.textbound.start_pos):  ## hack
+                # e.g., co-ordinating hard => ['co,', '-,', 'ordinating,', 'hard,']
+                event.textbound.start_pos = event.textbound.start_pos[-1]
+                event.textbound.end_pos = event.textbound.end_pos[-1]
+            else:
+                event.textbound.start_pos = event.textbound.start_pos[root_idx]
+                event.textbound.end_pos = event.textbound.end_pos[root_idx]
             new_event_list.append(event)
     return new_event_list
 

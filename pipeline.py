@@ -15,6 +15,7 @@ from readers.event_reader import TwoDocumentPackReader
 from readers.event_reader import DocumentReader
 from utils import set_logging
 import spacy
+import sys
 
 # input_path = 'brat_data/input'
 # output_path = 'brat_data/output'
@@ -24,11 +25,14 @@ import spacy
 # output_path = 'sample_data/output'
 # input_path = './data/output/data/cdec_wikinews_processed/GROUP-104/'
 # output_path = './output/data/cdec_wikinews_processed/GROUP-104/'
-input_dir = './data/output/data/raw_cdec_wikinews/'
-output_dir = './output/data/cdec_wikinews_processed/'
+input_dir = './data/cdec_wikinews_v3/raw_all_articles_v2/'
+# input_dir = './data/cdec_wikinews_v3/raw_sample_articles/'
+output_dir = './output/data/cdec_wikinews_v3_nombank/'
 df_file_path = './idf_table.json.gz'
 lemma_list_path = "./lemma_match/event_lemma.txt"
-coling2018_path = './data/output/data/cdec_wikinews_processed/'
+coling2018_path = './data/data/cdec_wikinews_v3/all_articles_v2/'
+nombank_path = './nombank_propositions.json'
+# coling2018_path = './data/data/cdec_wikinews_v3/sample_articles/'
 
 ## ------- ##
 # working space
@@ -40,35 +44,38 @@ coling2018_path = './data/output/data/cdec_wikinews_processed/'
 set_logging()
 nlp = spacy.load("en_core_web_sm")
 
-for dir_ in os.listdir(input_dir):
-    input_path = input_dir+dir_+'/'
-    output_path = output_dir+dir_+'/'
-    print('input path:', input_path)
-    print('output_path:', output_path)
-    if not os.path.isdir(input_path):
-        continue
+# for dir_ in os.listdir(input_dir):
+#     input_path = input_dir+dir_+'/'
+#     output_path = output_dir+dir_+'/'
+#     print('input path:', input_path)
+#     print('output_path:', output_path)
+#     if not os.path.isdir(input_path):
+#         continue
 
-    pl = Pipeline()
-    # Read raw text.
-    pl.set_reader(DocumentReader())
+input_path = input_dir
+output_path = output_dir
 
-    # Call stanfordnlp
-    pl.add(StandfordNLPProcessor())
+pl = Pipeline()
+# Read raw text.
+pl.set_reader(DocumentReader())
 
-    # Call the event detector
-    # pl.add(SameLemmaEventDetector(event_lemma_list_filename="./lemma_match/event_lemma.txt"), selector=AllPackSelector())
-    pl.add(LemmaMatchAndCOLING2018OEDEventDetector(event_lemma_list_filename=lemma_list_path, coling2018_event_output_path=coling2018_path+dir_+'/', df_file=df_file_path, tokenizer=nlp))
+# Call stanfordnlp
+pl.add(StandfordNLPProcessor())
 
-    pl.add(
-        PackNameJsonPackWriter(), {
-            'output_dir': output_path,
-            'indent': 2,
-            'overwrite': True,
-        })
+# Call the event detector
+# pl.add(SameLemmaEventDetector(event_lemma_list_filename="./lemma_match/event_lemma.txt"), selector=AllPackSelector())
+# pl.add(LemmaMatchAndCOLING2018OEDEventDetector(event_lemma_list_filename=lemma_list_path, coling2018_event_output_path=coling2018_path+dir_+'/', df_file=df_file_path, tokenizer=nlp))
+pl.add(LemmaMatchAndCOLING2018OEDEventDetector(event_lemma_list_filename=lemma_list_path, coling2018_event_output_path=coling2018_path, nombank_propositions=nombank_path, df_file=df_file_path, tokenizer=nlp))
 
-    pl.initialize()
+pl.add(
+    PackNameJsonPackWriter(), {
+        'output_dir': output_path,
+        'indent': 2,
+        'overwrite': True,
+    })
 
-    print('start pipeline')
-    pl.run(input_path)
-    
-    break  # todo: to be removed
+print('Initializing ... ')
+pl.initialize()  # maybe this is redundant???
+
+print('Pipeline.run starts ...')
+pl.run(input_path)
