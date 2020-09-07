@@ -47,23 +47,10 @@ class TwoDocumentPackReader(MultiPackReader):
         doc1, doc2 = doc_path_pair
 
         with open(doc1) as doc1_f, open(doc2) as doc2_f:
-            p1: DataPack = deserialize(self._pack_manager, doc1_f.read())
-            p2: DataPack = deserialize(self._pack_manager, doc2_f.read())
+            p1: DataPack = deserialize(doc1_f.read())
+            p2: DataPack = deserialize(doc2_f.read())
             mp.add_pack_(p1)
             mp.add_pack_(p2)
             mp.pack_name = f'pair_{p1.pack_name}_and_{p2.pack_name}'
-
-        # doc1_name, doc2_name = doc_name(doc1), doc_name(doc2)
-        # doc1_text, doc2_text = doc_text(doc1), doc_text(doc2)
-        #
-        # mp.pack_name = f'pair_{doc1_name}_and_{doc2_name}'
-        #
-        # p1 = mp.add_pack()
-        # p1.pack_name = doc1_name
-        # p1.set_text(doc1_text)
-        #
-        # p2 = mp.add_pack()
-        # p2.pack_name = doc2_name
-        # p2.set_text(doc2_text)
 
         yield mp

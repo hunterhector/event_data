@@ -1,0 +1,1225 @@
+{
+  "py/object": "forte.data.multi_pack.MultiPack",
+  "py/state": {
+    "creation_records": {},
+    "field_records": {},
+    "links": [
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              731
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              443
+            ]
+          },
+          "_tid": 0,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              739
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              428
+            ]
+          },
+          "_tid": 1,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              744
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              420
+            ]
+          },
+          "_tid": 2,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              745
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              421
+            ]
+          },
+          "_tid": 3,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              746
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              422
+            ]
+          },
+          "_tid": 4,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              747
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              423
+            ]
+          },
+          "_tid": 5,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              748
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              424
+            ]
+          },
+          "_tid": 6,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              749
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              425
+            ]
+          },
+          "_tid": 7,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              750
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              426
+            ]
+          },
+          "_tid": 8,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              751
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              427
+            ]
+          },
+          "_tid": 9,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              752
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              428
+            ]
+          },
+          "_tid": 10,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              753
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              429
+            ]
+          },
+          "_tid": 11,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              754
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              430
+            ]
+          },
+          "_tid": 12,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              755
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              431
+            ]
+          },
+          "_tid": 13,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              755
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              435
+            ]
+          },
+          "_tid": 14,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              755
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              438
+            ]
+          },
+          "_tid": 15,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              756
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              432
+            ]
+          },
+          "_tid": 16,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              757
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              433
+            ]
+          },
+          "_tid": 17,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              758
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              434
+            ]
+          },
+          "_tid": 18,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              759
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              431
+            ]
+          },
+          "_tid": 19,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              759
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              435
+            ]
+          },
+          "_tid": 20,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              759
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              438
+            ]
+          },
+          "_tid": 21,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              760
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              436
+            ]
+          },
+          "_tid": 22,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              761
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              437
+            ]
+          },
+          "_tid": 23,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              762
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              431
+            ]
+          },
+          "_tid": 24,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              762
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              435
+            ]
+          },
+          "_tid": 25,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              762
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              438
+            ]
+          },
+          "_tid": 26,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              763
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              439
+            ]
+          },
+          "_tid": 27,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              764
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              440
+            ]
+          },
+          "_tid": 28,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              765
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              441
+            ]
+          },
+          "_tid": 29,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              766
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              442
+            ]
+          },
+          "_tid": 30,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              767
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              443
+            ]
+          },
+          "_tid": 31,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              768
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              444
+            ]
+          },
+          "_tid": 32,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      },
+      {
+        "py/object": "edu.cmu.CrossEventRelation",
+        "py/state": {
+          "_parent": {
+            "py/tuple": [
+              0,
+              769
+            ]
+          },
+          "_child": {
+            "py/tuple": [
+              1,
+              445
+            ]
+          },
+          "_tid": 33,
+          "rel_type": "suggested",
+          "coref_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "coref_answers": [],
+          "suggest_questions": {
+            "py/object": "forte.data.ontology.core.FList",
+            "py/state": {
+              "_FList__data": []
+            }
+          },
+          "suggest_answers": []
+        }
+      }
+    ],
+    "groups": [],
+    "meta": {
+      "py/object": "forte.data.multi_pack.MultiPackMeta",
+      "py/state": {
+        "pack_name": "pair_00_Abstract_and_01_Abstract",
+        "_pack_id": 245105513660552457842558558264051520751
+      }
+    },
+    "_pack_ref": [
+      15949387325583023611804041173996546478,
+      274558559340592747066337483027428627402
+    ],
+    "_inverse_pack_ref": {
+      "15949387325583023611804041173996546478": 0,
+      "274558559340592747066337483027428627402": 1
+    },
+    "_pack_names": [
+      "_pack_15949387325583023611804041173996546478",
+      "_pack_274558559340592747066337483027428627402"
+    ],
+    "_name_index": {
+      "_pack_15949387325583023611804041173996546478": 0,
+      "_pack_274558559340592747066337483027428627402": 1
+    },
+    "generics": [
+      {
+        "py/object": "edu.cmu.CorefQuestion",
+        "py/state": {
+          "_tid": 34,
+          "question_body": "Do you find both location are identical?",
+          "options": [
+            "Yes",
+            "No",
+            "Probably",
+            "Cannot determine"
+          ]
+        }
+      },
+      {
+        "py/object": "edu.cmu.CorefQuestion",
+        "py/state": {
+          "_tid": 35,
+          "question_body": "Do you find the time on both events are identical?",
+          "options": [
+            "Yes",
+            "No",
+            "Probably",
+            "Cannot determine"
+          ]
+        }
+      },
+      {
+        "py/object": "edu.cmu.CorefQuestion",
+        "py/state": {
+          "_tid": 36,
+          "question_body": "Do you find the participants are the same?",
+          "options": [
+            "Yes",
+            "No",
+            "Probably",
+            "Cannot determine"
+          ]
+        }
+      },
+      {
+        "py/object": "edu.cmu.CorefQuestion",
+        "py/state": {
+          "_tid": 37,
+          "question_body": "Do you think one of the event may include another one?",
+          "options": [
+            "Yes",
+            "No",
+            "Probably",
+            "Cannot determine"
+          ]
+        }
+      },
+      {
+        "py/object": "edu.cmu.SuggestionQuestion",
+        "py/state": {
+          "_tid": 38,
+          "question_body": "Why do you think these two events are different?",
+          "options": [
+            "They are not really relevant.",
+            "There is no enough information to determine that.",
+            "Some event details are conflicting."
+          ]
+        }
+      }
+    ],
+    "_MultiPack__default_pack_prefix": "_pack",
+    "serialization": {
+      "next_id": 39
+    }
+  }
+}
