@@ -74,6 +74,9 @@ class AllenNLPEventProcessor(PackProcessor):
         for result_predicate in result["verbs"]:
 
             tags = result_predicate["tags"]
+            if "B-V" not in tags:
+                continue
+
             start_index = tags.index("B-V")
             end_index = len(tags) - 1 - tags[::-1].index("B-V")
 
