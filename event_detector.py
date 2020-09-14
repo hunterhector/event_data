@@ -166,7 +166,6 @@ class LemmaMatchAndCOLING2018OEDEventDetector(PackProcessor):
         
         # store events + importance(tf-idf) calculation
         for event in detected_events_coling2018:
-            # この代入をif  elseのなかに入れる。parser->lemma check
             # set the importance score
             if type(event[-1]) is list:
                 evm = EventMention(pack, event[0], event[1])  # event[0]: start, event[1]: end
