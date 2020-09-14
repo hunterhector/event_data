@@ -26,13 +26,18 @@ import sys
 # input_path = './data/output/data/cdec_wikinews_processed/GROUP-104/'
 # output_path = './output/data/cdec_wikinews_processed/GROUP-104/'
 input_dir = './data/cdec_wikinews_v3/raw_all_articles_v2/'
+input_dir = './data/cdec_wikinews_v3/files4debug/'
+
 # input_dir = './data/cdec_wikinews_v3/raw_sample_articles/'
 output_dir = './output/data/cdec_wikinews_v3_nombank/'
+output_dir = './data/cdec_wikinews_v3/files4debug/'
+
 df_file_path = './idf_table.json.gz'
 lemma_list_path = "./lemma_match/event_lemma.txt"
 coling2018_path = './data/data/cdec_wikinews_v3/all_articles_v2/'
 nombank_path = './nombank_propositions.json'
 # coling2018_path = './data/data/cdec_wikinews_v3/sample_articles/'
+reporting_verbs = './reporting_verbs.txt'
 
 ## ------- ##
 # working space
@@ -65,7 +70,13 @@ pl.add(StandfordNLPProcessor())
 # Call the event detector
 # pl.add(SameLemmaEventDetector(event_lemma_list_filename="./lemma_match/event_lemma.txt"), selector=AllPackSelector())
 # pl.add(LemmaMatchAndCOLING2018OEDEventDetector(event_lemma_list_filename=lemma_list_path, coling2018_event_output_path=coling2018_path+dir_+'/', df_file=df_file_path, tokenizer=nlp))
-pl.add(LemmaMatchAndCOLING2018OEDEventDetector(event_lemma_list_filename=lemma_list_path, coling2018_event_output_path=coling2018_path, nombank_propositions=nombank_path, df_file=df_file_path, tokenizer=nlp))
+pl.add(LemmaMatchAndCOLING2018OEDEventDetector( 
+            event_lemma_list_filename=lemma_list_path, 
+            coling2018_event_output_path=coling2018_path, 
+            nombank_propositions=nombank_path, 
+            df_file=df_file_path, 
+            reporting_verbs=reporting_verbs, 
+            tokenizer=nlp))
 
 pl.add(
     PackNameJsonPackWriter(), {
