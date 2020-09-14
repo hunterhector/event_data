@@ -1,0 +1,15 @@
+say
+tell
+ask
+advise
+agree
+apologize
+decide
+encourage
+explain
+insist
+promise
+recommend
+remind 
+suggest 
+warn

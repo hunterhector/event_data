@@ -1,0 +1,70 @@
+T1	Event 17 24	manhunt
+E1	Event:T1
+T2	Event 38 44	ensued
+E2	Event:T2
+T3	Event 101 110	searching
+E3	Event:T3
+T4	Event 168 179	surrounding
+E4	Event:T4
+T5	Event 197 202	asked
+E5	Event:T5
+T6	Event 206 210	stay
+E6	Event:T6
+T7	Event 288 294	closed
+E7	Event:T7
+T8	Event 335 345	discovered
+E8	Event:T8
+T9	Event 355 361	hiding
+E9	Event:T9
+T10	Event 396 400	shot
+E10	Event:T10
+T11	Event 405 412	wounded
+E11	Event:T11
+T12	Event 436 441	taken
+E12	Event:T12
+T13	Event 447 454	custody
+E13	Event:T13
+T14	Event 464 475	questioning
+E14	Event:T14
+T15	Event 486 490	said
+E15	Event:T15
+T16	Event 520 529	motivated
+E16	Event:T16
+T17	Event 568 572	wars
+E17	Event:T17
+T18	Event 613 629	self-radicalized
+E18	Event:T18
+T19	Event 695 704	following
+E19	Event:T19
+T20	Event 719 723	lead
+E20	Event:T20
+T21	Event 728 732	said
+E21	Event:T21
+T22	Event 738 745	learned
+E22	Event:T22
+T23	Event 749 754	build
+E23	Event:T23
+T24	Event 841 845	said
+E24	Event:T24
+T25	Event 855 863	intended
+E25	Event:T25
+T26	Event 867 873	travel
+E26	Event:T26
+T27	Event 938 947	convicted
+E27	Event:T27
+T28	Event 963 972	including
+E28	Event:T28
+T29	Event 973 976	use
+E29	Event:T29
+T30	Event 997 1008	destruction
+E30	Event:T30
+T31	Event 1023 1034	destruction
+E31	Event:T31
+T32	Event 1047 1056	resulting
+E32	Event:T32
+T33	Event 1060 1065	death
+E33	Event:T33
+T34	Event 1092 1101	sentenced
+E34	Event:T34
+T35	Event 1105 1110	death
+E35	Event:T35

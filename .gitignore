@@ -131,3 +131,11 @@ dmypy.json
 # Some project data
 resources.json
 en/
+brat_data/
+coling2018-event/
+data/
+forte/
+jupyter_notebooks/
+nohup.out
+output/
+stave/

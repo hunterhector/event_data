@@ -1,0 +1,110 @@
+T1	Event 25 33	Marathon
+E1	Event:T1
+T2	Event 88 97	detonated
+E2	Event:T2
+T3	Event 179 183	race
+E3	Event:T3
+T4	Event 185 192	killing
+E4	Event:T4
+T5	Event 210 218	injuring
+E5	Event:T5
+T6	Event 243 252	including
+E6	Event:T6
+T7	Event 260 264	lost
+E7	Event:T7
+T8	Event 333 341	released
+E8	Event:T8
+T9	Event 381 391	identified
+E9	Event:T9
+T10	Event 479 485	killed
+E10	Event:T10
+T11	Event 504 513	kidnapped
+E11	Event:T11
+T12	Event 536 539	had
+E12	Event:T12
+T13	Event 542 550	shootout
+E13	Event:T13
+T14	Event 628 635	injured
+E14	Event:T14
+T15	Event 649 653	died
+E15	Event:T15
+T16	Event 681 685	shot
+E16	Event:T16
+T17	Event 717 720	ran
+E17	Event:T17
+T18	Event 736 744	escaping
+E18	Event:T18
+T19	Event 752 758	stolen
+E19	Event:T19
+T20	Event 773 777	died
+E20	Event:T20
+T21	Event 808 815	manhunt
+E21	Event:T21
+T22	Event 829 835	ensued
+E22	Event:T22
+T23	Event 892 901	searching
+E23	Event:T23
+T24	Event 959 970	surrounding
+E24	Event:T24
+T25	Event 988 993	asked
+E25	Event:T25
+T26	Event 997 1001	stay
+E26	Event:T26
+T27	Event 1079 1085	closed
+E27	Event:T27
+T28	Event 1126 1136	discovered
+E28	Event:T28
+T29	Event 1146 1152	hiding
+E29	Event:T29
+T30	Event 1187 1191	shot
+E30	Event:T30
+T31	Event 1196 1203	wounded
+E31	Event:T31
+T32	Event 1227 1232	taken
+E32	Event:T32
+T33	Event 1238 1245	custody
+E33	Event:T33
+T34	Event 1255 1266	questioning
+E34	Event:T34
+T35	Event 1277 1281	said
+E35	Event:T35
+T36	Event 1311 1320	motivated
+E36	Event:T36
+T37	Event 1359 1363	wars
+E37	Event:T37
+T38	Event 1404 1420	self-radicalized
+E38	Event:T38
+T39	Event 1486 1495	following
+E39	Event:T39
+T40	Event 1510 1514	lead
+E40	Event:T40
+T41	Event 1519 1523	said
+E41	Event:T41
+T42	Event 1529 1536	learned
+E42	Event:T42
+T43	Event 1540 1545	build
+E43	Event:T43
+T44	Event 1632 1636	said
+E44	Event:T44
+T45	Event 1646 1654	intended
+E45	Event:T45
+T46	Event 1658 1664	travel
+E46	Event:T46
+T47	Event 1729 1738	convicted
+E47	Event:T47
+T48	Event 1754 1763	including
+E48	Event:T48
+T49	Event 1764 1767	use
+E49	Event:T49
+T50	Event 1788 1799	destruction
+E50	Event:T50
+T51	Event 1814 1825	destruction
+E51	Event:T51
+T52	Event 1838 1847	resulting
+E52	Event:T52
+T53	Event 1851 1856	death
+E53	Event:T53
+T54	Event 1883 1892	sentenced
+E54	Event:T54
+T55	Event 1896 1901	death
+E55	Event:T55
