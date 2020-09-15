@@ -125,7 +125,10 @@ class LemmaJunNombankEventDetector(PackProcessor):
         # phrase detection
         detected_events = sorted(detected_events, key=lambda x:x[0])
         replacements = list()
+        skip_idx = list()
         for idx in range(len(detected_events)-1):
+            if idx in skip_idx:
+                continue
             # if two consecutive events are next to each other, 
             if int(detected_events[idx+1][0]) - int(detected_events[idx][1]) <= 2:
                 # check dependency 
@@ -139,7 +142,12 @@ class LemmaJunNombankEventDetector(PackProcessor):
                                          'phrase', 
                                          detected_events[idx][-1]+' '+ detected_events[idx+1][-1])
                             replacements.append((detected_events[idx], detected_events[idx+1], new_event))
+                            skip_idx.append(idx+1)
+                            break
         for replacement in replacements:
+            if replacement[0] not in detected_events:
+                logging.info('debug: replacement){} detected_events){}'.format(replacement, detected_events))
+                continue
             detected_events.remove(replacement[0])
             detected_events.remove(replacement[1])
             detected_events.append(replacement[2])

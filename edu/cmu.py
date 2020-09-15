@@ -39,10 +39,12 @@ class EventMention(EventMention):
     """
 
     importance: Optional[float]
+    event_source: Optional[str]
 
     def __init__(self, pack: DataPack, begin: int, end: int):
         super().__init__(pack, begin, end)
         self.importance: Optional[float] = None
+        self.event_source: Optional[str] = None
 
 
 @dataclass

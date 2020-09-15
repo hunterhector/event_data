@@ -279,6 +279,11 @@
         {
           "name": "importance",
           "type": "float"
+        },
+        {
+          "name": "event_source",
+          "type": "str",
+          "description": "The source of the detected event."
         }
       ]
     },
