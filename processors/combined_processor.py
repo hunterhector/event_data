@@ -115,8 +115,8 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
             if (not token_is_event) and (token.lemma in self.event_lemma_list_single):
                 detected_events_lemma_match.append({'begin': token.begin, 'end': token.end, 'source': 'L', 'nugget': token.lemma})
                 
-            if (not token_is_event) and (token.lemma in self.nombank_lemma_list): 
-                detected_events_lemma_match.append({'begin': token.begin, 'end': token.end, 'source': 'N', 'nugget': token.lemma})
+#             if (not token_is_event) and (token.lemma in self.nombank_lemma_list): 
+#                 detected_events_lemma_match.append({'begin': token.begin, 'end': token.end, 'source': 'N', 'nugget': token.lemma})
         
         # event detection result from coling2018-event
         with open(self.coling2018_event_output_path+input_pack.pack_name+'.ann', 'r', encoding="utf-8") as f:
@@ -127,6 +127,19 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         
         for event in events:
             detected_events_coling2018.append({'begin': event.textbound.start_pos, 'end': event.textbound.end_pos, 'source': 'J', 'nugget': event.textbound.text})
+            
+        # check & modify alignment of detected events by coling2018-event
+        for event in detected_events_coling2018:
+            for token in input_pack.annotations:
+                if (token.begin == event['begin']) and (token.end == event['end']):
+                    # span is okay
+                    break
+                if (token.begin-5 <= event['begin'] <= token.begin+5) \
+                        and ((event['end'] - event['begin']) == (token.end - token.begin)) \
+                        and event['nugget'] == token.text:
+                    # modify span
+                    event['begin'] = token.begin
+                    event['end'] = token.end
         
         # OpenIE
         sentences, sentences_txt = [], []
@@ -142,15 +155,18 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         # merge and remove redundant
         detected_events = detected_events_coling2018[:]
         for event in detected_events_lemma_match:
-            flag_found = False
+            flag_exist = False
             for existing_event in detected_events_coling2018:
                 if event['begin'] == existing_event['begin'] and event['end'] == existing_event['end']:
-                    flag_found = True
+                    flag_exist = True
                     event['source'] += existing_event['source']
                 elif existing_event['begin'] <= event['begin'] and event['end'] <= existing_event['end']:
-                    flag_found = True
+                    flag_exist = True
                     event['source'] += existing_event['source']
-            if not flag_found:
+                elif event['begin'] <= existing_event['begin'] and existing_event['end'] <= event['end']:
+                    flag_exist = True
+                    event['source'] += existing_event['source']
+            if not flag_exist:
                 detected_events.append(event)
         
         for event in detected_events_openie:
@@ -162,7 +178,10 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
                 elif existing_event['begin'] <= event['begin'] and event['end'] <= existing_event['end']:
                     flag_exist = True
                     existing_event['source'] += event['source']
-            if not flag_found:
+                elif event['begin'] <= existing_event['begin'] and existing_event['end'] <= event['end']:
+                    flag_found = True
+                    event['source'] += existing_event['source']
+            if not flag_exist:
                 detected_events.append(event)
         
         # parse text w/ spacy 
@@ -230,7 +249,9 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
                 doc = self.tokenizer(event['nugget'])
                 if len(doc) == 1:
                     lemma = doc[0].lemma_
-                    if lemma not in self.reporting_verbs:
+                    pos = doc[0].pos_
+                    # reporting verbs and auziliary verbs are discarded
+                    if (lemma not in self.reporting_verbs) and (pos != 'AUX'):
                         evm = EventMention(input_pack, event['begin'], event['end'])  
                         evm.event_source = event['source']
                         if lemma in table_word_count and lemma in self.df_table:

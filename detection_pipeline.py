@@ -14,9 +14,9 @@ nlp = spacy.load("en_core_web_sm")
 set_logging()
 
 # file paths
-coling2018_path = './sample_data/output_from_coling2018_event/'
+# coling2018_path = './sample_data/output_from_coling2018_event/'
 # coling2018_path = './data/kairos_cdec_candidates/output_from_coling2018_event/'
-# coling2018_path = './data/data/cdec_wikinews_v3/all_articles_v2/'
+coling2018_path = './data/data/cdec_wikinews_v3/all_articles_v2/'
 
 # In the first pipeline, we simply add events and some annotations.
 detection_pipeline = Pipeline()
@@ -31,12 +31,14 @@ detection_pipeline.add(LemmaJunNombankOpenIEEventDetector(jun_output=coling2018_
 # detection_pipeline.add(AllenNLPEventProcessor())
 
 # Write out the events.
-input_path = os.path.join('sample_data', 'raw_text')
-output_path = os.path.join('sample_data', 'event_detected')
+# input_path = os.path.join('sample_data', 'raw_text')
+# output_path = os.path.join('sample_data', 'event_detected')
 # input_path = os.path.join('data/kairos_cdec_candidates', 'raw_kairos_cdec_candidates')
 # output_path = os.path.join('output/data', 'kairos_cdec_candidates')
-# input_path = os.path.join('./data/cdec_wikinews_v3', 'raw_all_articles_v2')
-# output_path = os.path.join('output/data', 'cdec_wikinews_v3')
+input_path = os.path.join('./data/cdec_wikinews_v3', 'raw_all_articles_v2')
+output_path = os.path.join('output/data', 'cdec_wikinews_v3_no_nombank')
+# input_path = os.path.join('./data/debug', 'input')
+# output_path = os.path.join('data/debug', 'output')
 
 detection_pipeline.add(
     PackNameJsonPackWriter(), {
