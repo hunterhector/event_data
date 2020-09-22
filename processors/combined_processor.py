@@ -1,4 +1,3 @@
-
 import logging
 import json
 import math
@@ -31,9 +30,10 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
     This is the combined method: 
     - lemma-match (Matz) 
     - coling2018-event(Araki and Mitamura)
-    - Nombank
+    - Nombank (pruned based on hypernyms)
     - OpenIE (Adithya)
     - No reporting verbs 
+    - No stative verbs
     """
     
     def __init__(self, jun_output, tokenizer):
@@ -46,12 +46,19 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         self.event_lemma_list_sequence = sorted(self.event_lemma_list_sequence, key=lambda x: len(x), reverse=True)
         
         # nombank
-        with open('./tools/nombank_propositions.json', 'r') as f:
+        with open('./tools/pruned_nombank_propositions.json', 'r') as f:
             self.nombank_lemma_list = json.load(f)
         
         # reporting verbs
         with open('./tools/reporting_verbs.txt', 'r') as f:
             self.reporting_verbs = [x.strip() for x in f.readlines()]
+            
+        # stative verbs
+        with open('./tools/stative_verbs.txt', 'r') as f:
+            self.stative_verbs = [x.strip() for x in f.readlines()]
+        
+        # auxiliary verbs
+        self.auxiliary_verbs = ['will', 'would', 'could', 'can', 'might', 'may', 'must', 'should', 'have']
             
         # path to the output of Jun's code
         self.coling2018_event_output_path = jun_output
@@ -63,9 +70,10 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         with gzip.open('./tools/idf_table.json.gz', 'rt', encoding='utf-8') as f:
             self.df_table = json.load(f)
         
-#         # OpenIE
-#         model_url = MODEL2URL[configs.model]
-#         self.predictor = Predictor.from_path(model_url)
+        # shiftlist(blacklist) created manually
+        with open('./tools/shiftlist.txt', 'r') as f:
+            self.shiftlist = [x.strip() for x in f.readlines()]
+            
         
     def initialize(self, resources: Resources, configs: Config):
         super().initialize(resources, configs)
@@ -115,8 +123,8 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
             if (not token_is_event) and (token.lemma in self.event_lemma_list_single):
                 detected_events_lemma_match.append({'begin': token.begin, 'end': token.end, 'source': 'L', 'nugget': token.lemma})
                 
-#             if (not token_is_event) and (token.lemma in self.nombank_lemma_list): 
-#                 detected_events_lemma_match.append({'begin': token.begin, 'end': token.end, 'source': 'N', 'nugget': token.lemma})
+            if (not token_is_event) and (token.lemma in self.nombank_lemma_list): 
+                detected_events_lemma_match.append({'begin': token.begin, 'end': token.end, 'source': 'N', 'nugget': token.lemma})
         
         # event detection result from coling2018-event
         with open(self.coling2018_event_output_path+input_pack.pack_name+'.ann', 'r', encoding="utf-8") as f:
@@ -152,24 +160,24 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         for sentence, prediction in zip(sentences, predictions):
             detected_events_openie += self.get_event_mentions_openie(input_pack, sentence, prediction)
         
-        # merge and remove redundant
-        detected_events = detected_events_coling2018[:]
-        for event in detected_events_lemma_match:
-            flag_exist = False
-            for existing_event in detected_events_coling2018:
-                if event['begin'] == existing_event['begin'] and event['end'] == existing_event['end']:
-                    flag_exist = True
-                    event['source'] += existing_event['source']
-                elif existing_event['begin'] <= event['begin'] and event['end'] <= existing_event['end']:
-                    flag_exist = True
-                    event['source'] += existing_event['source']
-                elif event['begin'] <= existing_event['begin'] and existing_event['end'] <= event['end']:
-                    flag_exist = True
-                    event['source'] += existing_event['source']
-            if not flag_exist:
-                detected_events.append(event)
         
-        for event in detected_events_openie:
+        # concate all detected events
+        detected_event_candidates = sorted(detected_events_lemma_match+detected_events_coling2018+detected_events_openie, key=lambda x:x['begin'])
+        
+        # remove not-our-target event candidates
+        tmp = list()
+        for event in detected_event_candidates:
+            lemma = self.get_lemma(input_pack, event) 
+            if (lemma not in self.reporting_verbs) \
+                and (lemma not in self.stative_verbs) \
+                and (lemma not in self.auxiliary_verbs) \
+                and (lemma not in self.shiftlist):
+                tmp.append(event)
+        detected_event_candidates = tmp[:]
+        
+        # merge redundant
+        detected_events = list()
+        for event in detected_event_candidates:
             flag_exist = False
             for existing_event in detected_events:
                 if event['begin'] == existing_event['begin'] and event['end'] == existing_event['end']:
@@ -179,8 +187,8 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
                     flag_exist = True
                     existing_event['source'] += event['source']
                 elif event['begin'] <= existing_event['begin'] and existing_event['end'] <= event['end']:
-                    flag_found = True
-                    event['source'] += existing_event['source']
+                    flag_exist = True
+                    existing_event['source'] += event['source']
             if not flag_exist:
                 detected_events.append(event)
         
@@ -202,16 +210,16 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
                 # check dependency 
                 for idx_ in range(len(doc)-1):
                     if doc[idx_].text == detected_events[idx]['nugget'] and doc[idx_+1].text == detected_events[idx+1]['nugget']:
-                        if doc[idx_].dep_ == 'compound' \
-                            or (doc[idx_].dep_ == 'prt' or doc[idx_+1].dep_ == 'prt') \
-                            or (doc[idx_].dep_ == 'dobj' or doc[idx_+1].dep_ == 'dobj'):
-                            new_event = {'begin': detected_events[idx]['begin'], 
-                                         'end': detected_events[idx+1]['end'], 
-                                         'source': 'P', 
-                                         'nugget': detected_events[idx]['nugget']+' '+ detected_events[idx+1]['nugget']}
-                            replacements.append((detected_events[idx], detected_events[idx+1], new_event))
-                            skip_idx.append(idx+1)
-                            break
+                        if (doc[idx_].head.text == doc[idx_+1].text) or (doc[idx_].text == doc[idx_+1].head.text):
+                            if doc[idx_].dep_ == 'compound' \
+                                or (doc[idx_].dep_ == 'prt' or doc[idx_+1].dep_ == 'prt'):
+                                new_event = {'begin': detected_events[idx]['begin'], 
+                                             'end': detected_events[idx+1]['end'], 
+                                             'source': 'P', 
+                                             'nugget': detected_events[idx]['nugget']+' '+ detected_events[idx+1]['nugget']}
+                                replacements.append((detected_events[idx], detected_events[idx+1], new_event))
+                                skip_idx.append(idx+1)
+                                break
         for replacement in replacements:
             if replacement[0] not in detected_events:
                 logging.info('debug: replacement){} detected_events){}'.format(replacement, detected_events))
@@ -239,6 +247,7 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         
         
         # store events + importance(tf-idf) calculation
+        
         for event in detected_events:
             # set the importance score
             if type(event['nugget']) is list:
@@ -249,17 +258,14 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
                 doc = self.tokenizer(event['nugget'])
                 if len(doc) == 1:
                     lemma = doc[0].lemma_
-                    pos = doc[0].pos_
-                    # reporting verbs and auziliary verbs are discarded
-                    if (lemma not in self.reporting_verbs) and (pos != 'AUX'):
-                        evm = EventMention(input_pack, event['begin'], event['end'])  
-                        evm.event_source = event['source']
-                        if lemma in table_word_count and lemma in self.df_table:
-                            tf = table_word_count[lemma] / len(table_word_count)
-                            idf = len(self.df_table) / self.df_table[lemma]
-                            evm.importance = float('{0:.3g}'.format(tf * math.log(idf)))
-                        else:  # the word not found in tables (including stop words)
-                            evm.importance = - 1.0
+                    evm = EventMention(input_pack, event['begin'], event['end'])  
+                    evm.event_source = event['source']
+                    if lemma in table_word_count and lemma in self.df_table:
+                        tf = table_word_count[lemma] / len(table_word_count)
+                        idf = len(self.df_table) / self.df_table[lemma]
+                        evm.importance = float('{0:.3g}'.format(tf * math.log(idf)))
+                    else:  # the word not found in tables (including stop words)
+                        evm.importance = - 1.0
                 else:  # multiple words?
                     evm = EventMention(input_pack, event['begin'], event['end'])
                     evm.importance = - 1.0
@@ -271,6 +277,14 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
             if mylist[i] == pattern[0] and mylist[i:i+len(pattern)] == pattern:
                 matches.append(list(range(i, len(pattern) + i, 1)))
         return matches
+    
+    def get_lemma(self, input_pack: DataPack, event):
+        lemma = None
+        for token in input_pack.annotations:
+            if (token.begin == event['begin']) and (token.end == event['end']):
+                lemma = token.lemma
+                break
+        return lemma
     
     def get_event_mentions_openie(
         self, input_pack: DataPack, sentence: Sentence, result: Dict[str, Any]
