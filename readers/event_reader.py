@@ -1,5 +1,6 @@
 import os
 from typing import Iterator, Tuple, List, Any
+import json
 
 from forte.data.base_pack import PackType
 from forte.data.data_pack import DataPack
@@ -7,7 +8,6 @@ from forte.data.multi_pack import MultiPack
 from forte.data.readers.base_reader import PackReader
 from forte.data.readers.base_reader import MultiPackReader
 from forte.data.data_utils import deserialize
-
 
 def doc_name(doc_path):
     return os.path.basename(doc_path).split('.')[0]
@@ -54,3 +54,34 @@ class TwoDocumentPackReader(MultiPackReader):
             mp.pack_name = f'pair_{p1.pack_name}_and_{p2.pack_name}'
 
         yield mp
+
+class DocumentReaderJson(PackReader):
+    def _collect(self, data_dir: str) -> Iterator[Any]:
+        for f in os.listdir(data_dir):
+            yield os.path.join(data_dir, f)
+
+    def _parse_pack(self, input_file: str) -> Iterator[PackType]:
+        with open(input_file) as f:
+            pack: DataPack = self.new_pack()
+            pack.pack_name = os.path.basename(input_file).split('.')[0]
+            
+            text = ""
+            data = json.load(f)
+            
+            title = data.get("title", None)
+            title_str = f"Title: {title}"
+            # title_offset, title_length = len(text), len(title_str)
+            text += f"{title_str}\n\n"
+
+            date = data.get("date", None)
+            date_str = f"Date: {date}"
+            # date_offset, date_length = len(text), len(date_str)
+            text += f"{date_str}\n\n"
+
+            body = data["text"]
+            # body_offset, body_length = len(text), len(body)
+            text += f"{body}"
+            
+            pack.set_text(text)
+
+            yield pack
