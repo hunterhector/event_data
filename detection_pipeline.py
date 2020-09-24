@@ -5,7 +5,7 @@ from forte.processors.stanfordnlp_processor import StandfordNLPProcessor
 from forte.processors.writers import PackNameJsonPackWriter
 from processors.combined_processor import LemmaJunNombankOpenIEEventDetector
 # from processors.openie_processor import AllenNLPEventProcessor
-from readers.event_reader import DocumentReader
+from readers.event_reader import DocumentReader, DocumentReaderJson
 from utils import set_logging
 import spacy
 
@@ -21,7 +21,7 @@ coling2018_path = './data/data/cdec_wikinews_v3/all_articles_v2/'
 # In the first pipeline, we simply add events and some annotations.
 detection_pipeline = Pipeline()
 # Read raw text.
-detection_pipeline.set_reader(DocumentReader())
+detection_pipeline.set_reader(DocumentReaderJson())
 
 # Call stanfordnlp.
 detection_pipeline.add(StandfordNLPProcessor())
