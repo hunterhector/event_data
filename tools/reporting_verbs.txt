@@ -11,5 +11,6 @@ insist
 promise
 recommend
 remind 
+report
 suggest 
 warn
