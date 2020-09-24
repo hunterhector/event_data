@@ -36,7 +36,7 @@ detection_pipeline.add(LemmaJunNombankOpenIEEventDetector(jun_output=coling2018_
 # input_path = os.path.join('data/kairos_cdec_candidates', 'raw_kairos_cdec_candidates')
 # output_path = os.path.join('output/data', 'kairos_cdec_candidates')
 input_path = os.path.join('./data/cdec_wikinews_v3', 'raw_all_articles_v2')
-output_path = os.path.join('output/data', 'cdec_wikinews_v3_pruned_nombank')
+output_path = os.path.join('output/data', 'cdec_wikinews_v3_pruned_nombank_Sep24')
 # input_path = os.path.join('./data/debug', 'input')
 # output_path = os.path.join('data/debug', 'output')
 

@@ -46,7 +46,7 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         self.event_lemma_list_sequence = sorted(self.event_lemma_list_sequence, key=lambda x: len(x), reverse=True)
         
         # nombank
-        with open('./tools/pruned_nombank_propositions.json', 'r') as f:
+        with open('./tools/pruned_nombank_propositions_chain_10.json', 'r') as f:
             self.nombank_lemma_list = json.load(f)
         
         # reporting verbs
@@ -70,12 +70,15 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         with gzip.open('./tools/idf_table.json.gz', 'rt', encoding='utf-8') as f:
             self.df_table = json.load(f)
         
-        # shiftlist(blacklist) created manually
+        # manually gathering shiftlist(blacklist) 
         with open('./tools/shiftlist.txt', 'r') as f:
             self.shiftlist = [x.strip() for x in f.readlines()]
             
         
     def initialize(self, resources: Resources, configs: Config):
+        """
+        initialization for AllenNLP model
+        """
         super().initialize(resources, configs)
 
         model_url = MODEL2URL[configs.model]
@@ -247,7 +250,6 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         
         
         # store events + importance(tf-idf) calculation
-        
         for event in detected_events:
             # set the importance score
             if type(event['nugget']) is list:
@@ -282,7 +284,10 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         lemma = None
         for token in input_pack.annotations:
             if (token.begin == event['begin']) and (token.end == event['end']):
-                lemma = token.lemma
+                try:
+                    lemma = token.lemma
+                except:  # Sentence
+                    lemma = None
                 break
         return lemma
     
