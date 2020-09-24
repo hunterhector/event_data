@@ -15,7 +15,7 @@ from forte.processors.base import PackProcessor
 from ft.onto.base_ontology import Token, Sentence
 from forte.common.configuration import Config
 from forte.common.resources import Resources
-from edu.cmu import EventMention
+from edu.cmu import EventMention, BodySpan
 
 MODEL2URL = {
     "openie": "https://storage.googleapis.com/allennlp-public-models/openie-model.2020.03.26.tar.gz",
@@ -98,6 +98,9 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         print('pack.pack_name {}'.format(input_pack.pack_name+'.txt'))
         logging.info('pack.pack_name {}'.format(input_pack.pack_name+'.txt'))
         
+        body = list(input_pack.get(BodySpan))[0]
+        body_offset = body.begin
+
         body_tokens = [token for token in input_pack.get(Token)]
         body_lemmas = [token.lemma for token in body_tokens]
         body_events = [False] * len(body_tokens)
@@ -136,8 +139,9 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         ann = brat_tool.BratAnnotations(ann_data)
         events = ann.getEventAnnotationList()
         
+        # adding `body_offset`
         for event in events:
-            detected_events_coling2018.append({'begin': event.textbound.start_pos, 'end': event.textbound.end_pos, 'source': 'J', 'nugget': event.textbound.text})
+            detected_events_coling2018.append({'begin': body_offset + event.textbound.start_pos, 'end': body_offset + event.textbound.end_pos, 'source': 'J', 'nugget': event.textbound.text})
             
         # check & modify alignment of detected events by coling2018-event
         for event in detected_events_coling2018:

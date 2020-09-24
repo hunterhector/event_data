@@ -27,6 +27,9 @@ __all__ = [
     "CorefQuestion",
     "SuggestionQuestion",
     "CrossEventRelation",
+    "TitleSpan",
+    "DateSpan",
+    "BodySpan",
 ]
 
 
@@ -36,6 +39,7 @@ class EventMention(EventMention):
     A span based annotation `EventMention`, used to refer to a mention of an event.
     Attributes:
         importance (Optional[float])
+        event_source (Optional[str])
     """
 
     importance: Optional[float]
@@ -120,3 +124,33 @@ class CrossEventRelation(CrossDocEventRelation):
         self.coref_answers: List[int] = []
         self.suggest_questions: FList[SuggestionQuestion] = FList(self)
         self.suggest_answers: List[int] = []
+
+
+@dataclass
+class TitleSpan(Annotation):
+    """
+    A span based annotation, used to refer to the document title span
+    """
+
+    def __init__(self, pack: DataPack, begin: int, end: int):
+        super().__init__(pack, begin, end)
+
+
+@dataclass
+class DateSpan(Annotation):
+    """
+    A span based annotation, used to refer to the document date span
+    """
+
+    def __init__(self, pack: DataPack, begin: int, end: int):
+        super().__init__(pack, begin, end)
+
+
+@dataclass
+class BodySpan(Annotation):
+    """
+    A span based annotation, used to refer to the document body span. Used by preprocessor.
+    """
+
+    def __init__(self, pack: DataPack, begin: int, end: int):
+        super().__init__(pack, begin, end)

@@ -12,6 +12,8 @@ from ft.onto.base_ontology import Token, Sentence
 from forte.common.configuration import Config
 from forte.common.resources import Resources
 
+from edu.cmu import EventMention
+
 from typing import Dict, Any, List
 
 logger = logging.getLogger(__name__)
@@ -54,10 +56,6 @@ class AllenNLPEventProcessor(PackProcessor):
         for sentence in input_pack.get(Sentence):
             sentences.append(sentence)
             sentences_txt.append({"sentence": sentence.text})
-
-        # skipping title and date
-        sentences = sentences[2:]
-        sentences_txt = sentences_txt[2:]
 
         predictions = self.predictor.predict_batch_json(sentences_txt)
 

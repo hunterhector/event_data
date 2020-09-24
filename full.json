@@ -282,8 +282,7 @@
         },
         {
           "name": "event_source",
-          "type": "str",
-          "description": "The source of the detected event."
+          "type": "str"
         }
       ]
     },
@@ -346,6 +345,21 @@
       ],
       "parent_type": "edu.cmu.EventMention",
       "child_type": "edu.cmu.EventMention"
+    },
+    {
+      "entry_name": "edu.cmu.TitleSpan",
+      "parent_entry": "forte.data.ontology.top.Annotation",
+      "description": "A span based annotation, used to refer to the document title span"
+    },
+    {
+      "entry_name": "edu.cmu.DateSpan",
+      "parent_entry": "forte.data.ontology.top.Annotation",
+      "description": "A span based annotation, used to refer to the document date span"
+    },
+    {
+      "entry_name": "edu.cmu.BodySpan",
+      "parent_entry": "forte.data.ontology.top.Annotation",
+      "description": "A span based annotation, used to refer to the document body span. Used by preprocessor."
     }
   ]
 }

@@ -1,53 +1,71 @@
 import os
+import argparse
+import spacy
+from pathlib import Path
 
 from forte.pipeline import Pipeline
-from forte.processors.stanfordnlp_processor import StandfordNLPProcessor
 from forte.processors.writers import PackNameJsonPackWriter
+
 from processors.combined_processor import LemmaJunNombankOpenIEEventDetector
-# from processors.openie_processor import AllenNLPEventProcessor
-from readers.event_reader import DocumentReader, DocumentReaderJson
+from processors.stanfordnlp_processor import StandfordNLPProcessor
+from readers.event_reader import DocumentReaderJson
+
 from utils import set_logging
-import spacy
 
-nlp = spacy.load("en_core_web_sm")
+if __name__ == "__main__":
 
-set_logging()
+    parser = argparse.ArgumentParser(description="run detection pipeline")
+    parser.add_argument(
+        "--dir",
+        type=Path,
+        default="data",
+        help="input directory path, assumes json files under json/",
+    )
+    parser.add_argument(
+        "--coling2018",
+        type=str,
+        default="./data/data/cdec_wikinews_v3/all_articles_v2/",
+        help="path to events extracted using Jun's open-domain event extraction model",
+    )
 
-# file paths
-# coling2018_path = './sample_data/output_from_coling2018_event/'
-# coling2018_path = './data/kairos_cdec_candidates/output_from_coling2018_event/'
-coling2018_path = './data/data/cdec_wikinews_v3/all_articles_v2/'
+    args = parser.parse_args()
 
-# In the first pipeline, we simply add events and some annotations.
-detection_pipeline = Pipeline()
-# Read raw text.
-detection_pipeline.set_reader(DocumentReaderJson())
+    nlp = spacy.load("en_core_web_sm")
 
-# Call stanfordnlp.
-detection_pipeline.add(StandfordNLPProcessor())
+    set_logging()
 
-# Call the event detector.
-detection_pipeline.add(LemmaJunNombankOpenIEEventDetector(jun_output=coling2018_path, tokenizer=nlp))
-# detection_pipeline.add(AllenNLPEventProcessor())
+    # file paths
+    coling2018_path = args.coling2018
 
-# Write out the events.
-# input_path = os.path.join('sample_data', 'raw_text')
-# output_path = os.path.join('sample_data', 'event_detected')
-# input_path = os.path.join('data/kairos_cdec_candidates', 'raw_kairos_cdec_candidates')
-# output_path = os.path.join('output/data', 'kairos_cdec_candidates')
-input_path = os.path.join('./data/cdec_wikinews_v3', 'raw_all_articles_v2')
-output_path = os.path.join('output/data', 'cdec_wikinews_v3_pruned_nombank_Sep24')
-# input_path = os.path.join('./data/debug', 'input')
-# output_path = os.path.join('data/debug', 'output')
+    # In the first pipeline, we simply add events and some annotations.
+    detection_pipeline = Pipeline()
 
-detection_pipeline.add(
-    PackNameJsonPackWriter(), {
-        'output_dir': output_path,
-        'indent': 2,
-        'overwrite': True,
-        # 'drop_record': True
-    })
+    # Read raw text.
+    detection_pipeline.set_reader(DocumentReaderJson())
 
-detection_pipeline.initialize()
+    # Call stanfordnlp.
+    detection_pipeline.add(StandfordNLPProcessor())
 
-detection_pipeline.run(input_path)
+    # Call the event detector.
+    detection_pipeline.add(
+        LemmaJunNombankOpenIEEventDetector(jun_output=coling2018_path, tokenizer=nlp)
+    )
+
+    # Write out the events.
+    input_path = args.dir / "json"
+    output_path = args.dir / "packs"
+    output_path.mkdir(exist_ok=True)
+
+    detection_pipeline.add(
+        PackNameJsonPackWriter(),
+        {
+            "output_dir": str(output_path),
+            "indent": 2,
+            "overwrite": True,
+            # 'drop_record': True
+        },
+    )
+
+    detection_pipeline.initialize()
+
+    detection_pipeline.run(str(input_path))
