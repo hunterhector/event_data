@@ -1,0 +1,92 @@
+T1	Event 44 49	voted
+E1	Event:T1
+T2	Event 62 71	endorsing
+E2	Event:T2
+T3	Event 81 85	made
+E3	Event:T3
+T4	Event 132 139	accuses
+E4	Event:T4
+T5	Event 160 170	committing
+E5	Event:T5
+T6	Event 189 197	fighting
+E6	Event:T6
+T7	Event 218 222	left
+E7	Event:T7
+T8	Event 280 287	adopted
+E8	Event:T8
+T9	Event 340 345	calls
+E9	Event:T9
+T10	Event 359 363	make
+E10	Event:T10
+T11	Event 391 398	conduct
+E11	Event:T11
+T12	Event 432 439	alleged
+E12	Event:T12
+T13	Event 472 476	fail
+E13	Event:T13
+T14	Event 480 482	do
+E14	Event:T14
+T15	Event 498 508	recommends
+E15	Event:T15
+T16	Event 523 527	sent
+E16	Event:T16
+T17	Event 591 600	endorsing
+E17	Event:T17
+T18	Event 642 650	condemns
+E18	Event:T18
+T19	Event 677 682	taken
+E19	Event:T19
+T20	Event 698 707	occupying
+E20	Event:T20
+T21	Event 715 724	including
+E21	Event:T21
+T22	Event 731 739	limiting
+E22	Event:T22
+T23	Event 813 820	accuses
+E23	Event:T23
+T24	Event 898 903	taken
+E24	Event:T24
+T25	Event 978 987	dedicated
+E25	Event:T25
+T26	Event 991 1001	discussing
+E26	Event:T26
+T27	Event 1045 1052	alleges
+E27	Event:T27
+T28	Event 1092 1100	targeted
+E28	Event:T28
+T29	Event 1112 1116	used
+E29	Event:T29
+T30	Event 1151 1160	destroyed
+E30	Event:T30
+T31	Event 1202 1206	Cast
+E31	Event:T31
+T32	Event 1218 1224	lasted
+E32	Event:T32
+T33	Event 1302 1311	responded
+E33	Event:T33
+T34	Event 1315 1323	claiming
+E34	Event:T34
+T35	Event 1340 1347	ignored
+E35	Event:T35
+T36	Event 1408 1414	warned
+E36	Event:T36
+T37	Event 1432 1442	jeopardize
+E37	Event:T37
+T38	Event 1512 1519	delayed
+E38	Event:T38
+T39	Event 1551 1562	considering
+E39	Event:T39
+T40	Event 1632 1640	controls
+E40	Event:T40
+T41	Event 1667 1676	pressured
+E41	Event:T41
+T42	Event 1698 1703	delay
+E42	Event:T42
+T43	Event 1781 1787	forced
+E43	Event:T43
+T44	Event 1795 1802	endorse
+E44	Event:T44
+T45	Event 1832 1838	caused
+E45	Event:T45
+T46	Event 1971 1976	voted
+E46	Event:T46

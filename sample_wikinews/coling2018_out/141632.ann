@@ -1,0 +1,44 @@
+T1	Event 24 32	rejected
+E1	Event:T1
+T2	Event 106 114	endorsed
+E2	Event:T2
+T3	Event 124 132	accusing
+E3	Event:T3
+T4	Event 183 191	accusing
+E4	Event:T4
+T5	Event 233 237	said
+E5	Event:T5
+T6	Event 364 370	defend
+E6	Event:T6
+T7	Event 393 397	said
+E7	Event:T7
+T8	Event 480 488	endorsed
+E8	Event:T8
+T9	Event 530 537	accused
+E9	Event:T9
+T10	Event 615 624	responded
+E10	Event:T10
+T11	Event 628 634	saying
+E11	Event:T11
+T12	Event 656 666	responding
+E12	Event:T12
+T13	Event 746 753	accused
+E13	Event:T13
+T14	Event 779 786	devoted
+E14	Event:T14
+T15	Event 844 852	reported
+E15	Event:T15
+T16	Event 861 867	killed
+E16	Event:T16
+T17	Event 953 960	accused
+E17	Event:T17
+T18	Event 1020 1024	said
+E18	Event:T18
+T19	Event 1108 1115	allowed
+E19	Event:T19
+T20	Event 1178 1184	denied
+E20	Event:T20
+T21	Event 1244 1246	go
+E21	Event:T21
+T22	Event 1287 1292	refer
+E22	Event:T22

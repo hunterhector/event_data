@@ -1,0 +1,50 @@
+T1	Event 40 48	retiring
+E1	Event:T1
+T2	Event 102 111	confessed
+E2	Event:T2
+T3	Event 142 149	prevent
+E3	Event:T3
+T4	Event 175 179	said
+E4	Event:T4
+T5	Event 330 336	Saying
+E5	Event:T5
+T6	Event 349 355	caused
+E6	Event:T6
+T7	Event 385 389	said
+E7	Event:T7
+T8	Event 467 475	provoked
+E8	Event:T8
+T9	Event 548 552	said
+E9	Event:T9
+T10	Event 560 567	shocked
+E10	Event:T10
+T11	Event 591 595	said
+E11	Event:T11
+T12	Event 613 620	accused
+E12	Event:T12
+T13	Event 643 650	failing
+E13	Event:T13
+T14	Event 801 809	admitted
+E14	Event:T14
+T15	Event 866 873	working
+E15	Event:T15
+T16	Event 925 934	advocated
+E16	Event:T16
+T17	Event 954 960	saying
+E17	Event:T17
+T18	Event 1000 1005	doing
+E18	Event:T18
+T19	Event 1021 1028	working
+E19	Event:T19
+T20	Event 1106 1111	heads
+E20	Event:T20
+T21	Event 1131 1143	commissioned
+E21	Event:T21
+T22	Event 1164 1170	advise
+E22	Event:T22
+T23	Event 1197 1205	referred
+E23	Event:T23
+T24	Event 1348 1352	told
+E24	Event:T24
+T25	Event 1453 1462	expressed
+E25	Event:T25

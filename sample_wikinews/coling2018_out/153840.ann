@@ -1,0 +1,56 @@
+T1	Event 50 56	become
+E1	Event:T1
+T2	Event 71 77	acting
+E2	Event:T2
+T3	Event 119 128	travelled
+E3	Event:T3
+T4	Event 162 169	receive
+E4	Event:T4
+T5	Event 216 225	televised
+E5	Event:T5
+T6	Event 244 253	commented
+E6	Event:T6
+T7	Event 297 304	reposed
+E7	Event:T7
+T8	Event 318 322	want
+E8	Event:T8
+T9	Event 326 334	reassure
+E9	Event:T9
+T10	Event 392 401	discharge
+E10	Event:T10
+T11	Event 465 469	find
+E11	Event:T11
+T12	Event 477 485	assuming
+E12	Event:T12
+T13	Event 502 508	acting
+E13	Event:T13
+T14	Event 576 581	added
+E14	Event:T14
+T15	Event 614 618	urge
+E15	Event:T15
+T16	Event 649 653	have
+E16	Event:T16
+T17	Event 670 674	pray
+E17	Event:T17
+T18	Event 763 766	saw
+E18	Event:T18
+T19	Event 813 820	approve
+E19	Event:T19
+T20	Event 846 852	become
+E20	Event:T20
+T21	Event 889 895	return
+E21	Event:T21
+T22	Event 954 965	transferred
+E22	Event:T22
+T23	Event 994 1002	informed
+E23	Event:T23
+T24	Event 1067 1071	done
+E24	Event:T24
+T25	Event 1110 1114	said
+E25	Event:T25
+T26	Event 1243 1252	indicated
+E26	Event:T26
+T27	Event 1294 1301	binding
+E27	Event:T27
+T28	Event 1313 1317	face
+E28	Event:T28

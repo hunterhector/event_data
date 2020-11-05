@@ -13,8 +13,8 @@
 # limitations under the License.
 
 """
-modified from forte.processors.stanfordnlp_processor
-ignores the first two sentences that specify the title and date
+adapted from forte.processors.stanfordnlp_processor
+only runs on the text part of BodySpan
 """
 import logging
 from typing import List, Any, Dict
@@ -41,7 +41,7 @@ class StandfordNLPProcessor(PackProcessor):
 
     def set_up(self):
         stanza.download(self.configs.lang, self.configs.dir)
-        self.processors = set(self.configs.processors.split(','))
+        self.processors = set(self.configs.processors.split(","))
 
     # pylint: disable=unused-argument
     def initialize(self, resources: Resources, configs: Config):
@@ -63,12 +63,13 @@ class StandfordNLPProcessor(PackProcessor):
         config = super().default_configs()
         config.update(
             {
-                'processors': 'tokenize,pos,lemma,depparse',
-                'lang': 'en',
+                "processors": "tokenize,pos,lemma,depparse",
+                "lang": "en",
                 # Language code for the language to build the Pipeline
-                'use_gpu': False,
-                'dir': '.',
-            })
+                "use_gpu": False,
+                "dir": ".",
+            }
+        )
         return config
 
     def _process(self, input_pack: DataPack):
@@ -89,28 +90,31 @@ class StandfordNLPProcessor(PackProcessor):
 
         # Iterating through stanfordnlp sentence objects
         for sentence in sentences:
-            Sentence(input_pack, doc_offset + sentence.tokens[0].start_char,
-                     doc_offset + sentence.tokens[-1].end_char)
+            Sentence(
+                input_pack,
+                doc_offset + sentence.tokens[0].start_char,
+                doc_offset + sentence.tokens[-1].end_char,
+            )
 
             tokens: List[Token] = []
             if "tokenize" in self.processors:
                 # Iterating through stanfordnlp word objects
                 for word in sentence.words:
-                    misc = word.misc.split('|')
+                    misc = word.misc.split("|")
 
                     t_start = -1
                     t_end = -1
                     for m in misc:
-                        k, v = m.split('=')
-                        if k == 'start_char':
+                        k, v = m.split("=")
+                        if k == "start_char":
                             t_start = int(v)
-                        elif k == 'end_char':
+                        elif k == "end_char":
                             t_end = int(v)
 
                     if t_start < 0 or t_end < 0:
                         raise ValueError(
-                            "Cannot determine word start or end for "
-                            "stanfordnlp.")
+                            "Cannot determine word start or end for " "stanfordnlp."
+                        )
 
                     token = Token(input_pack, doc_offset + t_start, doc_offset + t_end)
 

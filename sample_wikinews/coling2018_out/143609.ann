@@ -1,0 +1,178 @@
+T1	Event 50 73	overwhelmingly endorsed
+E1	Event:T1
+T2	Event 113 120	calling
+E2	Event:T2
+T3	Event 154 161	alleged
+E3	Event:T3
+T4	Event 173 182	committed
+E4	Event:T4
+T5	Event 225 230	armed
+E5	Event:T5
+T6	Event 268 273	began
+E6	Event:T6
+T7	Event 314 323	concluded
+E7	Event:T7
+T8	Event 336 340	used
+E8	Event:T8
+T9	Event 389 397	targeted
+E9	Event:T9
+T10	Event 414 418	used
+E10	Event:T10
+T11	Event 446 455	destroyed
+E11	Event:T11
+T12	Event 519 528	discussed
+E12	Event:T12
+T13	Event 663 667	came
+E13	Event:T13
+T14	Event 686 697	non-aligned
+E14	Event:T14
+T15	Event 722 734	co-sponsored
+E15	Event:T15
+T16	Event 794 802	welcomed
+E16	Event:T16
+T17	Event 813 819	saying
+E17	Event:T17
+T18	Event 886 891	begin
+E18	Event:T18
+T19	Event 946 952	called
+E19	Event:T19
+T20	Event 1134 1141	treated
+E20	Event:T20
+T21	Event 1220 1224	said
+E21	Event:T21
+T22	Event 1251 1255	come
+E22	Event:T22
+T23	Event 1284 1292	consider
+E23	Event:T23
+T24	Event 1349 1358	including
+E24	Event:T24
+T25	Event 1395 1404	including
+E25	Event:T25
+T26	Event 1431 1435	said
+E26	Event:T26
+T27	Event 1488 1499	non-binding
+E27	Event:T27
+T28	Event 1649 1660	considering
+E28	Event:T28
+T29	Event 1744 1748	said
+E29	Event:T29
+T30	Event 1771 1779	endorses
+E30	Event:T30
+T31	Event 1784 1795	legitimizes
+E31	Event:T31
+T32	Event 1805 1811	flawed
+E32	Event:T32
+T33	Event 1813 1822	one-sided
+E33	Event:T33
+T34	Event 1827 1837	prejudiced
+E34	Event:T34
+T35	Event 1852 1863	discredited
+E35	Event:T35
+T36	Event 1893 1904	politicised
+E36	Event:T36
+T37	Event 1915 1920	bends
+E37	Event:T37
+T38	Event 1958 1968	abstaining
+E38	Event:T38
+T39	Event 1972 1978	voting
+E39	Event:T39
+T40	Event 1991 1995	said
+E40	Event:T40
+T41	Event 2015 2021	agreed
+E41	Event:T41
+T42	Event 2083 2090	conduct
+E42	Event:T42
+T43	Event 2143 2150	alleged
+E43	Event:T43
+T44	Event 2165 2171	called
+E44	Event:T44
+T45	Event 2217 2221	vote
+E45	Event:T45
+T46	Event 2244 2247	had
+E46	Event:T46
+T47	Event 2358 2364	leaves
+E47	Event:T47
+T48	Event 2447 2451	made
+E48	Event:T48
+T49	Event 2463 2467	plan
+E49	Event:T49
+T50	Event 2471 2477	pursue
+E50	Event:T50
+T51	Event 2540 2547	opposed
+E51	Event:T51
+T52	Event 2558 2564	saying
+E52	Event:T52
+T53	Event 2657 2664	started
+E53	Event:T53
+T54	Event 2734 2738	vote
+E54	Event:T54
+T55	Event 2797 2801	said
+E55	Event:T55
+T56	Event 2819 2826	opposed
+E56	Event:T56
+T57	Event 2859 2868	supported
+E57	Event:T57
+T58	Event 2933 2941	relating
+E58	Event:T58
+T59	Event 2968 2975	believe
+E59	Event:T59
+T60	Event 3012 3028	flawed-including
+E60	Event:T60
+T61	Event 3033 3043	unbalanced
+E61	Event:T61
+T62	Event 3065 3073	sweeping
+E62	Event:T62
+T63	Event 3133 3138	draws
+E63	Event:T63
+T64	Event 3193 3197	deal
+E64	Event:T64
+T65	Event 3275 3281	assign
+E65	Event:T65
+T66	Event 3338 3342	base
+E66	Event:T66
+T67	Event 3380 3398	civilian-populated
+E67	Event:T67
+T68	Event 3425 3437	overreaching
+E68	Event:T68
+T69	Event 3456 3460	said
+E69	Event:T69
+T70	Event 3500 3509	cooperate
+E70	Event:T70
+T71	Event 3541 3546	voted
+E71	Event:T71
+T72	Event 3571 3577	saying
+E72	Event:T72
+T73	Event 3586 3597	legitimised
+E73	Event:T73
+T74	Event 3608 3614	flawed
+E74	Event:T74
+T75	Event 3616 3625	one-sided
+E75	Event:T75
+T76	Event 3639 3650	disregarded
+E76	Event:T76
+T77	Event 3669 3675	defend
+E77	Event:T77
+T78	Event 3757 3762	voted
+E78	Event:T78
+T79	Event 3774 3783	abstained
+E79	Event:T79
+T80	Event 3785 3796	demonstrate
+E80	Event:T80
+T81	Event 3834 3838	have
+E81	Event:T81
+T82	Event 3891 3895	read
+E82	Event:T82
+T83	Event 3972 3979	rejects
+E83	Event:T83
+T84	Event 4043 4051	detached
+E84	Event:T84
+T85	Event 4186 4190	died
+E85	Event:T85
+T86	Event 4191 4200	according
+E86	Event:T86
+T87	Event 4258 4262	says
+E87	Event:T87
+T88	Event 4291 4295	died
+E88	Event:T88
+T89	Event 4322 4332	criticized
+E89	Event:T89

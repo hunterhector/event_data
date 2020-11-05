@@ -1,0 +1,116 @@
+T1	Event 5 16	introducing
+E1	Event:T1
+T2	Event 106 116	emphasized
+E2	Event:T2
+T3	Event 163 175	complemented
+E3	Event:T3
+T4	Event 201 206	taken
+E4	Event:T4
+T5	Event 267 271	pick
+E5	Event:T5
+T6	Event 276 282	choose
+E6	Event:T6
+T7	Event 316 322	giving
+E7	Event:T7
+T8	Event 346 351	going
+E8	Event:T8
+T9	Event 355 357	do
+E9	Event:T9
+T10	Event 375 383	agreeing
+E10	Event:T10
+T11	Event 400 403	had
+E11	Event:T11
+T12	Event 424 428	make
+E12	Event:T12
+T13	Event 433 437	said
+E13	Event:T13
+T14	Event 455 460	asked
+E14	Event:T14
+T15	Event 529 536	reflect
+E15	Event:T15
+T16	Event 563 569	report
+E16	Event:T16
+T17	Event 607 615	proposes
+E17	Event:T17
+T18	Event 662 670	deployed
+E18	Event:T18
+T19	Event 779 788	depending
+E19	Event:T19
+T20	Event 826 830	made
+E20	Event:T20
+T21	Event 853 863	concerning
+E21	Event:T21
+T22	Event 914 923	determine
+E22	Event:T22
+T23	Event 951 959	expected
+E23	Event:T23
+T24	Event 966 975	announced
+E24	Event:T24
+T25	Event 1012 1016	said
+E25	Event:T25
+T26	Event 1034 1038	talk
+E26	Event:T26
+T27	Event 1070 1074	meet
+E27	Event:T27
+T28	Event 1116 1120	stop
+E28	Event:T28
+T29	Event 1121 1134	destabilizing
+E29	Event:T29
+T30	Event 1189 1196	suspend
+E30	Event:T30
+T31	Event 1235 1244	declaring
+E31	Event:T31
+T32	Event 1351 1360	reflected
+E32	Event:T32
+T33	Event 1400 1408	settling
+E33	Event:T33
+T34	Event 1457 1462	given
+E34	Event:T34
+T35	Event 1481 1485	said
+E35	Event:T35
+T36	Event 1502 1509	solving
+E36	Event:T36
+T37	Event 1555 1558	lay
+E37	Event:T37
+T38	Event 1562 1570	settling
+E38	Event:T38
+T39	Event 1612 1621	announced
+E39	Event:T39
+T40	Event 1639 1647	visiting
+E40	Event:T40
+T41	Event 1677 1682	bring
+E41	Event:T41
+T42	Event 1721 1725	bear
+E42	Event:T42
+T43	Event 1742 1752	indicating
+E43	Event:T43
+T44	Event 1784 1791	achieve
+E44	Event:T44
+T45	Event 1824 1828	said
+E45	Event:T45
+T46	Event 1832 1841	supported
+E46	Event:T46
+T47	Event 1915 1923	rejected
+E47	Event:T47
+T48	Event 2029 2035	stated
+E48	Event:T48
+T49	Event 2084 2095	negotiating
+E49	Event:T49
+T50	Event 2114 2124	reiterated
+E50	Event:T50
+T51	Event 2254 2262	asserted
+E51	Event:T51
+T52	Event 2276 2286	surrounded
+E52	Event:T52
+T53	Event 2306 2315	including
+E53	Event:T53
+T54	Event 2371 2378	refused
+E54	Event:T54
+T55	Event 2382 2388	affirm
+E55	Event:T55
+T56	Event 2392 2396	deny
+E56	Event:T56
+T57	Event 2412 2415	had
+E57	Event:T57
+T58	Event 2446 2452	saying
+E58	Event:T58

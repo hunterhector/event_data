@@ -1,0 +1,48 @@
+T1	Event 23 29	acting
+E1	Event:T1
+T2	Event 65 70	sworn
+E2	Event:T2
+T3	Event 126 130	died
+E3	Event:T3
+T4	Event 155 167	administered
+E4	Event:T4
+T5	Event 190 199	According
+E5	Event:T5
+T6	Event 306 314	nominate
+E6	Event:T6
+T7	Event 345 353	approved
+E7	Event:T7
+T8	Event 395 402	running
+E8	Event:T8
+T9	Event 423 429	became
+E9	Event:T9
+T10	Event 430 436	acting
+E10	Event:T10
+T11	Event 481 493	hospitalised
+E11	Event:T11
+T12	Event 545 550	sworn
+E12	Event:T12
+T13	Event 564 568	made
+E13	Event:T13
+T14	Event 698 706	continue
+E14	Event:T14
+T15	Event 710 714	gain
+E15	Event:T15
+T16	Event 746 755	upholding
+E16	Event:T16
+T17	Event 777 785	departed
+E17	Event:T17
+T18	Event 793 804	represented
+E18	Event:T18
+T19	Event 871 878	counted
+E19	Event:T19
+T20	Event 887 895	upcoming
+E20	Event:T20
+T21	Event 923 927	said
+E21	Event:T21
+T22	Event 939 943	aged
+E22	Event:T22
+T23	Event 952 958	buried
+E23	Event:T23
+T24	Event 1008 1016	declared
+E24	Event:T24

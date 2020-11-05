@@ -15,16 +15,27 @@ cd forte
 pip install -e .
 ```
 
+Download NER resources:
+```bash
+cd ner
+python download.py
+cd ..
+```
+
 ## Run Event Detection
 Now you can run the script to check out the sample data:
 ```bash
-python detection_pipeline.py
+python detection_pipeline.py \
+  --dir sample_wikinews \
+  --coling2018 sample_wikinews/coling2018_out
 ```
 
 ## Create Event Pairs
 Now you can run the script to find the pairs:
 ```bash
-python pair_pipeline.py
+python pair_pipeline.py \
+  --dir sample_wikinews \
+  --doc-pairs sample_wikinews/doc_clusters.txt
 ```
 
 ## To Start the Stave UI
@@ -37,7 +48,7 @@ Now you can start the system, first the front end:
 yarn && yarn start
 ```
 You will also need to start the back end:
-```bash 
+```bash
 cd simple-backend
 ./start-dev.sh
 ```
@@ -45,7 +56,7 @@ You can start using the front end, as a development server,
 the username/password pair is 'admin','admin'.
 
 ## Update Ontology
-You can modify the `event_ontology.json` file to create new types of add new 
+You can modify the `event_ontology.json` file to create new types of add new
 features. After you finished the file, at the project's root directory, run
 the following:
 ```bash

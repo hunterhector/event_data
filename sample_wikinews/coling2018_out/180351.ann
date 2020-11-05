@@ -1,0 +1,68 @@
+T1	Event 40 49	announced
+E1	Event:T1
+T2	Event 105 109	died
+E2	Event:T2
+T3	Event 120 128	ascended
+E3	Event:T3
+T4	Event 170 175	taken
+E4	Event:T4
+T5	Event 207 211	seen
+E5	Event:T5
+T6	Event 244 256	hospitalised
+E6	Event:T6
+T7	Event 285 288	get
+E7	Event:T7
+T8	Event 325 332	treated
+E8	Event:T8
+T9	Event 347 356	diagnosed
+E9	Event:T9
+T10	Event 380 389	According
+E10	Event:T10
+T11	Event 419 428	indicated
+E11	Event:T11
+T12	Event 443 447	died
+E12	Event:T12
+T13	Event 566 572	became
+E13	Event:T13
+T14	Event 577 583	acting
+E14	Event:T14
+T15	Event 649 654	sworn
+E15	Event:T15
+T16	Event 676 683	appoint
+E16	Event:T16
+T17	Event 740 749	broadcast
+E17	Event:T17
+T18	Event 760 766	saying
+E18	Event:T18
+T19	Event 813 818	armed
+E19	Event:T19
+T20	Event 848 852	died
+E20	Event:T20
+T21	Event 911 919	notified
+E21	Event:T21
+T22	Event 988 994	called
+E22	Event:T22
+T23	Event 999 1005	acting
+E23	Event:T23
+T24	Event 1112 1121	commented
+E24	Event:T24
+T25	Event 1128 1134	acting
+E25	Event:T25
+T26	Event 1171 1179	happened
+E26	Event:T26
+T27	Event 1195 1203	mourning
+E27	Event:T27
+T28	Event 1261 1268	observe
+E28	Event:T28
+T29	Event 1279 1287	mourning
+E29	Event:T29
+T30	Event 1296 1304	deceased
+E30	Event:T30
+T31	Event 1334 1340	acting
+E31	Event:T31
+T32	Event 1360 1364	said
+E32	Event:T32
+T33	Event 1379 1383	lost
+E33	Event:T33
+T34	Event 1429 1434	mourn
+E34	Event:T34
