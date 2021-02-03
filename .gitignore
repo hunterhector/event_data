@@ -141,3 +141,8 @@ jupyter_notebooks/
 nohup.out
 output/
 stave/
+
+cdec_wikinews/
+ner/resources/
+sample_wikinews/packs/
+sample_wikinews/multipacks/

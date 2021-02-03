@@ -136,14 +136,57 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
         # event detection result from coling2018-event
         with open(self.coling2018_event_output_path / f"{input_pack.pack_name}.ann", 'r', encoding="utf-8") as f:
             ann_data = f.read()
+        
+        # load txt 
+        with open(self.coling2018_event_output_path / f"{input_pack.pack_name}.txt", 'r', encoding='utf-8') as f:
+            txt_data = f.read()
+        # parse text w/ spacy
+        # ToDo: replace spacy tokenizer with Default one (stanfordcorenlp? stanza?).
+        doc = self.tokenizer(txt_data)
 
         ann = brat_tool.BratAnnotations(ann_data)
         events = ann.getEventAnnotationList()
+        
 
         # adding `body_offset`
         for event in events:
-            detected_events_coling2018.append({'begin': body_offset + event.textbound.start_pos, 'end': body_offset + event.textbound.end_pos, 'source': 'J', 'nugget': event.textbound.text})
-
+            
+            start_pos = event.textbound.start_pos
+            end_pos = event.textbound.end_pos
+            txt = event.textbound.text
+            
+            if type(event.textbound.start_pos) is list:  # deal with discontinuous events
+                # relace discontinuous events with head word
+                # if not possible, then use former word
+                done = False
+                if len(txt.split(' ')) == 2:
+                    former_token = txt_data[event.textbound.start_pos[0]:event.textbound.end_pos[0]]
+                    latter_token = txt_data[event.textbound.start_pos[1]:event.textbound.end_pos[1]]
+                    for sent in doc.sents:
+                        if sent.start_char <= event.textbound.start_pos[0] <= sent.end_char:
+                            for token in sent:
+                                if token.text == former_token:
+                                    former_head = token.head.text
+                                if token.text == latter_token:
+                                    latter_head = token.head.text
+                            if latter_head == former_token:
+                                done = False
+                            elif former_head == latter_token:
+                                start_pos = event.textbound.start_pos[1]
+                                end_pos = event.textbound.end_pos[1]
+                                txt = txt_data[event.textbound.start_pos[0]:event.textbound.end_pos[1]]
+                                done = True
+                            else:
+                                done = False
+                if not done:
+                    # replace discontinuous events with a top word
+                    start_pos = event.textbound.start_pos[0]
+                    end_pos = event.textbound.end_pos[0]
+                    txt = txt_data[event.textbound.start_pos[0]:event.textbound.end_pos[0]]
+            
+            
+            detected_events_coling2018.append({'begin': body_offset + start_pos, 'end': body_offset + end_pos, 'source': 'J', 'nugget': txt})
+        
         # check & modify alignment of detected events by coling2018-event
         for event in detected_events_coling2018:
             for token in input_pack.annotations:
@@ -200,12 +243,6 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
             if not flag_exist:
                 detected_events.append(event)
 
-        # parse text w/ spacy
-        # ToDo: replace spacy tokenizer with Default one (stanfordcorenlp? stanza?).
-        with open(self.coling2018_event_output_path / f"{input_pack.pack_name}.txt", 'r', encoding='utf-8') as f:
-            txt_data = f.read()
-        doc = self.tokenizer(txt_data)
-
         # phrase detection
         detected_events = sorted(detected_events, key=lambda x:x['begin'])
         replacements = list()
@@ -252,7 +289,6 @@ class LemmaJunNombankOpenIEEventDetector(PackProcessor):
                 table_word_count[token.lemma_] = 1
             else:
                 table_word_count[token.lemma_] += 1
-
 
         # store events + importance(tf-idf) calculation
         for event in detected_events:

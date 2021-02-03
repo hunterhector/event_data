@@ -10,26 +10,53 @@ class QuestionCreator(MultiPackProcessor):
     """
 
     def _process(self, input_pack: MultiPack):
-        coref_questions = [
-            'Do you find both location are identical?',
-            'Do you find the time on both events are identical?',
-            'Do you find the participants are the same?',
-            'Do you think one of the event may include another one?'
+        q = CorefQuestion(input_pack)
+        q.question_body = 'Place: Do you think the two events ' \
+                          'happen at the same place?'
+        q.options = [
+            'Exactly the same', 'The places overlap',
+            'Not at all', 'Cannot determine',
         ]
+        input_pack.add_entry(q)
 
-        for q_t in coref_questions:
-            q = CorefQuestion(input_pack)
-            q.question_body = q_t
-            q.options = [
-                'Yes', 'No', 'Probably', 'Cannot determine',
-            ]
-            input_pack.add_entry(q)
+        q = CorefQuestion(input_pack)
+        q.question_body = 'Time: Do you think the two events ' \
+                          'happen at the same time?'
+        q.options = [
+            'Exactly the same', 'They overlap in time',
+            'Not at all', 'Cannot determine',
+        ]
+        input_pack.add_entry(q)
+
+        q = CorefQuestion(input_pack)
+        q.question_body = 'Participants: Do you think the two events' \
+                          ' have the same participants?'
+        q.options = [
+            'Exactly the same', 'They share some participants',
+            'Not at all', 'Cannot determine',
+        ]
+        input_pack.add_entry(q)
+
+        q = CorefQuestion(input_pack)
+        q.question_body = 'Inclusion: Do you think one of the events' \
+                          ' contain the other?'
+        q.options = [
+            'Yes, left fully contains right',
+            'Yes, right fully contains left',
+            'No, they are exactly the same',
+            'Cannot determine',
+        ]
+        input_pack.add_entry(q)
 
         q = SuggestionQuestion(input_pack)
-        q.question_body = 'Why do you think these two events are different?'
+        q.question_body = 'You consider these two to be different, ' \
+                          'could you tell us why?'
         q.options = [
-            'They are not really relevant.',
-            'There is no enough information to determine that.',
-            'Some event details are conflicting.',
+            'One event contains the other.',
+            'Some event details (e.g. time, location, participants) '
+            'are conflicting.',
+            'There is no enough information.',
+            'The two events are completely un-related.'
+            'Other reasons',
         ]
         input_pack.add_entry(q)

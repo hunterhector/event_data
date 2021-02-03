@@ -18,7 +18,7 @@ def read_doc_pairs(inp_path):
     doc_pairs = []
     with open(inp_path, "r") as rf:
         for line in rf:
-            group_docs = line.strip().split("\t")
+            group_docs = line.strip().split()
             for doc1, doc2 in itertools.combinations(group_docs, 2):
                 doc_pairs.append((f"{doc1}.json", f"{doc2}.json"))
     return doc_pairs
