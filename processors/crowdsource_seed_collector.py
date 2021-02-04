@@ -19,13 +19,13 @@ class SeedCollector(MultiPackProcessor):
     """
     ROUND_DOC_TABLE_NAME = "round_doc"
 
-    def __init__(self, stave_db_path, annotation_module_db_path, is_adding_multipack=False):
+    def __init__(self, stave_db_path, mturk_db_path, is_adding_multipack=False):
         #remove!!!
         self.stave_db_path = stave_db_path
         #END remove
-        if not annotation_module_db_path.endswith("db.json"):
-            annotation_module_db_path = annotation_module_db_path+os.path.sep+"db.json"
-        self.db = TinyDB(annotation_module_db_path)
+        if not mturk_db_path.endswith("db.json"):
+            mturk_db_path = mturk_db_path+os.path.sep+"db.json"
+        self.db = TinyDB(mturk_db_path)
         self.round_doc_table = self.db.table(self.ROUND_DOC_TABLE_NAME)
         if (len(self.round_doc_table) == 0):
             #input seed
@@ -82,15 +82,13 @@ class SeedCollector(MultiPackProcessor):
         
 
 if __name__ == '__main__':
-    #db_path = sys.argv[1]
-    #tiny_db_path = sys.argv[2]
     parser = argparse.ArgumentParser()
     parser.add_argument("-a", "--add_doc", help="adding more multidocs",
                     action="store_true")
     parser.add_argument("stave_db_path", type=str,
                     help="path to the stave sqlite database")
-    parser.add_argument("annotator_db_path", type=str, default="./db.json",
-                    help="path to the db.json file for annotator module")
+    parser.add_argument("mturk_db_path", type=str, default="./db.json",
+                    help="path to the db.json file for MTurk annotator module")
     options = parser.parse_args()  
     is_adding_multipack = True if options.add_doc else False
 
@@ -98,5 +96,5 @@ if __name__ == '__main__':
     pipeline.set_reader(StaveMultiDocSqlReader(), config={
         'stave_db_path': options.stave_db_path
     })
-    pipeline.add(SeedCollector(options.stave_db_path, options.annotator_db_path, is_adding_multipack=is_adding_multipack))
+    pipeline.add(SeedCollector(options.stave_db_path, options.mturk_db_path, is_adding_multipack=is_adding_multipack))
     pipeline.run()

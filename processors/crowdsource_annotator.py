@@ -27,7 +27,7 @@ class CrowdSourceAnnotationModule:
     MTURK_HIT_LAYOUT_ID = "3BC45DRD9A1JXYGP43Y9NFLSKGQV7G"
     
 
-    def __init__(self, stave_db_path):  # config_file?
+    def __init__(self, stave_db_path, mturk_db_path):  # config_file?
         #read input files
         self.stave_db_path = stave_db_path
         self.number_of_copys = 3
@@ -36,15 +36,11 @@ class CrowdSourceAnnotationModule:
         self.task_distributor = [] #could take several formats
         self.is_sandbox_testing = True
         self.debug_flag = True
-        db = TinyDB('data/db.json') #store all part list
+        db = TinyDB(mturk_db_path) #store all part list
         self.stack_target_table = db.table(self.STACK_TABLE_NAME)
         self.past_task_table = db.table(self.PAST_TASKS_TABLE_NAME)
         self.logging_table = db.table(self.LOGGING_TABLE_NAME)
         self.round_doc_table = db.table(self.ROUND_DOC_TABLE_NAME)
-        #TEMP SEED
-        self.seed_names = ['pair_141481_and_143609.json', 'pair_141632_and_143609.json', 'pair_127880_and_55965.json', 'pair_127880_and_56250.json',\
-             'pair_55965_and_56250.json','pair_104435_and_125289.json', 'pair_104435_and_13602.json', 'pair_125289_and_13602.json', \
-             'pair_112040_and_112041.json', 'pair_112040_and_112069.json']
         #region_name ???
 
         if (self.is_sandbox_testing):
@@ -297,15 +293,16 @@ class CrowdSourceAnnotationModule:
 
     
 
-def _delete_db():
-    db = TinyDB('data/db.json') #store all part list
+def _delete_db(mturk_db_path):
+    db = TinyDB(mturk_db_path) #store all part list
     tables = ['stack_target', 'past_tasks', 'logging', 'round_doc']
     for t_name in tables:
         db.drop_table(t_name)
 
 if __name__ == "__main__":
     stave_db_path = sys.argv[1]
-    #_delete_db()
-    mturk = CrowdSourceAnnotationModule(stave_db_path)
+    mturk_db_path = sys.argv[2]
+    #_delete_db(mturk_db_path)
+    mturk = CrowdSourceAnnotationModule(stave_db_path, mturk_db_path)
     mturk.run_round()
     #mturk.add_qualification("3PP3A267AC06C3I4KJZXPB0QD3UQ9X", "A2BH1DM1D62J5Q", True)

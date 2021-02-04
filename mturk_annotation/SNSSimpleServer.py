@@ -9,9 +9,10 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
     """
     This class creates a simple request handler for aws_sns_topic subscriptions.
     """
-    def __init__(self, db_path, mace_path):
-        self.db_path = db_path
-        self.mace_path = mace_path
+    def __init__(self, stave_db_path, mace_code_path, mturk_db_path):
+        self.stave_db_path = stave_db_path
+        self.mace_code_path = mace_code_path
+        self.mturk_db_path = mturk_db_path
 
     def _set_headers(self):
         self.send_response(200)
@@ -42,7 +43,7 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
         end_index = answer_html.find("</FreeText>")
         participant_code = answer_html[start_index:end_index]
 
-        db = TinyDB('data/db.json')
+        db = TinyDB(self.mturk_db_path)
         stack_target_table = db.table('stack_target')
         past_task_table = db.table('past_tasks')
         logging_table = db.table('logging')
@@ -79,15 +80,15 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
                 #call collect data from processor & run MACE
                 pipeline = Pipeline()
                 pipeline.set_reader(StaveMultiDocSqlReader(), config={
-                    'stave_db_path': self.db_path
+                    'stave_db_path': self.stave_db_path
                 })
-                pipeline.add(MaceFormatCollector(self.mace_path))
+                pipeline.add(MaceFormatCollector(self.mace_code_path))
                 pipeline.run()
                 
 
 if __name__ == "__main__":
     PORT = 8989
-    handler = partial(SNSHandleRequests, sys.argv[1], sys.argv[2])
+    handler = partial(SNSHandleRequests, sys.argv[1], sys.argv[2], sys.argv[3])
     server = HTTPServer(("", PORT), handler)
     print("serving at port", PORT)
     server.serve_forever()
