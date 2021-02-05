@@ -1,0 +1,29 @@
+<QuestionForm>
+  <Overview>
+    <Title></Title>
+    <FormattedContent></FormattedContent>
+  </Overview>
+  <Question>
+    <QuestionIdentifier></QuestionIdentifier>
+    <DisplayName></DisplayName>
+    <IsRequired>true</IsRequired>
+    <QuestionContent>
+      <FormattedContent></FormattedContent>
+    </QuestionContent>
+    <AnswerSpecification>
+      <SelectionAnswer>
+        <StyleSuggestion>radiobutton</StyleSuggestion>
+        <Selections>
+          <Selection>
+            <SelectionIdentifier>yes</SelectionIdentifier>
+            <Text>Yes</Text>
+          </Selection>
+          <Selection>
+            <SelectionIdentifier>no</SelectionIdentifier>
+            <Text>No</Text>
+          </Selection>
+        </Selections>
+      </SelectionAnswer>
+    </AnswerSpecification>
+  </Question>
+</QuestionForm>

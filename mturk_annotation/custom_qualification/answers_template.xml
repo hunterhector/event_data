@@ -1,0 +1,14 @@
+<AnswerKey>
+  <Question>
+    <QuestionIdentifier></QuestionIdentifier>
+    <AnswerOption>
+      <SelectionIdentifier></SelectionIdentifier>
+      <AnswerScore>1</AnswerScore>
+    </AnswerOption>
+  </Question>
+  <QualificationValueMapping>
+    <PercentageMapping>
+      <MaximumSummedScore>0</MaximumSummedScore>
+    </PercentageMapping>
+  </QualificationValueMapping>
+</AnswerKey>

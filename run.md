@@ -30,7 +30,7 @@ sed -n "${SED_START_IDX}, ${SED_END_IDX}p" data/topics/Politics_and_conflicts.id
 
 ```bash
 python prepare_doc_batch.py \
-    --wikinews cdec_wikinews/wikinews-1220-similar.json \
+    --wikinews cdec_wikinews/wikinews-0121-similar.json \
     --coling2018 cdec_wikinews/coling2018_out \
     --doc-clusters data/${BATCH_NUM}/doc_clusters.txt \
     --out cdec_wikinews/${BATCH_NUM}
