@@ -39,10 +39,10 @@ class QuestionCreator(MultiPackProcessor):
 
         q = CorefQuestion(input_pack)
         q.question_body = 'Inclusion: Do you think one of the events' \
-                          ' contain the other?'
+                          ' is part of the other?'
         q.options = [
-            'Yes, left fully contains right',
-            'Yes, right fully contains left',
+            'Yes, the left event is part of right one',
+            'Yes, the right event is part of left one',
             'No, they are exactly the same',
             'Cannot determine',
         ]
@@ -52,7 +52,7 @@ class QuestionCreator(MultiPackProcessor):
         q.question_body = 'You consider these two to be different, ' \
                           'could you tell us why?'
         q.options = [
-            'One event contains the other.',
+            'One event is part of the other event.',
             'Some event details (e.g. time, location, participants) '
             'are conflicting.',
             'There is no enough information.',
