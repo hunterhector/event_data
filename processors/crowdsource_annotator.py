@@ -201,11 +201,16 @@ class CrowdSourceAnnotationModule:
         ]
         if not is_first_round:
             # annotator groups are empty in the first round
-            qualification_requirements.append({ #who passed the annotator qualification
-                    'QualificationTypeId': annotator_group_ID,
-                    'Comparator':"Exists",
-                    'ActionsGuarded':"PreviewAndAccept"
-                })
+            # annotators from other groups should not be allowed to do this task
+            # i.e, only annotators with ID `annotator_group_ID` or new annotators are allowed
+            disallowed_IDs = [
+                x for x in self.annotator_group_IDs if x != annotator_group_ID]
+            for group_ID in disallowed_IDs:
+                qualification_requirements.append({ #who passed the annotator qualification
+                    'QualificationTypeId': group_ID,
+                    'Comparator': "DoesNotExist",
+                        'ActionsGuarded':"PreviewAndAccept"
+                    })
         new_hit = self.mturk_client.create_hit(
             MaxAssignments=1,  # required
             #AutoApprovalDelayInSeconds=3600*24,
