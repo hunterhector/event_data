@@ -94,7 +94,7 @@ He was <b>shot</b> and dead in the <b>shooting</b>. \
 ]]>"
 
 
-def write_questions(source_path, qs_path, ans_path, k):
+def prepare_questionnaire(source_path, qs_path, ans_path, k):
 
     all_questions = read_questions(source_path / "cdec_screening_test.tsv")
     sampled_questions = random.sample(all_questions, k=k)
@@ -136,8 +136,8 @@ if __name__ == "__main__":
         "-q", type=Path, help="path to write sampled questions in .xml format",
     )
     parser.add_argument("-a", type=Path, help="path to write answer key in .xml format")
-    parser.add_argument("-n", default=7, help="number of questions to sample")
+    parser.add_argument("-n", default=10, help="number of questions to sample")
 
     args = parser.parse_args()
 
-    write_questions(args.s, args.q, args.a, args.n)
+    prepare_questionnaire(args.s, args.q, args.a, args.n)
