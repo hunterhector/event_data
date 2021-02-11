@@ -4,15 +4,40 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from tinydb import TinyDB, Query
 from tinydb.operations import increment
 from forte.data.readers.stave_readers import StaveMultiDocSqlReader
+import boto3
+
+from credentials import (MTURK_ACCESS_KEY, MTURK_SECRET_KEY, SNS_TOPIC_ID,
+                         MTURK_EVENT_BLOCKED_QUAL_ID)
 
 class SNSHandleRequests(BaseHTTPRequestHandler):
     """
     This class creates a simple request handler for aws_sns_topic subscriptions.
     """
+
+    MTURK_SANDBOX = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
+
     def __init__(self, stave_db_path, mace_code_path, mturk_db_path):
         self.stave_db_path = stave_db_path
         self.mace_code_path = mace_code_path
         self.mturk_db_path = mturk_db_path
+
+        self.is_sandbox_testing = True
+
+        if (self.is_sandbox_testing):
+            self.mturk_client = boto3.client(
+                'mturk',
+                aws_access_key_id=MTURK_ACCESS_KEY,
+                aws_secret_access_key=MTURK_SECRET_KEY,
+                region_name='us-east-1',
+                endpoint_url=self.MTURK_SANDBOX  # this uses Mturk's sandbox
+            )
+        else:
+            self.mturk_client = boto3.client(
+                'mturk',
+                aws_access_key_id=MTURK_ACCESS_KEY,
+                aws_secret_access_key=MTURK_SECRET_KEY,
+                region_name='us-east-1',
+            )
 
     def _set_headers(self):
         self.send_response(200)
@@ -60,6 +85,11 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
                 ((assignment_query.round_number == rnd_num) 
                     & (assignment_query.HITID == HIT_id))
                 )
+            task_record = past_task_table.get(((assignment_query.round_number == rnd_num)
+                                               & (assignment_query.HITID == HIT_id)))
+            annotator_group_ID = task_record['annotator_group_ID']
+            # assign the qualification to the worker (new or old)
+            self.add_qualification(annotator_group_ID, worker_id, False)
             logging_table.insert({"action":"hit_completed", 
                 'log':"HITID:%s;worker:%s" % (HIT_id, worker_id)})
 
@@ -85,6 +115,13 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
                 pipeline.add(MaceFormatCollector(self.mace_code_path))
                 pipeline.run()
                 
+    def add_qualification(self, qualification_id, worker_id, bool_send_not):
+        response = self.mturk_client.associate_qualification_with_worker(
+            QualificationTypeId=qualification_id,
+            WorkerId=worker_id,
+            IntegerValue=1,
+            SendNotification=bool_send_not)
+        return response
 
 if __name__ == "__main__":
     PORT = 8989

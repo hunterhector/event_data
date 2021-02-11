@@ -22,8 +22,8 @@ class CrowdSourceAnnotationModule:
     MTURK_SANDBOX = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
     ANNOTATOR_GROUP_DESCRIPTION = "hello this is a place holder"
     STAVE_LINK = "http://miami.lti.cs.cmu.edu:8004/?tasks=%s&%s" #two pairs?
-    MTURK_REQRMT_NUM_HITS_COMPLETED = 0
-    MTURK_REQRMT_PERCENT_APPROVAL_RATE = 90
+    MTURK_REQRMT_NUM_HITS_COMPLETED = 1000
+    MTURK_REQRMT_PERCENT_APPROVAL_RATE = 95
     MTURK_HIT_LAYOUT_ID = "3BC45DRD9A1JXYGP43Y9NFLSKGQV7G"
     
 
@@ -162,7 +162,7 @@ class CrowdSourceAnnotationModule:
         return list(zip(pre_pairs_hash_ordered, pairs))
 
 
-    def publish_hit(self, website_url, annotator_group_ID):
+    def publish_hit(self, website_url, annotator_group_ID, is_first_round=False):
         # params include reward, title, keywords, description, maxassignments,
         # lifetime, AssignmentDurationInSeconds, QualificationRequirements, 
         # typeoflayout -
@@ -170,16 +170,7 @@ class CrowdSourceAnnotationModule:
          and for each pair you will be asked to identify texts that refer to
          the same events."""
 
-        new_hit = self.mturk_client.create_hit(
-            MaxAssignments=1,  #required
-            #AutoApprovalDelayInSeconds=3600*24,
-            LifetimeInSeconds=3600*24,  #life time
-            AssignmentDurationInSeconds=3600*24,  #time to complete the HIT
-            Reward='2.4',  #string us dollar
-            Title="Annotating Event Coreferences in News Articles",  #
-            Keywords='annotation,event,news,coreference',
-            Description=HIT_DESCRIPTION,
-            QualificationRequirements=[ 
+        qualification_requirements = [
                 {	#location 
                     'QualificationTypeId': '00000000000000000071',
                     'Comparator': 'In',
@@ -202,17 +193,29 @@ class CrowdSourceAnnotationModule:
                     'ActionsGuarded':  'PreviewAndAccept'
 
                 },
-                { #who passed the annotator qualification
-                    'QualificationTypeId': annotator_group_ID,
-                    'Comparator':"Exists",
-                    'ActionsGuarded':"PreviewAndAccept"
-                },
                 { #not in temporary block
                     'QualificationTypeId': MTURK_EVENT_BLOCKED_QUAL_ID,
                     'Comparator':"DoesNotExist",
                     'ActionsGuarded':"PreviewAndAccept"
                 },
-            ],
+        ]
+        if not is_first_round:
+            # annotator groups are empty in the first round
+            qualification_requirements.append({ #who passed the annotator qualification
+                    'QualificationTypeId': annotator_group_ID,
+                    'Comparator':"Exists",
+                    'ActionsGuarded':"PreviewAndAccept"
+                })
+        new_hit = self.mturk_client.create_hit(
+            MaxAssignments=1,  # required
+            #AutoApprovalDelayInSeconds=3600*24,
+            LifetimeInSeconds=3600*24,  # life time
+            AssignmentDurationInSeconds=3600*24,  # time to complete the HIT
+            Reward='2.4',  # string us dollar
+            Title="Annotating Event Coreferences in News Articles",  #
+            Keywords='annotation,event,news,coreference',
+            Description=HIT_DESCRIPTION,
+            QualificationRequirements=qualification_requirements,
             HITLayoutId=self.MTURK_HIT_LAYOUT_ID,
             HITLayoutParameters=[
                 { 'Name': 'website_url',
@@ -244,9 +247,11 @@ class CrowdSourceAnnotationModule:
     def run_round(self):
         if (self.debug_flag): print(self.logging_table.all())
         annotator_group_idx = 1
+        is_first_round = False
         if (len(self.stack_target_table) == 0):
             #first round
             nxt_rnd_num = 1.1
+            is_first_round = True
         else:
             last_record = self.stack_target_table.all()[-1]
             if (last_record['completed']):
@@ -280,10 +285,12 @@ class CrowdSourceAnnotationModule:
             "sent_hit_count":len(annotation_pairs)})
         for hash_pair in annotation_pairs:
             hit_id = self.publish_hit(self.STAVE_LINK % (hash_pair), 
-                self.annotator_group_IDs[annotator_group_idx])
+                self.annotator_group_IDs[annotator_group_idx], is_first_round=is_first_round)
             hash_pair_str = "%s&%s" % hash_pair
+            # additionally storing annotator group ID to assign the necessary qualification for new workers
             self.past_task_table.insert({'round_number':nxt_rnd_num, 
-                'completed':False, 'hash_pair':hash_pair_str, 'HITID':hit_id})
+                                         'completed': False, 'hash_pair': hash_pair_str, 'HITID': hit_id,
+                                         'annotator_group_ID': self.annotator_group_IDs[annotator_group_idx]})
             self.logging_table.insert({"action":"hit_created", 
                 'log':"HITID:%s;hash_pair:%s" % (hit_id, hash_pair_str)})
         print(self.logging_table.all())

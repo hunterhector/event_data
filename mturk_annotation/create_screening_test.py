@@ -29,7 +29,14 @@ def add_question(q_id, q_txt, q_elm, q_xml):
     q.find("QuestionIdentifier").text = f"Q_{q_id}"
     q.find("QuestionContent").find(
         "FormattedContent"
-    ).text = f"<![CDATA[<p>{q_txt}<br /><br /><i>Question</i>: In the above paragraph, are the highlighted events the same?<br /></p>]]>"
+    ).text = f"<![CDATA[ \
+<p> \
+{q_txt} \
+<br /><br /> \
+<i>Question</i>: In the above paragraph, are the highlighted events the same? \
+<br /> \
+</p> \
+]]>"
 
     q_xml.append(q)
 
