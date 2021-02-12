@@ -14,7 +14,7 @@ from credentials import (
     SNS_TOPIC_ID,
     MTURK_EVENT_BLOCKED_QUAL_ID,
 )
-from screening import prepare_questionnaire
+from screening import QualificationTest
 
 
 class CrowdSourceAnnotationModule:
@@ -50,7 +50,8 @@ class CrowdSourceAnnotationModule:
         # region_name ???
 
         self.SCREENING_QUAL_ID = None
-        self.SCREENING_TEST_PATH = "custom_qualification"
+        self.SCREENING_TEMPLATE_PATH = "custom_qualification"
+        self.SCREENING_QUESTIONS_PATH = "custom_qualification/cdec_screening_test.tsv"
         self.SCREENING_THRESHOLD = 70
 
         if self.is_sandbox_testing:
@@ -369,20 +370,12 @@ class CrowdSourceAnnotationModule:
         qualification test to screen workers
         """
 
-        # generate questions.xml and answers.xml
-        QUESTIONS_XML_PATH = (
-            f"{self.SCREENING_TEST_PATH}/questions_round_{round_number}.xml"
+        # create a new qualification test
+        qual_test = QualificationTest(
+            self.SCREENING_TEMPLATE_PATH, self.SCREENING_QUESTIONS_PATH, k=7
         )
-        ANSWERS_XML_PATH = (
-            f"{self.SCREENING_TEST_PATH}/answers_round_{round_number}.xml"
-        )
-        prepare_questionnaire(
-            self.SCREENING_TEST_PATH, QUESTIONS_XML_PATH, ANSWERS_XML_PATH, 7
-        )
-
-        # load question and answer strings
-        questions = open(QUESTIONS_XML_PATH, "r").read()
-        answers = open(ANSWERS_XML_PATH, "r").read()
+        questions = qual_test.get_questions()
+        answers = qual_test.get_answers()
 
         if not self.SCREENING_QUAL_ID:
             # creating the screening qualification type for the first time
@@ -392,7 +385,7 @@ class CrowdSourceAnnotationModule:
                 QualificationTypeStatus="Active",
                 Test=questions,
                 AnswerKey=answers,
-                TestDurationInSeconds=300,
+                TestDurationInSeconds=600,
             )
             self.SCREENING_QUAL_ID = response["QualificationType"][
                 "QualificationTypeId"
@@ -404,8 +397,13 @@ class CrowdSourceAnnotationModule:
                 QualificationTypeStatus="Active",
                 Test=questions,
                 AnswerKey=answers,
-                TestDurationInSeconds=300,
+                TestDurationInSeconds=600,
             )
+
+        # to keep a log, write questions and answers used in the current round
+        Q_XML = f"{self.SCREENING_TEMPLATE_PATH}/questions_{round_number}.xml"
+        ANS_XML = f"{self.SCREENING_TEMPLATE_PATH}/answers_{round_number}.xml"
+        qual_test.write_xml(Q_XML, ANS_XML)
 
 
 def _delete_db(mturk_db_path):
