@@ -146,3 +146,6 @@ cdec_wikinews/
 ner/resources/
 sample_wikinews/packs/
 sample_wikinews/multipacks/
+*.err
+*.log
+.DS_Store

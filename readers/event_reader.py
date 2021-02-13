@@ -7,9 +7,9 @@ from forte.data.data_pack import DataPack
 from forte.data.multi_pack import MultiPack
 from forte.data.readers.base_reader import PackReader
 from forte.data.readers.base_reader import MultiPackReader
-from forte.data.data_utils import deserialize
 
 from edu.cmu import TitleSpan, DateSpan, BodySpan
+
 
 def doc_name(doc_path):
     return os.path.basename(doc_path).split(".")[0]
@@ -27,7 +27,7 @@ class DocumentReader(PackReader):
 
     def _parse_pack(self, input_file: str) -> Iterator[PackType]:
         with open(input_file) as f:
-            pack: DataPack = self.new_pack()
+            pack: DataPack = DataPack()
             pack.pack_name = os.path.basename(input_file).split(".")[0]
             pack.set_text(f.read())
             yield pack
@@ -44,12 +44,12 @@ class TwoDocumentPackReader(MultiPackReader):
             yield pack_path1, pack_path2
 
     def _parse_pack(self, doc_path_pair: Tuple[str, str]) -> Iterator[MultiPack]:
-        mp = self.new_pack()
+        mp = MultiPack()
         doc1, doc2 = doc_path_pair
 
         with open(doc1) as doc1_f, open(doc2) as doc2_f:
-            p1: DataPack = deserialize(doc1_f.read())
-            p2: DataPack = deserialize(doc2_f.read())
+            p1: DataPack = DataPack.deserialize(doc1_f.read())
+            p2: DataPack = DataPack.deserialize(doc2_f.read())
             mp.add_pack_(p1)
             mp.add_pack_(p2)
             mp.pack_name = f"pair_{p1.pack_name}_and_{p2.pack_name}"
@@ -64,7 +64,7 @@ class DocumentReaderJson(PackReader):
 
     def _parse_pack(self, input_file: str) -> Iterator[PackType]:
         with open(input_file) as f:
-            pack: DataPack = self.new_pack()
+            pack: DataPack = DataPack()
             pack.pack_name = os.path.basename(input_file).split(".")[0]
 
             text = ""

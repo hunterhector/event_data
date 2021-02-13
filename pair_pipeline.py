@@ -14,13 +14,21 @@ from readers.event_reader import TwoDocumentPackReader
 from utils import set_logging
 
 
-def read_doc_pairs(inp_path):
+def read_doc_pairs(inp_path, max_size: int, out_dir: Path):
     doc_pairs = []
-    with open(inp_path, "r") as rf:
-        for line in rf:
-            group_docs = line.strip().split()
-            for doc1, doc2 in itertools.combinations(group_docs, 2):
-                doc_pairs.append((f"{doc1}.json", f"{doc2}.json"))
+    out_path = out_dir / "doc_clusters.txt"
+    out_path_skipped = out_dir / "doc_clusters_skipped.txt"
+    with open(out_path, "w") as wf, open(out_path_skipped, "w") as wf_skipped:
+        with open(inp_path, "r") as rf:
+            for line in rf:
+                group_docs = line.strip().split()
+                if len(group_docs) <= max_size:
+                    for doc1, doc2 in itertools.combinations(group_docs, 2):
+                        doc_pairs.append((f"{doc1}.json", f"{doc2}.json"))
+                    wf.write(line)
+                else:
+                    wf_skipped.write(line)
+
     return doc_pairs
 
 
@@ -35,13 +43,16 @@ if __name__ == "__main__":
     parser.add_argument(
         "--doc-pairs", type=str, help="path to the file with document pairs"
     )
+    parser.add_argument(
+        "--clique-threshold", type=int, default=4, help="max size of clique to use"
+    )
 
     args = parser.parse_args()
 
     set_logging()
 
     # reading pre-selected document pairs
-    pairs = read_doc_pairs(args.doc_pairs)
+    pairs = read_doc_pairs(args.doc_pairs, args.clique_threshold, args.dir)
     print(f"# document pairs: {len(pairs)}")
 
     pair_pipeline = Pipeline()

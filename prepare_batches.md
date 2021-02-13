@@ -14,11 +14,15 @@ Also download the folder `topics` from [drive](https://drive.google.com/drive/fo
 
 ## Prepare batches
 
+Also check [prepare_batches.sh](prepare_batches.sh) for the corresponding shell script.
+
 ```bash
 # set batch ID
 export EVENT_BATCH_ID=1
 export BATCH_NUM=batch${EVENT_BATCH_ID}
 ```
+
+Pick 5 document groups from the two major categories (Disasters and Accidents, Politics and Conflicts).
 
 ```bash
 let "SED_START_IDX = (${EVENT_BATCH_ID} - 1) * 5 + 1"
@@ -28,6 +32,8 @@ sed -n "${SED_START_IDX}, ${SED_END_IDX}p" data/topics/Disasters_and_accidents.i
 sed -n "${SED_START_IDX}, ${SED_END_IDX}p" data/topics/Politics_and_conflicts.ids.txt >> data/${BATCH_NUM}/doc_clusters.txt
 ```
 
+Create a directory with corresponding raw document files, as well as outputs from Araki et al., 2018.
+
 ```bash
 python prepare_doc_batch.py \
     --wikinews cdec_wikinews/wikinews-0121-similar.json \
@@ -36,14 +42,28 @@ python prepare_doc_batch.py \
     --out cdec_wikinews/${BATCH_NUM}
 ```
 
+Run the event detection pipeline and convert documents into `DataPack` format.
+
 ```bash
 python detection_pipeline.py \
     --dir cdec_wikinews/${BATCH_NUM} \
     --coling2018 cdec_wikinews/${BATCH_NUM}/coling2018_out
 ```
 
+Here, detected events are manually corrected by uploading to Stave single-doc server.
+Extract `packs` from the resulting .sqlite3 database before creating multi-packs.
+
+**TODO: non-functional, debug!**
+
+```bash
+python db2pack.py
+```
+
+Use the document cluster information to create `MultiPack` files. Currently, we only use cliques (aka document groups) of upto size 4. The skipped cliques are written to `cdec_wikinews/${BATCH_NUM}/doc_clusters_skipped.txt`. Potentially, we can get back to these larger cliques at the end of AMT process.
+
 ```bash
 python pair_pipeline.py \
     --dir cdec_wikinews/${BATCH_NUM} \
-    --doc-pairs data/${BATCH_NUM}/doc_clusters.txt
+    --doc-pairs data/${BATCH_NUM}/doc_clusters.txt \
+    --clique-threshold 4
 ```
