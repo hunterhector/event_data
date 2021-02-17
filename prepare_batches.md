@@ -53,10 +53,12 @@ python detection_pipeline.py \
 Here, detected events are manually corrected by uploading to Stave single-doc server.
 Extract `packs` from the resulting .sqlite3 database before creating multi-packs.
 
-**TODO: non-functional, debug!**
-
 ```bash
-python db2pack.py
+python load_stave_single-doc.py \
+    --sql ${STAVE_DB_PATH} \
+    --project-name cdec_${BATCH_NUM} \
+    --doc-clusters data/${BATCH_NUM}/doc_clusters.txt \
+    --out ${BATCH_OUT_PATH}/packs
 ```
 
 Use the document cluster information to create `MultiPack` files. Currently, we only use cliques (aka document groups) of upto size 4. The skipped cliques are written to `cdec_wikinews/${BATCH_NUM}/doc_clusters_skipped.txt`. Potentially, we can get back to these larger cliques at the end of AMT process.

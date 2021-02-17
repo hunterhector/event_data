@@ -68,3 +68,11 @@ in the directory, it contains the generated code. You can also find a file
 called `full.json` that contains the ontology needed for the UI.
 
 To fully understand the generation code, read [here](https://asyml-forte.readthedocs.io/en/latest/ontology_generation.html#).
+
+## Preparing Wikinews corpus for CDEC project
+
+Refer to [prepare_batches.md](prepare_batches.md).
+
+## MTurk setup
+
+Refer to [mturk_readme.md](mturk_readme.md).
