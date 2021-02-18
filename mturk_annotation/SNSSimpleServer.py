@@ -4,6 +4,9 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from tinydb import TinyDB, Query
 from tinydb.operations import increment
 from forte.data.readers.stave_readers import StaveMultiDocSqlReader
+from subprocess import call
+from os.path import abspath, dirname, join
+import argparse
 import boto3
 
 from credentials import (MTURK_ACCESS_KEY, MTURK_SECRET_KEY, SNS_TOPIC_ID,
@@ -16,7 +19,7 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
 
     MTURK_SANDBOX = 'https://mturk-requester-sandbox.us-east-1.amazonaws.com'
 
-    def __init__(self, stave_db_path, mace_code_path, mturk_db_path):
+    def __init__(self, stave_db_path, mturk_db_path, mace_code_path):
         self.stave_db_path = stave_db_path
         self.mace_code_path = mace_code_path
         self.mturk_db_path = mturk_db_path
@@ -114,6 +117,8 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
                 })
                 pipeline.add(MaceFormatCollector(self.mace_code_path))
                 pipeline.run()
+
+                call(["java -jar %s/MACE.jar %s/mace_coref.csv" % (self.mace_code_path, self.mace_code_path)], shell=True)
                 
     def add_qualification(self, qualification_id, worker_id, bool_send_not):
         response = self.mturk_client.associate_qualification_with_worker(
@@ -125,7 +130,15 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     PORT = 8989
-    handler = partial(SNSHandleRequests, sys.argv[1], sys.argv[2], sys.argv[3])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("stave_db_path", type=str,
+                    help="path to the stave sqlite database")
+    parser.add_argument("mturk_db_path", type=str, default="./db.json",
+                    help="path to the db.json file for MTurk annotator module")
+    parser.add_argument("mace_folder_path", type=str,
+                    help="path to the MACE folder")
+    options = parser.parse_args()    
+    handler = partial(SNSHandleRequests, options.stave_db_path, options.mturk_db_path, options.mace_path)
     server = HTTPServer(("", PORT), handler)
     print("serving at port", PORT)
     server.serve_forever()

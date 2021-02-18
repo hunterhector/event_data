@@ -1,11 +1,10 @@
-import sys
+import sys, os
+import csv
 from typing import Dict, Tuple, Set
-
 from forte.data.multi_pack import MultiPack
 from forte.data.readers.stave_readers import StaveMultiDocSqlReader
 from forte.pipeline import Pipeline
 from forte.processors.base import MultiPackProcessor
-
 from edu.cmu import CrossEventRelation
 
 
@@ -17,7 +16,8 @@ class MaceFormatCollector(MultiPackProcessor):
     https://github.com/dirkhovy/MACE
     """
 
-    def __init__(self):
+    def __init__(self, out_path):
+        self.out_path = out_path
         self.event_pair_indices: Dict[
             Tuple[Tuple[int, int], Tuple[int, int]], int] = {}
         self.annotator_indices: Dict[str, int] = {}
@@ -52,22 +52,25 @@ class MaceFormatCollector(MultiPackProcessor):
     def finish(self, _):
         num_row, num_col = len(self.event_pair_indices), len(
             self.annotator_indices)
+        outfile_path = os.path.join(self.out_path, "mace_coref.csv")
 
         if num_row > 0 and num_col > 0:
-            for r in range(num_row):
-                sep = ''
-                for c in range(num_col):
-                    n = 1 if (r, c) in self.mace_matrix_ones else 0
-                    sys.stdout.write(f'{sep}{n}')
-                    sep = ','
-                sys.stdout.write('\n')
+            with open(outfile_path, 'w') as out_f:
+                for r in range(num_row):
+                    sep = ''
+                    for c in range(num_col):
+                        n = 1 if (r, c) in self.mace_matrix_ones else 0
+                        out_f.write(f'{sep}{n}')
+                        sep = ','
+                    out_f.write('\n')
 
 
 if __name__ == '__main__':
     db_path = sys.argv[1]
+    out_path = sys.argv[2]
     pipeline = Pipeline()
     pipeline.set_reader(StaveMultiDocSqlReader(), config={
         'stave_db_path': db_path
     })
-    pipeline.add(MaceFormatCollector())
+    pipeline.add(MaceFormatCollector(out_path))
     pipeline.run()
