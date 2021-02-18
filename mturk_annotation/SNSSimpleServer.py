@@ -118,6 +118,7 @@ class SNSHandleRequests(BaseHTTPRequestHandler):
                 pipeline.add(MaceFormatCollector(self.mace_code_path))
                 pipeline.run()
 
+                #TODO: error check whether file exists
                 call(["java -jar %s/MACE.jar %s/mace_coref.csv" % (self.mace_code_path, self.mace_code_path)], shell=True)
                 
     def add_qualification(self, qualification_id, worker_id, bool_send_not):
