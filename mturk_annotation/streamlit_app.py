@@ -12,11 +12,10 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-NA_STR = "Stats not available"
+NA_STR = "-"
 
 
 def get_overall_statistics(hit_table, worker_table):
-    st.title("Overall Summary")
     summary = {}
 
     released_hits = hit_table.search(where("HITId").exists())
@@ -27,6 +26,7 @@ def get_overall_statistics(hit_table, worker_table):
 
     # ! todo
     summary["Documents annotated"] = NA_STR
+    summary["Document groups annotated"] = NA_STR
 
     qualified = worker_table.search(where("Status") == "Granted")
     summary["Qualified workers"] = len(qualified)
@@ -36,11 +36,10 @@ def get_overall_statistics(hit_table, worker_table):
     # balance related info
     # ! todo
 
-    st.table(pd.DataFrame.from_dict(summary, orient="index", columns=["Count"]))
+    st.table(pd.DataFrame.from_dict(summary, orient="index", columns=[""]))
 
 
 def get_hit_statistics(hit_table, assignment_table):
-    st.title("HIT Summary")
     summary = {}
 
     released_hits = hit_table.search(where("HITId").exists())
@@ -64,7 +63,7 @@ def get_hit_statistics(hit_table, assignment_table):
         / 60
         for x in submitted_assigns
     ]
-    summary["Avg. time per HIT (in mins)"] = np.mean(avg_times)
+    summary["Avg. time per HIT (mins)"] = f"{np.mean(avg_times):.2f}"
     approved_assigns = assignment_table.search(where("ApprovalTime").exists())
     avg_times = [
         (
@@ -75,7 +74,7 @@ def get_hit_statistics(hit_table, assignment_table):
         / 60
         for x in approved_assigns
     ]
-    summary["Avg. time taken for approval (in hours)"] = np.mean(avg_times)
+    summary["Avg. time taken for approval (hours)"] = f"{np.mean(avg_times):.2f}"
 
     st.markdown("## Overview")
     st.table(pd.DataFrame.from_dict(summary, orient="index", columns=[""]))
@@ -100,20 +99,24 @@ def get_hit_statistics(hit_table, assignment_table):
 
 
 def get_dataset_statistics():
-    st.title("Dataset Summary")
+    summary = {}
+    summary["Documents annotated"] = NA_STR
+    summary["Document groups annotated"] = NA_STR
+    summary["Links found"] = NA_STR
+
+    st.table(pd.DataFrame.from_dict(summary, orient="index", columns=[""]))
 
 
 def get_annotator_statistics(assignment_table, worker_table):
-    st.title("Annotator Summary")
 
     qualified = worker_table.search(where("Status") == "Granted")
     st.write(
-        "Number of workers are qualified, i.e., those that passed the screening test: ",
+        "Number of qualified workers (i.e., passed the screening test): ",
         len(qualified),
     )
 
     active = worker_table.search(where("isActive") == True)
-    st.write("Number of active workers, i.e., solved at least one task: ", len(active))
+    st.write("Number of active workers (i.e., solved at least one task): ", len(active))
 
     st.markdown("## Statistics of every active worker")
     worker_summary = {}
@@ -122,11 +125,16 @@ def get_annotator_statistics(assignment_table, worker_table):
         worker_id = worker["WorkerId"]
         worker_summary[worker_id] = {}
         worker_summary[worker_id]["Qualification Score"] = worker["IntegerValue"]
-        worker_summary[worker_id]["Qualification Grant time"] = worker["GrantTime"]
-        worker_summary[worker_id]["Country"] = worker["LocaleValue"]["Country"]
-        worker_summary[worker_id]["Subdivision"] = worker["LocaleValue"]["Subdivision"]
+        worker_summary[worker_id]["Qualification Date"] = datetime.strftime(
+            datetime.fromisoformat(worker["GrantTime"]), "%b %d"
+        )
+        worker_summary[worker_id]["Location"] = (
+            worker["LocaleValue"]["Subdivision"]
+            + ", "
+            + worker["LocaleValue"]["Country"]
+        )
         assigns = assignment_table.search(where("WorkerId") == worker_id)
-        worker_summary[worker_id]["HITs solved"] = len(assigns)
+        worker_summary[worker_id]["HITs"] = len(assigns)
         # ! todo: uniq document pairs annotated
         times = [
             (
@@ -136,16 +144,20 @@ def get_annotator_statistics(assignment_table, worker_table):
             / 60
             for x in assigns
         ]
-        worker_summary[worker_id]["Avg. time per HIT (in mins)"] = np.mean(times)
-        worker_summary[worker_id]["Total time (in mins)"] = np.sum(times)
+        worker_summary[worker_id]["Total HIT time (mins)"] = np.sum(times)
+        worker_summary[worker_id]["Avg. HIT time (mins)"] = f"{np.mean(times):.2f}"
         # ! todo: add a summary of feedback obtained
+        worker_summary[worker_id]["# doc pairs"] = NA_STR
+        worker_summary[worker_id]["last Active"] = datetime.strftime(
+            datetime.fromisoformat(worker["lastActive"]), "%b %d"
+        )
 
     st.table(pd.DataFrame.from_dict(worker_summary, orient="index"))
 
 
 def show(option: str, hit_table, assignment_table, worker_table):
     return {
-        "Overall": lambda: get_overall_statistics(hit_table, worker_table),
+        "Summary": lambda: get_overall_statistics(hit_table, worker_table),
         "HITs": lambda: get_hit_statistics(hit_table, assignment_table),
         "Dataset": lambda: get_dataset_statistics(),
         "Annotators": lambda: get_annotator_statistics(assignment_table, worker_table),
@@ -160,7 +172,7 @@ worker_table = db.table("worker_table", cache_size=0)
 
 fname = Path(db_path)
 st.write("last updated on ", datetime.fromtimestamp(fname.stat().st_mtime).ctime())
-sidebar_options = ["Overall", "HITs", "Dataset", "Annotators"]
+sidebar_options = ["Summary", "HITs", "Dataset", "Annotators"]
 option = st.selectbox("Choose an option from the dropdown", sidebar_options)
 
 show(option, hit_table, assignment_table, worker_table)

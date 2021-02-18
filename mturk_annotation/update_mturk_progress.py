@@ -71,7 +71,8 @@ def update_assignment_db(mturk_client, db_path):
             assign = time2str(assign_entry)
             assign_table.upsert(assign, where("AssignmentId") == assign["AssignmentId"])
             worker_table.update(
-                {"isActive": True}, where("WorkerId") == assign["WorkerId"]
+                {"isActive": True, "lastActive": assign["SubmitTime"]},
+                where("WorkerId") == assign["WorkerId"],
             )
 
 

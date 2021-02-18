@@ -14,7 +14,7 @@ Refer to [SNSSimpleServer.py](SNSSimpleServer.py). This script is run indefinite
 
 ## Streamlit App: Tracking MTurk progress
 
-Our streamlit app presents a quick summary of MTurk progress. The app can be found [here]().
+Our streamlit app presents a quick summary of MTurk progress. The app can be found [here](miami.lti.cs.cmu.edu:8511/).
 
 ### Updating database
 
@@ -29,6 +29,7 @@ python update_mturk_progress.py \
 ```
 
 ```bash
-python streamlit_app.py \
-    ${DB_PATH}
+streamlit run \
+    streamlit_app.py ${DB_PATH} \
+    --server.port 8531
 ```
