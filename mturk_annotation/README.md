@@ -22,14 +22,15 @@ We use TinyDB to keep track of assignments, workers and HITs. The database is st
 
 ```bash
 # WARNING: remove the --sandbox option when using in production environment.
-DB_PATH=mturk_progress.json
+ACTIVITY_DB_PATH=mturk_activity_db.json
 python update_mturk_progress.py \
-    --db ${DB_PATH} \
+    --db ${ACTIVITY_DB_PATH} \
     --sandbox
 ```
 
 ```bash
+SCHEDULER_DB_PATH=scheduler_db.json
 streamlit run \
-    streamlit_app.py ${DB_PATH} \
+    streamlit_app.py ${ACTIVITY_DB_PATH} ${SCHEDULER_DB_PATH} \
     --server.port 8531
 ```

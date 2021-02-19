@@ -242,6 +242,7 @@ class CrowdSourceAnnotationModule:
             # annotator groups are empty in the first round
             # annotators from other groups should not be allowed to do this task
             # i.e, only annotators with ID `annotator_group_ID` or new annotators are allowed
+            # other annotators can't even discover the HIT
             disallowed_IDs = [
                 x for x in self.annotator_group_IDs if x != annotator_group_ID
             ]
@@ -250,7 +251,7 @@ class CrowdSourceAnnotationModule:
                     {
                         "QualificationTypeId": group_ID,
                         "Comparator": "DoesNotExist",
-                        "ActionsGuarded": "PreviewAndAccept",
+                        "ActionsGuarded": "DiscoverPreviewAndAccept",
                     }
                 )
         new_hit = self.mturk_client.create_hit(
