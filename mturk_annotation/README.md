@@ -14,7 +14,7 @@ Refer to [SNSSimpleServer.py](SNSSimpleServer.py). This script is run indefinite
 
 ## Streamlit App: Tracking MTurk progress
 
-Our streamlit app presents a quick summary of MTurk progress. The app can be found [here](miami.lti.cs.cmu.edu:8511/).
+Our streamlit app presents a quick summary of MTurk progress. The app can be found [here](http://miami.lti.cs.cmu.edu:8531/).
 
 ### Updating database
 

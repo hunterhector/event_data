@@ -71,7 +71,7 @@ if __name__ == "__main__":
             "output_dir": str(output_path),
             "indent": 2,
             "overwrite": True,
-            # 'drop_record': True
+            "drop_record": True,
         },
     )
 
