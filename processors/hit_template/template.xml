@@ -1,0 +1,27 @@
+<QuestionForm>
+  <Overview>
+    <Title>Annotating Event Coreference in News Articles</Title>
+    <Text>
+    In this HIT, you will be using our tool to perform the task. This HIT contains the following two steps,
+    </Text>
+    <List>
+    <ListItem>Visit the URL provided below to perform the task.</ListItem>
+    <ListItem>At the end of the task, you will be provided a secret code. To submit this HIT, copy the secret code and paste it into the box provided below. Note that the secret code is unique for each task.</ListItem>
+    </List>
+    <FormattedContent>
+    </FormattedContent>
+  </Overview>
+  <Question>
+    <QuestionIdentifier>secretcode</QuestionIdentifier>
+    <DisplayName>Fill in the secret code</DisplayName>
+    <IsRequired>true</IsRequired>
+    <QuestionContent>
+      <Text>
+      Paste the secret code provided at the end of the task into the text box (*required)
+      </Text>
+    </QuestionContent>
+    <AnswerSpecification>
+        <FreeTextAnswer></FreeTextAnswer>
+    </AnswerSpecification>
+  </Question>
+</QuestionForm>

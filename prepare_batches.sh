@@ -15,7 +15,7 @@ echo $err_out
 # single (upto human correction) or multi (post human correction)
 MODE=$1
 
-for x in `seq 1 2`;
+for x in `seq 1 1`;
 do
     echo $x >> $log_out 2>> $err_out
     export EVENT_BATCH_ID=$x
@@ -29,7 +29,7 @@ do
         sed -n "${SED_START_IDX}, ${SED_END_IDX}p" data/topics/Politics_and_conflicts.ids.txt >> data/${BATCH_NUM}/doc_clusters.txt
 
         python prepare_doc_batch.py \
-            --wikinews cdec_wikinews/wikinews-0121-similar.json \
+            --wikinews cdec_wikinews/wikinews-022421-similar.json \
             --coling2018 cdec_wikinews/coling2018_out \
             --doc-clusters data/${BATCH_NUM}/doc_clusters.txt \
             --out cdec_wikinews/${BATCH_NUM} \

@@ -53,12 +53,12 @@ class QualificationTest:
         " </p>"
         " ]]>"
     )
-    QUESTION_SCHEMA = "{http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd}"
-    ANSWER_SCHEMA = "{http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/AnswerKey.xsd}"
+    QUESTION_SCHEMA = "http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd"
+    ANSWER_SCHEMA = "http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/AnswerKey.xsd"
     MTURK_SANDBOX = "https://mturk-requester-sandbox.us-east-1.amazonaws.com"
 
     def __init__(
-        self, template_path: Path, questions_path: Path, k: int = 7,
+        self, template_path: Path, questions_path: Path, k: int = 8,
     ):
 
         self.template_path = Path(template_path)
@@ -71,6 +71,7 @@ class QualificationTest:
         self.answer_element = None
         self.answers_xml = None
         self.answers_xml_root = None
+        self.scorer = None
 
         self._read_templates()
         self._create_questionnaire()
@@ -104,19 +105,17 @@ class QualificationTest:
         self.answers_xml_root.append(a)
 
         cur_score = int(
-            self.answers_xml_root.find("QualificationValueMapping")
-            .find("PercentageMapping")
-            .find("MaximumSummedScore")
-            .text
+            self.scorer.find("PercentageMapping").find("MaximumSummedScore").text
         )
-        self.answers_xml_root.find("QualificationValueMapping").find(
-            "PercentageMapping"
-        ).find("MaximumSummedScore").text = f"{cur_score+1}"
+        self.scorer.find("PercentageMapping").find(
+            "MaximumSummedScore"
+        ).text = f"{cur_score+1}"
 
     def _add_meta_info(self):
         q_overview = self.question_xml_root.find("Overview")
         q_overview.find("Title").text = "Screening Test"
         q_overview.find("FormattedContent").text = self.OVERVIEW_FORMAT % self.k
+        self.answers_xml_root.append(self.scorer)
 
     def _read_templates(self):
 
@@ -127,9 +126,11 @@ class QualificationTest:
 
         self.question_element = questions_xml_root.find(f"Question")
         self.answer_element = answers_xml_root.find(f"Question")
+        self.scorer = answers_xml_root.find("QualificationValueMapping")
 
         questions_xml_root.remove(self.question_element)  # remove template question
         answers_xml_root.remove(self.answer_element)  # remove template answer
+        answers_xml_root.remove(self.scorer)  # remove scorer, to be added later
         self.question_xml_root = questions_xml_root
         self.answers_xml_root = answers_xml_root
 
@@ -153,10 +154,20 @@ class QualificationTest:
         self.answers_xml.write(answerkey_path)
 
     def get_questions(self) -> str:
-        return self.question_xml_root.tostring()
+        return (
+            ET.tostring(self.question_xml_root)
+            .decode("utf-8")
+            .replace("&lt;", "<")
+            .replace("&gt;", ">")
+        )
 
     def get_answers(self) -> str:
-        return self.answers_xml_root.tostring()
+        return (
+            ET.tostring(self.answers_xml_root)
+            .decode("utf-8")
+            .replace("&lt;", "<")
+            .replace("&gt;", ">")
+        )
 
 
 if __name__ == "__main__":
@@ -177,9 +188,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--out-answers", type=Path, help="path to write answer key in .xml format"
     )
-    parser.add_argument(
-        "-n", type=int, default=10, help="number of questions to sample"
-    )
+    parser.add_argument("-n", type=int, default=8, help="number of questions to sample")
 
     args = parser.parse_args()
 

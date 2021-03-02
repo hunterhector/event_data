@@ -1,6 +1,7 @@
 import os
 from typing import Iterator, Tuple, List, Any
 import json
+import logging
 
 from forte.data.base_pack import PackType
 from forte.data.data_pack import DataPack
@@ -41,7 +42,12 @@ class TwoDocumentPackReader(MultiPackReader):
             pack_path1 = os.path.join(data_dir, doc1)
             pack_path2 = os.path.join(data_dir, doc2)
 
-            yield pack_path1, pack_path2
+            if not os.path.isfile(pack_path1):
+                logging.warning("missing file: %s" % pack_path1)
+            elif not os.path.isfile(pack_path2):
+                logging.warning("missing file: %s" % pack_path2)
+            else:
+                yield pack_path1, pack_path2
 
     def _parse_pack(self, doc_path_pair: Tuple[str, str]) -> Iterator[MultiPack]:
         mp = MultiPack()
