@@ -3,6 +3,7 @@ Create a HIT layout with provided URL
 """
 
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 
 class HITLayout:
@@ -10,8 +11,8 @@ class HITLayout:
     QUESTION_SCHEMA = "http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2017-11-06/QuestionForm.xsd"
     URL_FORMAT = "<![CDATA[Link to the task: <a href='%s' target='_blank'>%s</a>]]>"
 
-    def __init__(self, template_path: str, website_url: str) -> None:
-        self.template_path = template_path
+    def __init__(self, template_dir: str, website_url: str) -> None:
+        self.template_path = Path(template_dir) / "template.xml"
         self.website_url = website_url
 
         self._load_template()

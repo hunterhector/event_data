@@ -1,0 +1,30 @@
+{
+    "sandbox": false,
+    "stave_url": "http://128.2.204.22:8731?tasks=%s",
+    "qualification": {
+        "percent_approval": 95,
+        "hits_approved": 1000,
+        "country": "US"
+    },
+    "screening": {
+        "template_path": "custom_qualification",
+        "questions_path": "custom_qualification/cdec_screening_test.tsv",
+        "score_percent_threshold": 75,
+        "num_questions": 8,
+        "Name": "Event Coreference Test",
+        "Description": "This test evaluates the ability to identify corefering events.",
+        "TestDurationInSeconds": 1200,
+        "RetryDelayInSeconds": 86400
+    },
+    "hit_setup": {
+        "MaxAssignments": 1,
+        "LifetimeInSeconds": 604800,
+        "AssignmentDurationInSeconds": 2700,
+        "AutoApprovalDelayInSeconds": 172800,
+        "Reward": "",
+        "Title": "Annotating Event Coreference in News Articles",
+        "Keywords": "annotation,event,news,coreference,nlp,language,english",
+        "Description": "You will be asked to read 1 pair of news articles, and for the given pair you will be asked to identify texts that refer to the same events.",
+        "HIT_template": "hit_template"
+    }
+}
