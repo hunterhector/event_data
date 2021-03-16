@@ -6,8 +6,8 @@ import logging
 from forte.data.base_pack import PackType
 from forte.data.data_pack import DataPack
 from forte.data.multi_pack import MultiPack
-from forte.data.readers.base_reader import PackReader
-from forte.data.readers.base_reader import MultiPackReader
+from forte.data.base_reader import PackReader
+from forte.data.base_reader import MultiPackReader
 
 from edu.cmu import TitleSpan, DateSpan, BodySpan
 
