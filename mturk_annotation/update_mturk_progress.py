@@ -3,6 +3,9 @@ import boto3
 from argparse import ArgumentParser
 from datetime import datetime, time
 from copy import deepcopy
+import sys, os
+
+sys.path.insert(0, os.path.abspath(".."))
 
 from credentials import MTURK_ACCESS_KEY, MTURK_SECRET_KEY
 
@@ -19,25 +22,25 @@ def time2str(elm):
 
 def get_hits(mturk_client):
     results = mturk_client.list_hits()
-    nextToken = results["NextToken"]
+    nextToken = results.get("NextToken", None)
     hits = results["HITs"]
-    while nextToken != "":
+    while nextToken:
         results = mturk_client.list_hits(NextToken=nextToken)
         hits.extend(results["HITs"])
-        nextToken = results["NextToken"]
+        nextToken = results.get("NextToken", None)
     return hits
 
 
 def get_hit_assignments(mturk_client, hit_id: str):
     results = mturk_client.list_assignments_for_hit(HITId=hit_id)
-    nextToken = results["NextToken"]
+    nextToken = results.get("NextToken", None)
     assignments = results["Assignments"]
-    while nextToken != "":
+    while nextToken:
         results = mturk_client.list_assignments_for_hit(
             HITId=hit_id, NextToken=nextToken
         )
         assignments.extend(results["Assignments"])
-        nextToken = results["NextToken"]
+        nextToken = results.get("NextToken")
     return assignments
 
 
@@ -45,19 +48,18 @@ def get_workers(mturk_client, qual_id: str):
     results = mturk_client.list_workers_with_qualification_type(
         QualificationTypeId=qual_id
     )
-    nextToken = results["NextToken"]
+    nextToken = results.get("NextToken", None)
     workers = results["Qualifications"]
-    while nextToken != "":
+    while nextToken:
         results = mturk_client.list_workers_with_qualification_type(
             QualificationTypeId=qual_id, NextToken=nextToken
         )
         workers.extend(results["Qualifications"])
-        nextToken = results["NextToken"]
+        nextToken = results.get("NextToken", None)
     return workers
 
 
-def update_assignment_db(mturk_client, db_path):
-    db = TinyDB(db_path)
+def update_assignment_db(mturk_client, db):
     assign_table = db.table("assignment_table", cache_size=0)
     hit_table = db.table("hit_table", cache_size=0)
     worker_table = db.table("worker_table", cache_size=0)
@@ -76,8 +78,7 @@ def update_assignment_db(mturk_client, db_path):
             )
 
 
-def update_worker_db(mturk_client, db_path, qual_id=None):
-    db = TinyDB(db_path)
+def update_worker_db(mturk_client, db, qual_id=None):
     table = db.table("worker_table", cache_size=0)
 
     workers = get_workers(mturk_client, qual_id)
@@ -88,7 +89,8 @@ def update_worker_db(mturk_client, db_path, qual_id=None):
 
 if __name__ == "__main__":
     parser = ArgumentParser(description="update all AMT database for visualization")
-    parser.add_argument("--db", type=str)
+    parser.add_argument("mturk_db_path", type=str)
+    parser.add_argument("results_db_path", type=str)
     parser.add_argument("--sandbox", action="store_true")
 
     args = parser.parse_args()
@@ -108,9 +110,16 @@ if __name__ == "__main__":
             region_name="us-east-1",
         )
 
-    screening_id = ""
-    assert screening_id != "", "fill in screening qualification ID"
-    assert args.sandbox, "not using Sandbox?"
+    # retrieving the screening qualification
+    mturk_db = TinyDB(args.mturk_db_path)
+    mturk_qual_table = mturk_db.table("mturk_qualifications", cache_size=0)
+    s = mturk_qual_table.search(where("qualification_type") == "screening")
+    assert len(s) <= 1, "more than one screening qualification"
+    if len(s) == 1:
+        SCREENING_QUAL_ID = s[0]["id"]
 
-    update_worker_db(mturk_client, args.db, qual_id=screening_id)
-    update_assignment_db(mturk_client, args.db)
+    # stats db
+    results_db = TinyDB(args.results_db_path)
+
+    update_worker_db(mturk_client, results_db, qual_id=SCREENING_QUAL_ID)
+    update_assignment_db(mturk_client, results_db)

@@ -90,6 +90,14 @@ class AMTCollector:
         return assignments
 
     def collect(self):
+
+        # identify latest round
+        if len(self.stack_target_table) == 0:
+            raise Exception("stack table is empty")
+
+        last_record = self.stack_target_table.all()[-1]
+        rnd_num = last_record["round_number"]
+
         # collect all reviewable HIT assignments
         reviewable_assignments = self.get_all_reviewable_assignments()
         if len(reviewable_assignments) == 0:
@@ -100,76 +108,86 @@ class AMTCollector:
             hit_id = asgn["HITId"]
             worker_id = asgn["WorkerId"]
             asgn_id = asgn["AssignmentId"]
-            # only interested in Submitted HITs
-            if asgn["AssignmentStatus"] in ["Approved", "Rejected"]:
-                continue
+            # # only interested in Submitted HITs
+            # if asgn["AssignmentStatus"] in ["Approved", "Rejected"]:
+            #     continue
             # ! TODO: retrive secret code from answer
             secret_code = None
 
-            if len(self.stack_target_table) != 0:
-                record = self.stack_target_table.all()[-1]
-                rnd_num = record["round_number"]
-
-                # check if the task table is previous updated for this assignment
-                print(rnd_num, hit_id, worker_id)
-                task_record = self.past_task_table.search(
-                    (where("round_number") == rnd_num)
-                    & (where("HITId") == hit_id)
-                    & (where("annotator_id") == worker_id)
-                    & (where("completed") == True)
-                )
-                if len(task_record) == 1:
-                    # assignment already recorded in the database
+            # check if the HIT is from current round
+            task_record = self.past_task_table.search(
+                (where("round_number") == rnd_num) & (where("HITId") == hit_id)
+            )
+            if len(task_record) == 0:
+                # a HIT from previous rounds
+                continue
+            elif len(task_record) == 1:
+                if task_record[0]["completed"]:
+                    # already marked as complete
                     continue
-                elif len(task_record) > 1:
-                    raise Exception("found duplicate task record")
 
-                rnd_assignments = self.past_task_table.update(
-                    {"completed": True, "annotator_id": worker_id},
-                    (where("round_number") == rnd_num) & (where("HITId") == hit_id),
+            # new assignment from current round, yet to marked as complete
+            print("found new assignment")
+            print("Round: %s, HIT: %s, Worker: %s" % (rnd_num, hit_id, worker_id))
+
+            self.past_task_table.update(
+                {"completed": True, "annotator_id": worker_id},
+                (where("round_number") == rnd_num) & (where("HITId") == hit_id),
+            )
+            task_record = self.past_task_table.get(
+                (where("round_number") == rnd_num) & (where("HITId") == hit_id)
+            )
+            annotator_group_ID = task_record["annotator_group_ID"]
+            # assign the qualification to the worker (new or old)
+            self.add_qualification(annotator_group_ID, worker_id, False)
+            self.logging_table.insert(
+                {
+                    "action": "hit_completed",
+                    "log": "HITID:%s;worker:%s" % (hit_id, worker_id),
+                }
+            )
+
+            # custom operation in tinydb
+            def add_annotator(ann_id):
+                def transform(doc):
+                    doc["annotator_list"] += [ann_id]
+
+                return transform
+
+            self.stack_target_table.update(
+                increment("completed_hit_count"), (where("round_number") == rnd_num),
+            )
+            self.stack_target_table.update(
+                add_annotator(worker_id), (where("round_number") == rnd_num)
+            )
+            if (last_record["completed_hit_count"] + 1) >= last_record[
+                "sent_hit_count"
+            ]:
+                print("round %.1f complete" % rnd_num)
+                self.stack_target_table.update(
+                    {"completed": True}, (where("round_number") == rnd_num)
                 )
-                task_record = self.past_task_table.get(
-                    (where("round_number") == rnd_num) & (where("HITId") == hit_id)
-                )
-                annotator_group_ID = task_record["annotator_group_ID"]
-                # assign the qualification to the worker (new or old)
-                self.add_qualification(annotator_group_ID, worker_id, False)
                 self.logging_table.insert(
-                    {
-                        "action": "hit_completed",
-                        "log": "HITID:%s;worker:%s" % (hit_id, worker_id),
-                    }
+                    {"action": "rnd_completed", "log": "round %.1f" % (rnd_num)}
                 )
-                rnd_assignments = self.stack_target_table.update(
-                    increment("completed_hit_count"),
-                    (where("round_number") == rnd_num),
-                )
-                if (record["completed_hit_count"] + 1) >= record["sent_hit_count"]:
-                    print("round %.1f complete" % rnd_num)
-                    rnd_assignments = self.stack_target_table.update(
-                        {"completed": True}, (where("round_number") == rnd_num)
-                    )
-                    self.logging_table.insert(
-                        {"action": "rnd_completed", "log": "round %.1f" % (rnd_num)}
-                    )
 
-                    # call collect data from processor & run MACE
-                    # pipeline = Pipeline()
-                    # pipeline.set_reader(
-                    #     StaveMultiDocSqlReader(),
-                    #     config={"stave_db_path": self.stave_db_path},
-                    # )
-                    # pipeline.add(MaceFormatCollector(self.mace_code_path))
-                    # pipeline.run()
+                # call collect data from processor & run MACE
+                # pipeline = Pipeline()
+                # pipeline.set_reader(
+                #     StaveMultiDocSqlReader(),
+                #     config={"stave_db_path": self.stave_db_path},
+                # )
+                # pipeline.add(MaceFormatCollector(self.mace_code_path))
+                # pipeline.run()
 
-                    # # TODO: error check whether file exists
-                    # call(
-                    #     [
-                    #         "java -jar %s/MACE.jar %s/mace_coref.csv"
-                    #         % (self.mace_code_path, self.mace_code_path)
-                    #     ],
-                    #     shell=True,
-                    # )
+                # # TODO: error check whether file exists
+                # call(
+                #     [
+                #         "java -jar %s/MACE.jar %s/mace_coref.csv"
+                #         % (self.mace_code_path, self.mace_code_path)
+                #     ],
+                #     shell=True,
+                # )
 
     def add_qualification(self, qualification_id, worker_id, bool_send_not):
         response = self.mturk_client.associate_qualification_with_worker(
@@ -189,5 +207,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    collector = AMTCollector(args.stave_db, args.mturk_db, None)
+    collector = AMTCollector(args.stave_db, args.mturk_db, None, False)
     collector.collect()

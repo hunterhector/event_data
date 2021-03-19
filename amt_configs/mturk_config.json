@@ -1,6 +1,6 @@
 {
     "sandbox": false,
-    "stave_url": "http://128.2.204.22:8731?tasks=%s",
+    "stave_url": "http://128.2.204.22:8831?tasks=%s",
     "qualification": {
         "percent_approval": 95,
         "hits_approved": 1000,

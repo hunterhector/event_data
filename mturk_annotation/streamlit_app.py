@@ -3,6 +3,8 @@ Reads latest AMT databases to create summaries
 """
 
 import sys, re
+
+from pandas.io.sql import DatabaseError
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -142,44 +144,46 @@ def get_hit_statistics(hit_table, assignment_table):
         st.plotly_chart(fig, use_container_width=True)
 
 
-def get_dataset_statistics(round_doc_table, dataset_json_path: Path):
+def get_dataset_statistics(round_doc_table, dataset_json_path: Path = None):
 
     view_options = ["Overview", "Document release schedule"]
     view_option = st.radio("Choose a view", options=view_options)
 
-    with open(dataset_json_path, "r") as rf:
-        dataset_stats = json.load(rf)
-        all_docs = set()
-        ann2docs = defaultdict(int)
-        links2docs = defaultdict(int)
-        total_link_count = 0
-        for doc_pair, values in dataset_stats.items():
-            all_docs.update(doc_pair.split("_"))
-            ann2docs[len(values["annotators"])] += 1
-            for k, c in values["links"].items():
-                links2docs[k] += c
-                total_link_count += c
+    if dataset_json_path:
+        with open(dataset_json_path, "r") as rf:
+            dataset_stats = json.load(rf)
+            all_docs = set()
+            ann2docs = defaultdict(int)
+            links2docs = defaultdict(int)
+            total_link_count = 0
+            for doc_pair, values in dataset_stats.items():
+                all_docs.update(doc_pair.split("_"))
+                ann2docs[len(values["annotators"])] += 1
+                for k, c in values["links"].items():
+                    links2docs[k] += c
+                    total_link_count += c
 
     if view_option == view_options[0]:
         summary = {}
-        summary["Documents annotated"] = len(all_docs)
-        summary["Document pairs annotated"] = len(dataset_stats.keys())
-        summary["Links found"] = total_link_count
+        if dataset_json_path:
+            summary["Documents annotated"] = len(all_docs)
+            summary["Document pairs annotated"] = len(dataset_stats.keys())
+            summary["Links found"] = total_link_count
 
-        st.markdown("## Overview")
-        st.table(pd.DataFrame.from_dict(summary, orient="index", columns=[""]))
+            st.markdown("## Overview")
+            st.table(pd.DataFrame.from_dict(summary, orient="index", columns=[""]))
 
-        df = defaultdict(list)
-        for k, v in links2docs.items():
-            df["Num. of annotators"].append(k)
-            df["Num. of links"].append(v)
+            df = defaultdict(list)
+            for k, v in links2docs.items():
+                df["Num. of annotators"].append(k)
+                df["Num. of links"].append(v)
 
-        fig = px.pie(df, values="Num. of links", names="Num. of annotators")
-        st.markdown("## Agreement")
-        st.write(
-            "Pie chart showing the distribution of coreference links with the number of unique annotators per link. Higher the number of unique annotators, higher the agreement."
-        )
-        st.plotly_chart(fig, use_container_width=True)
+            fig = px.pie(df, values="Num. of links", names="Num. of annotators")
+            st.markdown("## Agreement")
+            st.write(
+                "Pie chart showing the distribution of coreference links with the number of unique annotators per link. Higher the number of unique annotators, higher the agreement."
+            )
+            st.plotly_chart(fig, use_container_width=True)
 
     elif view_option == view_options[1]:
         docs_per_round = defaultdict(list)
@@ -209,16 +213,48 @@ def get_annotator_statistics(assignment_table, worker_table):
     view_options = ["Overview", "Worker statistics", "HIT duration (trends)"]
     view_option = st.radio("Choose a view", options=view_options)
 
+    THRESHOLD = 75
     if view_option == view_options[0]:
-        qualified = worker_table.search(where("Status") == "Granted")
+        attempted = worker_table.search(where("Status") == "Granted")
+        qualified = worker_table.search(
+            (where("Status") == "Granted") & (where("IntegerValue") >= THRESHOLD)
+        )
         st.write(
-            "Number of qualified workers (i.e., passed the screening test): ",
+            "Number of qualified workers (test passed / test attempted): ",
             len(qualified),
+            "/",
+            len(attempted),
         )
 
         active = worker_table.search(where("isActive") == True)
         st.write(
             "Number of active workers (i.e., solved at least one task): ", len(active)
+        )
+
+        worker_summary = {}
+        for worker in attempted:
+            worker_id = worker["WorkerId"]
+            worker_summary[worker_id] = {}
+            worker_summary[worker_id]["Qualification Score"] = worker["IntegerValue"]
+            worker_summary[worker_id]["Qualification Date"] = datetime.strftime(
+                datetime.fromisoformat(worker["GrantTime"]), "%b %d"
+            )
+
+        def highlight_worker(val):
+            if val.item() >= THRESHOLD:
+                s = worker_table.search(
+                    (where("WorkerId") == val.name) & (where("isActive") == True)
+                )
+                if len(s) > 0:
+                    return ["background-color: green"]
+                return ["background-color: yellow"]
+            else:
+                return [""]
+
+        st.markdown("## Overall worker statistics")
+        df = pd.DataFrame.from_dict(worker_summary, orient="index")
+        st.dataframe(
+            df.style.apply(highlight_worker, subset="Qualification Score", axis=1)
         )
 
     elif view_option == view_options[1]:
@@ -230,11 +266,6 @@ def get_annotator_statistics(assignment_table, worker_table):
             worker_summary[worker_id]["Qualification Score"] = worker["IntegerValue"]
             worker_summary[worker_id]["Qualification Date"] = datetime.strftime(
                 datetime.fromisoformat(worker["GrantTime"]), "%b %d"
-            )
-            worker_summary[worker_id]["Location"] = (
-                worker["LocaleValue"]["Subdivision"]
-                + ", "
-                + worker["LocaleValue"]["Country"]
             )
             assigns = assignment_table.search(where("WorkerId") == worker_id)
             worker_summary[worker_id]["HITs"] = len(assigns)
@@ -261,10 +292,13 @@ def get_annotator_statistics(assignment_table, worker_table):
     elif view_option == view_options[2]:
         df = defaultdict(list)
         worker_hit_count = defaultdict(int)
-        for assign in assignment_table.search(where("ApprovalTime").exists()):
+        # for assign in assignment_table.search(where("ApprovalTime").exists()):
+        for assign in assignment_table.search(where("SubmitTime").exists()):
             df["WorkerId"].append(assign["WorkerId"])
             worker_hit_count[assign["WorkerId"]] += 1
-            df["Worker HIT counter"] = f"hit{worker_hit_count[assign['WorkerId']]}"
+            df["Worker HIT counter"].append(
+                f"hit{worker_hit_count[assign['WorkerId']]}"
+            )
             df["HITId"].append(assign["HITId"])
             df["Duration (mins) "].append(
                 (
@@ -273,13 +307,13 @@ def get_annotator_statistics(assignment_table, worker_table):
                 ).seconds
                 / 60
             )
-            df["Approval Delay"].append(
-                (
-                    datetime.fromisoformat(assign["ApprovalTime"])
-                    - datetime.fromisoformat(assign["SubmitTime"])
-                ).seconds
-                / 60
-            )
+            # df["Approval Delay"].append(
+            #     (
+            #         datetime.fromisoformat(assign["ApprovalTime"])
+            #         - datetime.fromisoformat(assign["SubmitTime"])
+            #     ).seconds
+            #     / 60
+            # )
 
         fig = px.scatter(
             df,
@@ -322,7 +356,7 @@ def get_hit_schedule(stack_target_table, past_task_table):
             tasks[f"Task {task_id}"]["Status"] = (
                 "Complete" if task["completed"] else "Ongoing"
             )
-            tasks[f"Task {task_id}"]["HITId"] = task["HITID"]
+            tasks[f"Task {task_id}"]["HITId"] = task["HITId"]
             tasks[f"Task {task_id}"]["Annotator Group"] = task["annotator_group_ID"]
         st.markdown("## Task progress")
         st.write("Below table shows the progress of each released HIT.")
@@ -333,7 +367,7 @@ def get_quality_statistics():
     st.markdown("**pending**")
 
 
-def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path):
+def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path=None):
     # this db is updated via explicit API calls to MTurk
     overview_db = TinyDB(overview_db_path)
     hit_table = overview_db.table("hit_table", cache_size=0)
@@ -357,12 +391,13 @@ def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path):
 
 overview_db_path = sys.argv[1]
 scheduler_db_path = sys.argv[2]
-dataset_json_path = sys.argv[3]
+# dataset_json_path = sys.argv[3]
 
 overview_edit_time = datetime.fromtimestamp(Path(overview_db_path).stat().st_mtime)
 scheduler_edit_time = datetime.fromtimestamp(Path(scheduler_db_path).stat().st_mtime)
-dataset_edit_time = datetime.fromtimestamp(Path(dataset_json_path).stat().st_mtime)
-latest = max(overview_edit_time, scheduler_edit_time, dataset_edit_time)
+# dataset_edit_time = datetime.fromtimestamp(Path(dataset_json_path).stat().st_mtime)
+# latest = max(overview_edit_time, scheduler_edit_time, dataset_edit_time)
+latest = max(overview_edit_time, scheduler_edit_time,)
 st.write("last updated on ", latest.ctime())
 
 sidebar_options = [
@@ -377,4 +412,4 @@ option = st.sidebar.radio("Choose an option", sidebar_options)
 
 st.markdown(f"# {option}")
 
-show(option, overview_db_path, scheduler_db_path, dataset_json_path)
+show(option, overview_db_path, scheduler_db_path, None)
