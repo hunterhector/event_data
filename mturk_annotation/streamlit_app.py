@@ -4,7 +4,6 @@ Reads latest AMT databases to create summaries
 
 import sys, re
 
-from pandas.io.sql import DatabaseError
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -29,10 +28,12 @@ def get_hit_statistics(hit_table, assignment_table):
         released_hits = hit_table.search(where("HITId").exists())
         summary["Released HITs"] = len(released_hits)
 
-        completed_hits = hit_table.search(where("HITStatus") == "Unassignable")
+        completed_hits = hit_table.search(where("ApprovedTime").exists())
         summary["Completed HITs"] = len(completed_hits)
 
-        reviewable_hits = hit_table.search(where("HITStatus") == "Reviewable")
+        reviewable_hits = hit_table.search(
+            (where("HITStatus") == "Reviewable") & (~where("ApprovedTime").exists())
+        )
         summary["Reviewable HITs"] = len(reviewable_hits)
 
         open_hits = hit_table.search((where("HITStatus") == "Assignable"))
@@ -58,6 +59,7 @@ def get_hit_statistics(hit_table, assignment_table):
             / 60
             for x in approved_assigns
         ]
+        print(avg_times)
         summary["Avg. time taken for approval (hours)"] = f"{np.mean(avg_times):.2f}"
 
         st.table(pd.DataFrame.from_dict(summary, orient="index", columns=[""]))
@@ -96,19 +98,20 @@ def get_hit_statistics(hit_table, assignment_table):
         st.markdown("### Release")
         options = ["HITs released (daily)", "HITs released (cumulative)"]
         option = st.radio("", options=options)
+        range_x = [-1, len(days) + 1]
         if option == options[0]:
-            fig = px.line(df, x="Day X", y="# HITs released")
+            fig = px.line(df, x="Day X", y="# HITs released", range_x=range_x)
         elif option == options[1]:
-            fig = px.line(c_df, x="Day X", y="# HITs released")
+            fig = px.line(c_df, x="Day X", y="# HITs released", range_x=range_x)
         st.plotly_chart(fig, use_container_width=True)
 
         st.markdown("### Finish")
         options = ["HITs finished (daily)", "HITs finished (cumulative)"]
         option = st.radio("", options=options)
         if option == options[0]:
-            fig = px.line(df, x="Day X", y="# HITs finished")
+            fig = px.line(df, x="Day X", y="# HITs finished", range_x=range_x,)
         elif option == options[1]:
-            fig = px.line(c_df, x="Day X", y="# HITs finished")
+            fig = px.line(c_df, x="Day X", y="# HITs finished", range_x=range_x)
         st.plotly_chart(fig, use_container_width=True)
 
     elif view_option == view_options[2]:
@@ -117,9 +120,10 @@ def get_hit_statistics(hit_table, assignment_table):
             "Over the timeline of released HITs, below plot shows the trends in time taken for each HIT."
         )
         df = defaultdict(list)
-        for assign in assignment_table.search(where("ApprovalTime").exists()):
+        hit_counter = defaultdict(lambda: len(hit_counter))
+        for assign in assignment_table.search(where("SubmitTime").exists()):
             df["WorkerId"].append(assign["WorkerId"])
-            df["HITId (timeline)"].append(assign["HITId"])
+            df["HITId (timeline)"].append(hit_counter[assign["HITId"]])
             df["Duration (mins) "].append(
                 (
                     datetime.fromisoformat(assign["SubmitTime"])
@@ -127,19 +131,19 @@ def get_hit_statistics(hit_table, assignment_table):
                 ).seconds
                 / 60
             )
-            df["Approval Delay"].append(
-                (
-                    datetime.fromisoformat(assign["ApprovalTime"])
-                    - datetime.fromisoformat(assign["SubmitTime"])
-                ).seconds
-                / 60
-            )
+            # df["Approval Delay"].append(
+            #     (
+            #         datetime.fromisoformat(assign["ApprovalTime"])
+            #         - datetime.fromisoformat(assign["SubmitTime"])
+            #     ).seconds
+            #     / 60
+            # )
         fig = px.line(
             df,
             x="HITId (timeline)",
             y="Duration (mins) ",
-            range_y=[0, 30],
-            range_x=[-1, 5],
+            range_y=[0, 45],
+            range_x=[-1, len(hit_counter) + 1],
         )
         st.plotly_chart(fig, use_container_width=True)
 
@@ -210,7 +214,12 @@ def get_dataset_statistics(round_doc_table, dataset_json_path: Path = None):
 
 def get_annotator_statistics(assignment_table, worker_table):
 
-    view_options = ["Overview", "Worker statistics", "HIT duration (trends)"]
+    view_options = [
+        "Overview",
+        "Worker statistics",
+        "Screening Activity",
+        "HIT duration (trends)",
+    ]
     view_option = st.radio("Choose a view", options=view_options)
 
     THRESHOLD = 75
@@ -291,6 +300,32 @@ def get_annotator_statistics(assignment_table, worker_table):
 
     elif view_option == view_options[2]:
         df = defaultdict(list)
+        attempted = worker_table.search(where("Status") == "Granted")
+        passed = worker_table.search(
+            (where("Status") == "Granted") & (where("IntegerValue") >= THRESHOLD)
+        )
+        attempt_times = [datetime.fromisoformat(w["GrantTime"]) for w in attempted]
+        attempt_times = [(t - np.min(attempt_times)).days for t in attempt_times]
+        attempt_counter = Counter(attempt_times)
+        pass_times = [datetime.fromisoformat(w["GrantTime"]) for w in passed]
+        pass_times = [(t - np.min(pass_times)).days for t in pass_times]
+        pass_counter = Counter(pass_times)
+        days = np.arange(0, np.max(attempt_times), 1)
+        for i in days:
+            df["Day X"].append(i)
+            df["# Tests"].append(attempt_counter[i])
+            df["Type"].append("Attempted")
+        for i in days:
+            df["Day X"].append(i)
+            df["# Tests"].append(pass_counter[i])
+            df["Type"].append("Passed")
+
+        range_x = [0, len(days)]
+        fig = px.line(df, x="Day X", y="# Tests", range_x=range_x, color="Type")
+        st.plotly_chart(fig, use_container_width=True)
+
+    elif view_option == view_options[3]:
+        df = defaultdict(list)
         worker_hit_count = defaultdict(int)
         # for assign in assignment_table.search(where("ApprovalTime").exists()):
         for assign in assignment_table.search(where("SubmitTime").exists()):
@@ -315,7 +350,7 @@ def get_annotator_statistics(assignment_table, worker_table):
             #     / 60
             # )
 
-        fig = px.scatter(
+        fig = px.line(
             df,
             x="Worker HIT counter",
             y="Duration (mins) ",
