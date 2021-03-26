@@ -1,4 +1,4 @@
-# Prepare batches for Event Correction and MTurk
+# Prepare queue for Event Correction and MTurk
 
 ## Corpus
 
@@ -17,10 +17,10 @@ python update_pack_db.py \
 cd ..
 ```
 
-## Prepare next batch
+## Update the queue
 
-Update the above datapack DB using above scripts before preparing next batch. Each batch of documents for event correction include a maximum of 20 documents.
+Update the above datapack DB using above scripts before updating the queue. The queue is currently set to a max size of 20.
 
 ```bash
-bash prepare_batches.sh single
+bash prepare_stave_queue.sh single
 ```
