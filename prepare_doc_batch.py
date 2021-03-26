@@ -11,8 +11,9 @@ from tinydb import TinyDB, where
 
 from forte.data.data_pack import DataPack
 from ft.onto.base_ontology import Sentence
-
 from edu.cmu import EventMention
+
+from amt_data_utils import custom_sort
 
 
 def read_packs(dir_path: Path) -> Dict[str, DataPack]:
@@ -22,26 +23,6 @@ def read_packs(dir_path: Path) -> Dict[str, DataPack]:
             pack: DataPack = DataPack.deserialize(rf.read())
             name2pack[pack.pack_name] = pack
     return name2pack
-
-
-def custom_sort(doc_group, name2pack):
-    doc2sents = {}
-    doc2events = {}
-    for doc in doc_group:
-        events = [x.text for x in name2pack[doc].get(EventMention)]
-        sents = [x.text for x in name2pack[doc].get(Sentence)]
-        doc2sents[doc] = sents
-        doc2events[doc] = events
-
-    event_counts, sent_counts, event_overlap = [], [], []
-    for doc1, doc2 in combinations(doc_group, 2):
-        event_counts.append(len(doc2events[doc1]) + len(doc2events[doc2]))
-        sent_counts.append(len(doc2sents[doc1]) + len(doc2sents[doc2]))
-        event_overlap.append(
-            len([x for x in doc2events[doc1] if x in doc2events[doc2]])
-        )
-
-    return (np.mean(event_counts), np.mean(sent_counts), 1 / np.mean(event_overlap))
 
 
 def prepare_batch(args):
@@ -96,19 +77,12 @@ def prepare_batch(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="prepare a batch of Wikinews documents for event correction"
-    )
+    parser = argparse.ArgumentParser(description="prepare a batch of Wikinews documents for event correction")
     parser.add_argument("-packs", type=Path, help="path to machine tagged packs")
     parser.add_argument("-doc_clusters", help="path to document clusters")
+    parser.add_argument("-pack_db", help="path to tinydb that keeps track of corrected docs")
     parser.add_argument(
-        "-pack_db", help="path to tinydb that keeps track of corrected docs"
-    )
-    parser.add_argument(
-        "-count",
-        default=20,
-        type=int,
-        help="max docs to include for each batch of event correction",
+        "-count", default=20, type=int, help="max docs to include for each batch of event correction",
     )
     parser.add_argument("-out", help="write sorted document groups")
 

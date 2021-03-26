@@ -24,3 +24,21 @@ Update the above datapack DB using above scripts before updating the queue. The 
 ```bash
 bash prepare_stave_queue.sh single
 ```
+
+## Adding docs to stave db
+
+Add packs from the `ongoing_table` into the single doc stave db.
+
+```bash
+# (optional arguments)
+# to specify project name, add the argument --project <PROJECT_NAME>
+# to overwrite existing documents in the stave database, add the argument --overwrite. 
+# Warning! --overwrite will remove any existing annotations for **all** packs in the ongoing table
+
+cd event_correction
+python add_docs.py \
+    db.sqlite3 \
+    ../amt_data/pack_tinydb.json \
+    ../cdec_wikinews/latest/packs \
+    ../full.json
+```
