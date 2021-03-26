@@ -36,9 +36,14 @@ Add packs from the `ongoing_table` into the single doc stave db.
 # Warning! --overwrite will remove any existing annotations for **all** packs in the ongoing table
 
 cd event_correction
+URL_PREFIX="http://piaget.lti.cs.cmu.edu:3000/documents"
 python add_docs.py \
     db.sqlite3 \
     ../amt_data/pack_tinydb.json \
     ../cdec_wikinews/latest/packs \
-    ../full.json
+    ../full.json \
+    --url $URL_PREFIX \
+    --out links.txt
 ```
+
+File `links.txt` contains the URLs for packs in the current queue.

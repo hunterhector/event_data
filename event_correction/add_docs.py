@@ -22,7 +22,8 @@ def add_pack(
             print("warning! overwriting pack %s in the db, you will lose the previous work" % name)
         else:
             print("pack %s already exists in the db, skipping" % name)
-            return
+            pack_id = result[0]
+            return pack_id
 
     if project_name is None:
         print("adding pack %s" % name)
@@ -55,8 +56,15 @@ def add_pack(
             (name, textPack, project_id),
         )
 
+    result = cursor.execute(
+        "SELECT * FROM nlpviewer_backend_document WHERE name=:pack_name", {"pack_name": name},
+    ).fetchone()
+    pack_id = result[0]
+
     con.commit()
     con.close()
+
+    return pack_id
 
 
 if __name__ == "__main__":
@@ -65,6 +73,8 @@ if __name__ == "__main__":
     parser.add_argument("pack_db_path", type=Path, help="path to pack tinydb for scheduling")
     parser.add_argument("packs", type=Path, help="path to directory with packs")
     parser.add_argument("ontology", type=Path, help="path to ontology json")
+    parser.add_argument("--url", type=str, help="URL prefix for stave")
+    parser.add_argument("--out", type=Path, help="write stave links for docs in queue")
     parser.add_argument("--project", type=str, default=None, help="project name")
     parser.add_argument("--overwrite", action="store_true", help="overwrite existing files in the db")
 
@@ -76,13 +86,19 @@ if __name__ == "__main__":
     db = TinyDB(args.pack_db_path)
     table = db.table("ongoing_table")
 
-    for item_ in table.all():
-        pack_name = item_["pack_name"]
-        if not pack_name.endswith(".json"):
-            pack_name += ".json"
-        with open(args.packs / pack_name, "r") as rf:
-            pack = rf.read()
-        add_pack(
-            pack_name, pack, ontology, args.stave_db_path, project_name=args.project, overwrite=args.overwrite
-        )
-
+    with open(args.out, "w") as wf:
+        for item_ in table.all():
+            pack_name = item_["pack_name"]
+            if not pack_name.endswith(".json"):
+                pack_name += ".json"
+            with open(args.packs / pack_name, "r") as rf:
+                pack = rf.read()
+            pack_id = add_pack(
+                pack_name,
+                pack,
+                ontology,
+                args.stave_db_path,
+                project_name=args.project,
+                overwrite=args.overwrite,
+            )
+            wf.write("%s/%s\n" % (args.url, pack_id))
