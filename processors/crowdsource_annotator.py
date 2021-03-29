@@ -34,17 +34,12 @@ class CrowdSourceAnnotationModule:
     ROUND_DOC_TABLE_NAME = "round_doc"
     QUAL_TABLE_NAME = "mturk_qualifications"
     MTURK_SANDBOX = "https://mturk-requester-sandbox.us-east-1.amazonaws.com"
-    ANNOTATOR_GROUP_DESCRIPTION = "Qualification created for task logistics"
 
     def __init__(self, stave_db_path, mturk_db_path, config):  # config_file?
         # config
         self.config = config
         # read input files
         self.stave_db_path = stave_db_path
-        self.number_of_copys = 3
-        self.participant_criterion = {}
-        self.screened_participants = []  # list of participantIDs
-        self.task_distributor = []  # could take several formats
         self.is_sandbox_testing = self.config["sandbox"]
         self.debug_flag = True
         db = TinyDB(mturk_db_path)  # store all part list
@@ -53,7 +48,6 @@ class CrowdSourceAnnotationModule:
         self.logging_table = db.table(self.LOGGING_TABLE_NAME, cache_size=0)
         self.round_doc_table = db.table(self.ROUND_DOC_TABLE_NAME, cache_size=0)
         self.mturk_qual_table = db.table(self.QUAL_TABLE_NAME, cache_size=0)
-        # region_name ???
 
         self.SCREENING_QUAL_ID = None
         s = self.mturk_qual_table.search(where("qualification_type") == "screening")
@@ -78,56 +72,6 @@ class CrowdSourceAnnotationModule:
                 aws_secret_access_key=MTURK_SECRET_KEY,
                 region_name="us-east-1",
             )
-        # might need to load from static if groups created ahead
-        base_query = Query()
-        if db.search(base_query.annotator_group_IDs.exists()) == []:
-            self.annotator_group_IDs = self.create_annotator_groups()
-            db.insert({"annotator_group_IDs": self.annotator_group_IDs})
-        else:
-            record = db.search(base_query.annotator_group_IDs.exists())[0]
-            self.annotator_group_IDs = record["annotator_group_IDs"]
-
-        # load round_size from db or query seed set size from stave_db
-        if db.search(base_query.round_size.exists()) == []:
-            # need to query for seed set size
-            print(self.round_doc_table.search(base_query.round_assigned == 0))
-            self.round_size = len(
-                self.round_doc_table.search(base_query.round_assigned == 0)
-            )
-            db.insert({"round_size": self.round_size})
-        else:
-            record = db.search(base_query.round_size.exists())[0]
-            self.round_size = record["round_size"]
-
-    def create_annotator_groups(
-        self, name="ANNOTATORGROUP%02d", description=ANNOTATOR_GROUP_DESCRIPTION
-    ):
-        annotator_group_IDs = []
-        for i in range(self.number_of_copys):
-            # annotator_group_IDs += [name % i]
-            try:
-                response = self.mturk_client.create_qualification_type(
-                    Name=(name % i),
-                    Description=description,
-                    QualificationTypeStatus="Active",
-                )
-                # TODO: try catch here?
-                qual_id = response["QualificationType"]["QualificationTypeId"]
-                annotator_group_IDs += [qual_id]
-            except:
-                e = sys.exc_info()[0]
-                print(e)
-
-        return annotator_group_IDs
-
-    def add_qualification(self, qualification_id, worker_id, bool_send_not):
-        response = self.mturk_client.associate_qualification_with_worker(
-            QualificationTypeId=qualification_id,
-            WorkerId=worker_id,
-            IntegerValue=1,
-            SendNotification=bool_send_not,
-        )
-        return response
 
     def _get_annotation_pairs_for_round_prefixed(self, round_num):
         """
@@ -140,9 +84,7 @@ class CrowdSourceAnnotationModule:
             round_hash_reward_values += [(pair["hashed"], str(pair["reward"]))]
         return round_hash_reward_values
 
-    def publish_hit(
-        self, website_url, annotator_group_ID, reward, is_first_round=False
-    ):
+    def publish_hit(self, website_url, reward):
 
         # preparing the hit_layout
         hit_layout = HITLayout(self.config["hit_setup"]["HIT_template"], website_url)
@@ -184,30 +126,10 @@ class CrowdSourceAnnotationModule:
             #     "ActionsGuarded": "DiscoverPreviewAndAccept",
             # },
         ]
-        if not is_first_round:
-            # annotator groups are empty in the first round
-            # annotators from other groups should not be allowed to do this task
-            # i.e, only annotators with ID `annotator_group_ID` or new annotators are allowed
-            # other annotators can't even discover the HIT
-            disallowed_IDs = [
-                x for x in self.annotator_group_IDs if x != annotator_group_ID
-            ]
-            for group_ID in disallowed_IDs:
-                qualification_requirements.append(
-                    {
-                        "QualificationTypeId": group_ID,
-                        "Comparator": "DoesNotExist",
-                        "ActionsGuarded": "DiscoverPreviewAndAccept",
-                    }
-                )
         new_hit = self.mturk_client.create_hit(
             MaxAssignments=self.config["hit_setup"]["MaxAssignments"],  # required
-            AutoApprovalDelayInSeconds=self.config["hit_setup"][
-                "AutoApprovalDelayInSeconds"
-            ],
-            LifetimeInSeconds=self.config["hit_setup"][
-                "LifetimeInSeconds"
-            ],  # life time
+            AutoApprovalDelayInSeconds=self.config["hit_setup"]["AutoApprovalDelayInSeconds"],
+            LifetimeInSeconds=self.config["hit_setup"]["LifetimeInSeconds"],  # life time
             AssignmentDurationInSeconds=self.config["hit_setup"][
                 "AssignmentDurationInSeconds"
             ],  # time to complete the HIT
@@ -219,78 +141,38 @@ class CrowdSourceAnnotationModule:
             Question=hit_string,
         )
 
-        # hit_type_id = new_hit["HIT"]["HITTypeId"]
-        # notification = {
-        #     "Destination": SNS_TOPIC_ID,
-        #     "Transport": "SNS",
-        #     "Version": "2014-08-15",
-        #     "EventTypes": [
-        #         "AssignmentSubmitted",
-        #         # HITReviewable|AssignmentAccepted|AssignmentAbandoned|AssignmentReturned
-        #         # AssignmentRejected|AssignmentApproved|HITCreated|HITExtended|HITDisposed|HITExpired
-        #     ],
-        # }
-        # # Configure Notification settings using the HITTypeId
-        # self.mturk_client.update_notification_settings(
-        #     HITTypeId=hit_type_id, Notification=notification,
-        # )
         if self.debug_flag:
             if self.is_sandbox_testing:
-                print(
-                    "https://workersandbox.mturk.com/mturk/preview?groupId="
-                    + new_hit["HIT"]["HITGroupId"]
-                )
+                print("https://workersandbox.mturk.com/mturk/preview?groupId=" + new_hit["HIT"]["HITGroupId"])
             else:
-                print(
-                    "https://worker.mturk.com/mturk/preview?groupId="
-                    + new_hit["HIT"]["HITGroupId"]
-                )
+                print("https://worker.mturk.com/mturk/preview?groupId=" + new_hit["HIT"]["HITGroupId"])
             print("HITID = " + new_hit["HIT"]["HITId"] + " (Use to Get Results)")
 
         # keeping a log of HIT layout
-        hit_layout.write_xml(
-            f"{self.config['hit_setup']['HIT_template']}/hit_{new_hit['HIT']['HITId']}.xml"
-        )
+        hit_layout.write_xml(f"{self.config['hit_setup']['HIT_template']}/hit_{new_hit['HIT']['HITId']}.xml")
 
         return new_hit["HIT"]["HITId"]
 
-    def run_round(self):
-        annotator_group_idx = 0
-        is_first_round = False
+    def run_round(self, is_dryrun=False):
         if len(self.stack_target_table) == 0:
             # first round
             nxt_rnd_num = 1
-            is_first_round = True
         else:
             last_record = self.stack_target_table.all()[-1]
-            if last_record["completed"]:
-                # all previous round completed ; start new round
-                rnd_num_int = int(last_record["round_number"])
-                rnd_num_frc = int(last_record["round_number"] * 10 % 10)
-                if rnd_num_int % 2 == 0:
-                    if rnd_num_frc == 1:
-                        nxt_rnd_num = rnd_num_int + 0.2
-                        annotator_group_idx = 2
-                    else:  # rnd_num_frc == 2
-                        nxt_rnd_num = rnd_num_int + 1
-                        annotator_group_idx = 0
-                else:
-                    annotator_group_idx = 1
-                    nxt_rnd_num = rnd_num_int + 1 + 0.1
-            else:
-                # complete current round
-                nxt_rnd_num = last_record["round_number"]
-                # TODO: under what circumstances would round not complete?
-                print("last round# %.1f not finished" % nxt_rnd_num)
-                return
+            nxt_rnd_num = last_record["round_number"] + 1
 
         if self.debug_flag:
-            print("running round# %.1f" % nxt_rnd_num)
+            print("running round %s" % nxt_rnd_num)
 
         annotation_pairs = self._get_annotation_pairs_for_round_prefixed(nxt_rnd_num)
+        if len(annotation_pairs) == 0:
+            print("no document pairs assigned to round %s" % nxt_rnd_num)
+            return
         print(annotation_pairs)
 
-        # publish tasks with #nxt_rnd_num, and take from the article pairs
+        if is_dryrun:
+            return
+
         self.stack_target_table.insert(
             {
                 "round_number": nxt_rnd_num,
@@ -300,33 +182,17 @@ class CrowdSourceAnnotationModule:
                 "sent_hit_count": len(annotation_pairs),
             }
         )
+
         for hash_value, reward in annotation_pairs:
             # prepare qualification test
             self.update_qualification_test(round_number=nxt_rnd_num)
-            hit_id = self.publish_hit(
-                self.config["stave_url"] % (hash_value),
-                self.annotator_group_IDs[annotator_group_idx],
-                reward,
-                is_first_round=is_first_round,
-            )
-            # hit_id = f"{nxt_rnd_num}_{hash_value}"
-            # additionally storing annotator group ID to assign the necessary qualification for new workers
+            hit_id = self.publish_hit(self.config["stave_url"] % (hash_value), reward,)
             self.past_task_table.insert(
-                {
-                    "round_number": nxt_rnd_num,
-                    "completed": False,
-                    "hash_pair": hash_value,
-                    "HITId": hit_id,
-                    "annotator_group_ID": self.annotator_group_IDs[annotator_group_idx],
-                }
+                {"round_number": nxt_rnd_num, "completed": False, "hash_pair": hash_value, "HITId": hit_id,}
             )
             self.logging_table.insert(
-                {
-                    "action": "hit_created",
-                    "log": "HITID:%s;hash_value:%s" % (hit_id, hash_value),
-                }
+                {"action": "hit_created", "log": "HITID:%s;hash_value:%s" % (hit_id, hash_value),}
             )
-
         return
 
     def update_qualification_test(self, round_number):
@@ -354,12 +220,8 @@ class CrowdSourceAnnotationModule:
                 TestDurationInSeconds=self.config["screening"]["TestDurationInSeconds"],
                 RetryDelayInSeconds=self.config["screening"]["RetryDelayInSeconds"],
             )
-            self.SCREENING_QUAL_ID = response["QualificationType"][
-                "QualificationTypeId"
-            ]
-            self.mturk_qual_table.insert(
-                {"qualification_type": "screening", "id": self.SCREENING_QUAL_ID}
-            )
+            self.SCREENING_QUAL_ID = response["QualificationType"]["QualificationTypeId"]
+            self.mturk_qual_table.insert({"qualification_type": "screening", "id": self.SCREENING_QUAL_ID})
         else:
             # updating the qualification type to use new questionaire
             response = self.mturk_client.update_qualification_type(
@@ -372,12 +234,8 @@ class CrowdSourceAnnotationModule:
             )
 
         # to keep a log, write questions and answers used in the current round
-        Q_XML = (
-            f"{self.config['screening']['template_path']}/questions_{round_number}.xml"
-        )
-        ANS_XML = (
-            f"{self.config['screening']['template_path']}/answers_{round_number}.xml"
-        )
+        Q_XML = f"{self.config['screening']['template_path']}/questions_{round_number}.xml"
+        ANS_XML = f"{self.config['screening']['template_path']}/answers_{round_number}.xml"
         qual_test.write_xml(Q_XML, ANS_XML)
 
 
@@ -393,6 +251,7 @@ if __name__ == "__main__":
     parser.add_argument("stave_db", type=str, help="path to stave db")
     parser.add_argument("mturk_db", type=str, help="path to mturk db")
     parser.add_argument("config", type=str, help="path to config json")
+    parser.add_argument("--dryrun", action="store_true", help="get annotation pairs and not create a HIT")
 
     args = parser.parse_args()
     with open(args.config, "r") as rf:
@@ -400,5 +259,5 @@ if __name__ == "__main__":
 
     # _delete_db(args.mturk_db)
     mturk = CrowdSourceAnnotationModule(args.stave_db, args.mturk_db, config)
-    mturk.run_round()
+    mturk.run_round(args.dryrun)
 
