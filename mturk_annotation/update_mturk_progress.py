@@ -36,18 +36,14 @@ def get_hit_assignments(mturk_client, hit_id: str):
     nextToken = results.get("NextToken", None)
     assignments = results["Assignments"]
     while nextToken:
-        results = mturk_client.list_assignments_for_hit(
-            HITId=hit_id, NextToken=nextToken
-        )
+        results = mturk_client.list_assignments_for_hit(HITId=hit_id, NextToken=nextToken)
         assignments.extend(results["Assignments"])
         nextToken = results.get("NextToken")
     return assignments
 
 
 def get_workers(mturk_client, qual_id: str):
-    results = mturk_client.list_workers_with_qualification_type(
-        QualificationTypeId=qual_id
-    )
+    results = mturk_client.list_workers_with_qualification_type(QualificationTypeId=qual_id)
     nextToken = results.get("NextToken", None)
     workers = results["Qualifications"]
     while nextToken:

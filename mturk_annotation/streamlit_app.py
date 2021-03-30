@@ -41,42 +41,31 @@ def get_hit_statistics(hit_table, assignment_table):
 
         submitted_assigns = assignment_table.search(where("SubmitTime").exists())
         avg_times = [
-            (
-                datetime.fromisoformat(x["SubmitTime"])
-                - datetime.fromisoformat(x["AcceptTime"])
-            ).seconds
-            / 60
+            (datetime.fromisoformat(x["SubmitTime"]) - datetime.fromisoformat(x["AcceptTime"])).seconds / 60
             for x in submitted_assigns
         ]
         summary["Avg. time per HIT (mins)"] = f"{np.mean(avg_times):.2f}"
         approved_assigns = assignment_table.search(where("ApprovalTime").exists())
         avg_times = [
-            (
-                datetime.fromisoformat(x["ApprovalTime"])
-                - datetime.fromisoformat(x["SubmitTime"])
-            ).seconds
+            (datetime.fromisoformat(x["ApprovalTime"]) - datetime.fromisoformat(x["SubmitTime"])).seconds
             / 60
             / 60
             for x in approved_assigns
         ]
-        print(avg_times)
+        # print(avg_times)
         summary["Avg. time taken for approval (hours)"] = f"{np.mean(avg_times):.2f}"
 
         st.table(pd.DataFrame.from_dict(summary, orient="index", columns=[""]))
 
     elif view_option == view_options[1]:
         # HITs released per day
-        release_times = [
-            datetime.fromisoformat(x["CreationTime"]) for x in hit_table.all()
-        ]
+        release_times = [datetime.fromisoformat(x["CreationTime"]) for x in hit_table.all()]
         release_times = [(x - np.min(release_times)).days for x in release_times]
         release_counter = Counter(release_times)
 
         # HITs solved per day
         submitted_assigns = assignment_table.search(where("SubmitTime").exists())
-        submit_times = [
-            datetime.fromisoformat(x["SubmitTime"]) for x in submitted_assigns
-        ]
+        submit_times = [datetime.fromisoformat(x["SubmitTime"]) for x in submitted_assigns]
         submit_times = [(x - np.min(submit_times)).days for x in submit_times]
         submit_counter = Counter(submit_times)
 
@@ -194,22 +183,14 @@ def get_dataset_statistics(round_doc_table, dataset_json_path: Path = None):
         for record in round_doc_table.all()[::-1]:
             doc_ids = re.search(r"^pair\_([0-9]+)\_and\_([0-9]+)", record["name"])
             doc1, doc2 = doc_ids.group(1), doc_ids.group(2)
-            docs_per_round[f"Round {record['round_assigned']}"].append(
-                f"({doc1},{doc2})"
-            )
+            docs_per_round[f"Round {record['round_assigned']}"].append(f"({doc1},{doc2})")
 
         docs_schedule = {}
         for k, v in docs_per_round.items():
             docs_schedule[k] = ",".join(v)
         st.markdown("## Schedule")
-        st.write(
-            "This table presents our schedule for documents to be released in each annotation round."
-        )
-        st.table(
-            pd.DataFrame.from_dict(
-                docs_schedule, orient="index", columns=["Documents"],
-            )
-        )
+        st.write("This table presents our schedule for documents to be released in each annotation round.")
+        st.table(pd.DataFrame.from_dict(docs_schedule, orient="index", columns=["Documents"],))
 
 
 def get_annotator_statistics(assignment_table, worker_table):
@@ -225,9 +206,7 @@ def get_annotator_statistics(assignment_table, worker_table):
     THRESHOLD = 75
     if view_option == view_options[0]:
         attempted = worker_table.search(where("Status") == "Granted")
-        qualified = worker_table.search(
-            (where("Status") == "Granted") & (where("IntegerValue") >= THRESHOLD)
-        )
+        qualified = worker_table.search((where("Status") == "Granted") & (where("IntegerValue") >= THRESHOLD))
         st.write(
             "Number of qualified workers (test passed / test attempted): ",
             len(qualified),
@@ -236,9 +215,7 @@ def get_annotator_statistics(assignment_table, worker_table):
         )
 
         active = worker_table.search(where("isActive") == True)
-        st.write(
-            "Number of active workers (i.e., solved at least one task): ", len(active)
-        )
+        st.write("Number of active workers (i.e., solved at least one task): ", len(active))
 
         worker_summary = {}
         for worker in attempted:
@@ -251,9 +228,7 @@ def get_annotator_statistics(assignment_table, worker_table):
 
         def highlight_worker(val):
             if val.item() >= THRESHOLD:
-                s = worker_table.search(
-                    (where("WorkerId") == val.name) & (where("isActive") == True)
-                )
+                s = worker_table.search((where("WorkerId") == val.name) & (where("isActive") == True))
                 if len(s) > 0:
                     return ["background-color: green"]
                 return ["background-color: yellow"]
@@ -262,9 +237,7 @@ def get_annotator_statistics(assignment_table, worker_table):
 
         st.markdown("## Overall worker statistics")
         df = pd.DataFrame.from_dict(worker_summary, orient="index")
-        st.dataframe(
-            df.style.apply(highlight_worker, subset="Qualification Score", axis=1)
-        )
+        st.dataframe(df.style.apply(highlight_worker, subset="Qualification Score", axis=1))
 
     elif view_option == view_options[1]:
         worker_summary = {}
@@ -280,10 +253,7 @@ def get_annotator_statistics(assignment_table, worker_table):
             worker_summary[worker_id]["HITs"] = len(assigns)
             # ! todo: uniq document pairs annotated
             times = [
-                (
-                    datetime.fromisoformat(x["SubmitTime"])
-                    - datetime.fromisoformat(x["AcceptTime"])
-                ).seconds
+                (datetime.fromisoformat(x["SubmitTime"]) - datetime.fromisoformat(x["AcceptTime"])).seconds
                 / 60
                 for x in assigns
             ]
@@ -301,9 +271,7 @@ def get_annotator_statistics(assignment_table, worker_table):
     elif view_option == view_options[2]:
         df = defaultdict(list)
         attempted = worker_table.search(where("Status") == "Granted")
-        passed = worker_table.search(
-            (where("Status") == "Granted") & (where("IntegerValue") >= THRESHOLD)
-        )
+        passed = worker_table.search((where("Status") == "Granted") & (where("IntegerValue") >= THRESHOLD))
         attempt_times = [datetime.fromisoformat(w["GrantTime"]) for w in attempted]
         attempt_times = [(t - np.min(attempt_times)).days for t in attempt_times]
         attempt_counter = Counter(attempt_times)
@@ -331,9 +299,7 @@ def get_annotator_statistics(assignment_table, worker_table):
         for assign in assignment_table.search(where("SubmitTime").exists()):
             df["WorkerId"].append(assign["WorkerId"])
             worker_hit_count[assign["WorkerId"]] += 1
-            df["Worker HIT counter"].append(
-                f"hit{worker_hit_count[assign['WorkerId']]}"
-            )
+            df["Worker HIT counter"].append(f"hit{worker_hit_count[assign['WorkerId']]}")
             df["HITId"].append(assign["HITId"])
             df["Duration (mins) "].append(
                 (
@@ -350,13 +316,7 @@ def get_annotator_statistics(assignment_table, worker_table):
             #     / 60
             # )
 
-        fig = px.line(
-            df,
-            x="Worker HIT counter",
-            y="Duration (mins) ",
-            color="WorkerId",
-            range_y=[0, 30],
-        )
+        fig = px.line(df, x="Worker HIT counter", y="Duration (mins) ", color="WorkerId", range_y=[0, 30],)
         st.markdown("## HIT duration (trends)")
         st.write("For each worker, this plot shows the timeline of HIT durations.")
         st.plotly_chart(fig, use_container_width=True)
@@ -372,9 +332,7 @@ def get_hit_schedule(stack_target_table, past_task_table):
         for rnd in stack_target_table.all()[::-1]:
             rnd_name = f"Round {rnd['round_number']}"
             rounds[rnd_name] = {}
-            rounds[rnd_name][
-                "Progress"
-            ] = f"{rnd['completed_hit_count']}/{rnd['sent_hit_count']}"
+            rounds[rnd_name]["Progress"] = f"{rnd['completed_hit_count']}/{rnd['sent_hit_count']}"
             rounds[rnd_name]["Status"] = "Complete" if rnd["completed"] else "Ongoing"
             rounds[rnd_name]["Annotators"] = rnd["annotator_list"]
         st.markdown("## Round progress")
@@ -388,11 +346,9 @@ def get_hit_schedule(stack_target_table, past_task_table):
             task_id = task_count - idx
             tasks[f"Task {task_id}"] = {}
             tasks[f"Task {task_id}"]["Round"] = str(task["round_number"])
-            tasks[f"Task {task_id}"]["Status"] = (
-                "Complete" if task["completed"] else "Ongoing"
-            )
+            tasks[f"Task {task_id}"]["Status"] = "Complete" if task["completed"] else "Ongoing"
             tasks[f"Task {task_id}"]["HITId"] = task["HITId"]
-            tasks[f"Task {task_id}"]["Annotator Group"] = task["annotator_group_ID"]
+            tasks[f"Task {task_id}"]["Annotators"] = task["annotators"]
         st.markdown("## Task progress")
         st.write("Below table shows the progress of each released HIT.")
         st.table(pd.DataFrame.from_dict(tasks, orient="index"))
