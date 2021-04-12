@@ -34,18 +34,11 @@ def read_doc_pairs(inp_path, max_size: int, out_dir: Path):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(
-        description="generate MultiPack using pre-defined document pairs"
-    )
-    parser.add_argument(
-        "--dir", type=Path, default="data", help="source directory path for Packs"
-    )
-    parser.add_argument(
-        "--doc-pairs", type=str, help="path to the file with document pairs"
-    )
-    parser.add_argument(
-        "--clique-threshold", type=int, default=4, help="max size of clique to use"
-    )
+    parser = argparse.ArgumentParser(description="generate MultiPack using pre-defined document pairs")
+    parser.add_argument("--dir", type=Path, default="data", help="source directory path for Packs")
+    parser.add_argument("--doc-pairs", type=str, help="path to the file with document pairs")
+    parser.add_argument("--clique-threshold", type=int, default=4, help="max size of clique to use")
+    parser.add_argument("--overwrite", action="store_true", help="overwrite existing multipacks")
 
     args = parser.parse_args()
 
@@ -71,12 +64,7 @@ if __name__ == "__main__":
 
     pair_pipeline.add(
         PackNameMultiPackWriter(),
-        {
-            "output_dir": str(output_path),
-            "indent": 2,
-            "overwrite": True,
-            "drop_record": True,
-        },
+        {"output_dir": str(output_path), "indent": 2, "overwrite": args.overwrite, "drop_record": True,},
     )
 
     pair_pipeline.initialize()
