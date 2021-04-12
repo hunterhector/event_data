@@ -33,7 +33,7 @@ def check_mentions(pack: DataPack) -> Set[EventMention]:
     begin_set, end_set = set(), set()
     for token in tokens:
         begin_set.add(token.span.begin)
-        end_set.add(token.span.end)
+        end_set.add(token.span.end
 
     incorrect_mentions = set()
     for mention in mentions:

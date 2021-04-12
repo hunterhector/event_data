@@ -19,6 +19,8 @@ from amt_data_utils import custom_sort
 def read_packs(dir_path: Path) -> Dict[str, DataPack]:
     name2pack = {}
     for pack_path in tqdm(dir_path.iterdir()):
+        if 'checkpoint' in pack_path:
+            continue
         with open(pack_path, "r") as rf:
             pack: DataPack = DataPack.deserialize(rf.read())
             name2pack[pack.pack_name] = pack

@@ -5,11 +5,12 @@ from pathlib import Path
 
 
 def add_pack(
-    name: str, textPack: str, ontology: str, db_path: Path, project_name: str = None, overwrite: bool = False,
+    name: str, textPack: str, ontology: str, db_path: str, project_name: str = None, overwrite: bool = False,
 ):
     """
     add new pack into single doc stave
     """
+    
     con = sqlite3.connect(db_path)
     cursor = con.cursor()
 
@@ -69,8 +70,8 @@ def add_pack(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="add new documents to stave single doc db")
-    parser.add_argument("stave_db_path", type=Path, help="path to stave db")
-    parser.add_argument("pack_db_path", type=Path, help="path to pack tinydb for scheduling")
+    parser.add_argument("stave_db_path", type=str, help="path to stave db")
+    parser.add_argument("pack_db_path", type=str, help="path to pack tinydb for scheduling")
     parser.add_argument("packs", type=Path, help="path to directory with packs")
     parser.add_argument("ontology", type=Path, help="path to ontology json")
     parser.add_argument("--url", type=str, help="URL prefix for stave")

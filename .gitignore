@@ -149,3 +149,10 @@ sample_wikinews/multipacks/
 *.err
 *.log
 .DS_Store
+notebooks/
+amt_data/
+
+event_correction/*.zip
+event_correction/*.sqlite3
+event_correction/links.txt
+.gitignore
