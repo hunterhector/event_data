@@ -108,8 +108,14 @@ if __name__ == "__main__":
             print("document group %s is incomplete" % (" ".join(doc_group)))
             continue
 
+        packFound = True
         for doc in completed_docs:
             pack = get_corrected_pack(doc, args.stave_db)
+            if pack is None:
+                print("document pack %s not in the database" % doc)
+                packFound = False
+                break
+
             out_path = args.pack_out / f"{doc}.json"
             if out_path.is_file() and not args.overwrite:
                 print("pack %s already exists in the output folder, skipping!" % doc)
@@ -119,6 +125,11 @@ if __name__ == "__main__":
 
             with open(out_path, "w") as wf:
                 wf.write(pack)
+
+        if not packFound:
+            print("added %d groups" % added)
+            print("some packs are still missing in the database")
+            break
 
         added += 1
         if added >= args.ngroups:

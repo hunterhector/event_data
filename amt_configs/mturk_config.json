@@ -17,7 +17,7 @@
         "RetryDelayInSeconds": 86400
     },
     "hit_setup": {
-        "MaxAssignments": 3,
+        "MaxAssignments": 1,
         "LifetimeInSeconds": 604800,
         "AssignmentDurationInSeconds": 2700,
         "AutoApprovalDelayInSeconds": 172800,

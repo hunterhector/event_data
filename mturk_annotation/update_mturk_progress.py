@@ -38,7 +38,7 @@ def get_hit_assignments(mturk_client, hit_id: str):
     while nextToken:
         results = mturk_client.list_assignments_for_hit(HITId=hit_id, NextToken=nextToken)
         assignments.extend(results["Assignments"])
-        nextToken = results.get("NextToken")
+        nextToken = results.get("NextToken", None)
     return assignments
 
 
@@ -63,14 +63,21 @@ def update_assignment_db(mturk_client, db):
     hits = get_hits(mturk_client)
     for hit_entry in hits:
         hit = time2str(hit_entry)
+        # print("hit: %s" % (hit["HITId"]))
         hit_table.upsert(hit, where("HITId") == hit["HITId"])
         assignments = get_hit_assignments(mturk_client, hit["HITId"])
         for assign_entry in assignments:
             assign = time2str(assign_entry)
+            # print("assignment: %s" % assign["AssignmentId"])
             assign_table.upsert(assign, where("AssignmentId") == assign["AssignmentId"])
             worker_table.update(
-                {"isActive": True, "lastActive": assign["SubmitTime"]},
-                where("WorkerId") == assign["WorkerId"],
+                {"isActive": True}, where("WorkerId") == assign["WorkerId"],
+            )
+
+            worker_table.update(
+                {"lastActive": assign["SubmitTime"]},
+                ((where("lastActive") < assign["SubmitTime"]) | (~where("lastActive").exists()))
+                & (where("WorkerId") == assign["WorkerId"]),
             )
 
 

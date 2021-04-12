@@ -80,8 +80,7 @@ class AMTCollector:
             hit_assignments = self.get_hit_assignments(hit["HITId"])
             if len(hit_assignments) == 0:
                 continue
-            # assert len(hit_assignments) == 1, f"more than one assignment for hit {hit['HITId']}"
-            assignments.append(hit_assignments[0])
+            assignments.extend(hit_assignments)
 
         return assignments
 
@@ -111,11 +110,13 @@ class AMTCollector:
 
             # get the HIT task record
             task_record = self.past_task_table.search((where("HITId") == hit_id))
+            # print("hit: %s" % hit_id)
             if not task_record:
                 continue
             task_record = task_record[0]
             rnd_num = task_record["round_number"]
-            if task_record["completed"]:
+            # print("asgn: %s" % asgn_id)
+            if task_record["completed"] and task_record["finished_assignments"] == 3:
                 # hit already marked as complete
                 continue
             if "finished_assignments" in task_record:

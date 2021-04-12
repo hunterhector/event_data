@@ -20,14 +20,15 @@ from amt_data_utils import custom_sort
 
 
 def get_reward(sent_count):
-    if sent_count <= 25:
-        return 2.3
-    elif sent_count <= 40:
-        return 2.48
-    elif sent_count <= 60:
-        return 2.68
-    else:
-        return 2.91
+    return 2.3
+    # if sent_count <= 25:
+    #     return 2.3
+    # elif sent_count <= 40:
+    #     return 2.48
+    # elif sent_count <= 60:
+    #     return 2.68
+    # else:
+    #     return 2.91
 
 
 def load_multipacks(stave_db_path: str):
@@ -111,7 +112,7 @@ def assign_rounds(args):
     round_count, group_count = 0, 0
 
     for doc_group in sorted_groups:
-        if len(doc_group) >= 4:
+        if len(doc_group) > 4:
             continue
 
         if isAssigned(doc_group, round_table):
