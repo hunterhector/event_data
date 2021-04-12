@@ -41,11 +41,14 @@ elif [ "$MODE" == "multi" ]; then
         $PACK_OUT/packs \
         $DOC_GROUPS \
         $N_GROUPS
+    
+    python maskout.py \
+        $PACK_OUT/packs/ \
 
     cd ..
-
-    # write multipacks
-    # add --overwrite option to overwrite existing multipacks
+    
+#     # write multipacks
+#     # add --overwrite option to overwrite existing multipacks
     python pair_pipeline.py \
         --dir $PACK_OUT \
         --doc-pairs $DOC_GROUPS \

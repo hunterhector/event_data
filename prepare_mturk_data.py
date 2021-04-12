@@ -20,6 +20,11 @@ from amt_data_utils import custom_sort
 
 
 def get_reward(sent_count):
+    """
+    [ToDo]
+    added feature:
+    - consider the number of events by taking the weighted average between sent_count and event_count, e.g. event:sent = 7:3
+    """
     if sent_count <= 25:
         return 2.3
     elif sent_count <= 40:
@@ -83,6 +88,53 @@ def read_packs_dir(dir_path: str) -> Dict[str, DataPack]:
             name2pack[pack.pack_name] = pack
     return name2pack
 
+suffixes = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+
+def check_suffix(name):
+    contain = False
+    for suffix in suffixes:
+        if suffix in name:
+            contain = True
+            
+    return contain
+
+def custom_combinations(dirpath, group_docs):
+    """
+    search files in out_dir / "packs/", and check if {doc}_* exists
+    """
+    pack_names = []
+    for file in os.listdir(str(dirpath)+'/packs/'):
+        if not os.path.isfile(str(dirpath)+'/packs/'+file):
+            continue
+        pack_names.append(file[:-5])
+    
+    # correct corresponding {doc}_* files if exist
+    new_docs = [] 
+    for doc in group_docs:
+        splitted = []
+        for pack in pack_names:
+            if doc in pack:
+                splitted.append(pack)
+        if len(splitted) == 1:
+            # no split
+            new_docs += splitted
+        elif len(splitted) > 1:
+            splitted.remove(doc)
+            new_docs += splitted
+
+    temp_pairs = itertools.combinations(new_docs, 2)
+    pairs = []
+    for doc1, doc2 in temp_pairs:
+        # remove pairs for the same document
+        if check_suffix(doc1) and check_suffix(doc2):
+            prefix_doc1 = doc1[:-1]
+            prefix_doc2 = doc2[:-1]
+            if prefix_doc1 == prefix_doc2:
+                continue
+        pairs.append((doc1, doc2))
+    
+    return pairs
+
 
 def assign_rounds(args):
     # loading files from multidoc stave db
@@ -117,13 +169,15 @@ def assign_rounds(args):
         if isAssigned(doc_group, round_table):
             # doc_group already assigned
             continue
-
-        for doc1, doc2 in combinations(doc_group, 2):
+        
+        for doc1, doc2 in custom_combinations(args.packs, doc_group):
             mp_name = "pair_%s_and_%s" % (doc1, doc2)
             assert mp_name in name2mp, "multipack is missing the DB"
 
-        for doc1, doc2 in combinations(doc_group, 2):
+        for doc1, doc2 in custom_combinations(args.packs, doc_group):
+            # ToDo: replace this combination function w. customized one
             sent_count = len(list(name2pack[doc1].get(Sentence))) + len(list(name2pack[doc2].get(Sentence)))
+            # ToDo: modify this reward function, considering event numbers
             reward = get_reward(sent_count)
             mp_name = "pair_%s_and_%s" % (doc1, doc2)
             hashed = hashlib.sha256(str.encode(mp_name)).hexdigest()
@@ -158,5 +212,6 @@ if __name__ == "__main__":
     parser.add_argument("-nrounds", type=int, help="number of rounds to assign")
     parser.add_argument("-ngroups", type=int, help="number of document groups per round")
     args = parser.parse_args()
+    print(args.packs)
 
     assign_rounds(args)

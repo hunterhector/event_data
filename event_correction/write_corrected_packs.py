@@ -60,7 +60,7 @@ def get_corrected_pack(pack_name: str, stave_db_path: str, project_name: str = N
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("stave_db", type=Path, help="path to read single document SQL database from stave")
+    parser.add_argument("stave_db", type=str, help="path to read single document SQL database from stave")
     parser.add_argument("packs", type=Path, help="path to machine tagged packs")
     parser.add_argument("pack_db", type=Path, help="path to pack tinydb")
     parser.add_argument("pack_out", type=Path, help="directory path to write Packs")
