@@ -143,4 +143,6 @@ if __name__ == "__main__":
                 with open(out_path, "w+") as f:
                     # Note: PackNameMultiPackWriter() refers this element for pack_name
                     new_pack['py/state']['meta']['py/state']['pack_name'] = new_pack_name
+                    new_pack['py/state']['meta']['py/state']['_pack_id'] = new_pack['py/state']['meta']['py/state']['_pack_id'] // (1000*(idx+1))
+                    
                     json.dump(new_pack, f, indent=4)
