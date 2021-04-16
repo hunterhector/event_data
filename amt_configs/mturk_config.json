@@ -18,7 +18,7 @@
     },
     "hit_setup": {
         "MaxAssignments": 1,
-        "LifetimeInSeconds": 604800,
+        "LifetimeInSeconds": 1209600,
         "AssignmentDurationInSeconds": 2700,
         "AutoApprovalDelayInSeconds": 172800,
         "Reward": "",

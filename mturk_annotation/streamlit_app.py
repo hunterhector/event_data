@@ -16,6 +16,8 @@ import plotly.graph_objects as go
 from pathlib import Path
 import json
 
+import hashlib
+
 NA_STR = "-"
 
 
@@ -94,10 +96,19 @@ def get_hit_statistics(hit_table, assignment_table):
     st.plotly_chart(fig, use_container_width=True)
 
 
-def get_dataset_statistics(round_doc_table, dataset_json_path: Path = None):
+def get_dataset_statistics(
+    assignment_table, past_task_table, round_doc_table, dataset_json_path: Path = None
+):
 
     view_options = ["Overview", "Document release schedule"]
     view_option = st.radio("Choose a view", options=view_options)
+
+    hash2pair = {}
+    for doc in round_doc_table.all():
+        hash2pair[doc["hashed"]] = doc["name"]
+    hit2pair = {}
+    for task in past_task_table.all():
+        hit2pair[task["HITId"]] = hash2pair[task["hash_pair"]]
 
     if dataset_json_path:
         df_pairs = defaultdict(list)
@@ -158,6 +169,27 @@ def get_dataset_statistics(round_doc_table, dataset_json_path: Path = None):
             fig.update_yaxes(title_text="Response count")
             st.markdown("## Responses to Coreference Questions")
             st.plotly_chart(fig, use_container_width=True)
+
+            df = {}
+            ann_counter = defaultdict(lambda: len(ann_counter))
+            for assign in assignment_table.all():
+                if assign["WorkerId"] not in link_counter:
+                    continue
+                ann_idx = ann_counter[assign["WorkerId"]]
+                if ann_idx not in df:
+                    df[ann_idx] = {}
+                    df[ann_idx]["WorkerId"] = assign["WorkerId"]
+                    df[ann_idx]["# Total Pairs"] = 0
+                    df[ann_idx]["# Zero Pairs"] = 0
+                    df[ann_idx]["Zero Pairs"] = []
+                link_count = link_counter[assign["WorkerId"]][pair_counter[hit2pair[assign["HITId"]]]]
+                if link_count == 0:
+                    df[ann_idx]["# Zero Pairs"] += 1
+                    df[ann_idx]["Zero Pairs"].append(hit2pair[assign["HITId"]])
+                df[ann_idx]["# Total Pairs"] += 1
+
+            st.markdown("## Coreference Links (by annotator)")
+            st.table(pd.DataFrame.from_dict(df, orient="index"))
 
             # summary["Documents annotated"] = len(all_docs)
             # summary["Document pairs annotated"] = len(dataset_stats.keys())
@@ -264,7 +296,7 @@ def get_annotator_statistics(assignment_table, worker_table):
                 s = worker_table.search((where("WorkerId") == val.name) & (where("isActive") == True))
                 if len(s) > 0:
                     return ["background-color: green"]
-                return ["background-color: yellow"]
+                return ["background-color: orange"]
             else:
                 return [""]
 
@@ -298,17 +330,20 @@ def get_annotator_statistics(assignment_table, worker_table):
     elif view_option == view_options[2]:
         df_hits = defaultdict(list)
         df_durations = defaultdict(list)
-        hit_counter = defaultdict(lambda: len(hit_counter))
+        hit_counter = {}
         all_assignments = sorted(
             assignment_table.search(where("SubmitTime").exists()), key=lambda x: x["SubmitTime"]
         )
         for assign in all_assignments:
-            df_hits[assign["WorkerId"]].append(hit_counter[assign["HITId"]])
-            df_durations[assign["WorkerId"]].append(
+            worker_id = assign["WorkerId"]
+            if worker_id not in hit_counter:
+                hit_counter[worker_id] = defaultdict(lambda: len(hit_counter[worker_id]))
+            df_hits[worker_id].append(hit_counter[worker_id][assign["HITId"]])
+            df_durations[worker_id].append(
                 (
                     datetime.fromisoformat(assign["SubmitTime"])
                     - datetime.fromisoformat(assign["AcceptTime"])
-                ).seconds
+                ).total_seconds()
                 / 60
             )
         fig = go.Figure()
@@ -338,7 +373,7 @@ def get_hit_schedule(round_doc_table, stack_target_table, past_task_table, hit_t
             rounds[rnd_name] = {}
             rounds[rnd_name]["Progress"] = f"{rnd['completed_hit_count']}/{rnd['sent_hit_count']}"
             rounds[rnd_name]["Status"] = "Complete" if rnd["completed"] else "Ongoing"
-            rounds[rnd_name]["Annotators"] = rnd["annotator_list"]
+            rounds[rnd_name]["Annotators"] = list(set(rnd["annotator_list"]))
         st.markdown("## Round progress")
         st.write("Below table shows the progress of HITs in each annotation round.")
         st.table(pd.DataFrame.from_dict(rounds, orient="index"))
@@ -355,15 +390,128 @@ def get_hit_schedule(round_doc_table, stack_target_table, past_task_table, hit_t
             tasks[f"Task {task_id}"]["HITId"] = task["HITId"]
             tasks[f"Task {task_id}"]["Annotators"] = task.get("annotators", [])
             hit_entry = hit_table.search(where("HITId") == task["HITId"])[0]
-            tasks[f"Task {task_id}"]["HIT Expiry"] = hit_entry["Expiration"]
+            tasks[f"Task {task_id}"]["Released Assignments"] = hit_entry["MaxAssignments"]
+            tasks[f"Task {task_id}"]["HIT Expiry"] = datetime.fromisoformat(hit_entry["Expiration"]).ctime()
+
+        def highlight_release(val):
+            if val.item() < 3:
+                return ["background-color: orange"]
+            else:
+                return [""]
+
+        def highlight_expiry(val):
+            time_diff = (
+                datetime.strptime(val.item(), "%a %b %d %H:%M:%S %Y") - datetime.now()
+            ).total_seconds()
+            if time_diff < 86400:
+                return ["background-color: red"]
+            elif time_diff < 86400 * 2:
+                return ["background-color: orange"]
+            else:
+                return [""]
 
         st.markdown("## Task progress")
         st.write("Below table shows the progress of each released HIT.")
-        st.table(pd.DataFrame.from_dict(tasks, orient="index"))
+        df = pd.DataFrame.from_dict(tasks, orient="index")
+        st.table(
+            df.style.apply(highlight_release, subset="Released Assignments", axis=1).apply(
+                highlight_expiry, subset="HIT Expiry", axis=1
+            )
+        )
 
 
-def get_quality_statistics():
-    st.markdown("**pending**")
+def get_answer(response_xml: str):
+    answer = re.search(r"<FreeText>(.*)</FreeText>", response_xml).group(1)
+    return answer
+
+
+def get_quality_statistics(
+    assignment_table, past_task_table, round_doc_table, dataset_json_path: Path = None
+):
+    view_options = ["Assignments for Review (Manual)"]
+    view_option = st.radio("Choose a view", options=view_options)
+
+    hash2pair = {}
+    for doc in round_doc_table.all():
+        hash2pair[doc["hashed"]] = doc["name"]
+    hit2pair = {}
+    hit2secret = {}
+    for task in past_task_table.all():
+        hit2pair[task["HITId"]] = hash2pair[task["hash_pair"]]
+        inp_txt = f"{task['hash_pair']}-kairos"
+        hit2secret[task["HITId"]] = hashlib.sha256(str.encode(inp_txt)).hexdigest()
+
+    if dataset_json_path:
+        df_pairs = defaultdict(list)
+        link_counter = {}
+        pair_counter = defaultdict(lambda: len(pair_counter))
+        q_counter = {}
+        with open(dataset_json_path, "r") as rf:
+            dataset_stats = json.load(rf)
+            doc_pairs_sorted = sorted(dataset_stats.keys())
+            for doc_pair in doc_pairs_sorted:
+                for ann in dataset_stats[doc_pair]["annotators"]:
+                    df_pairs[ann].append(pair_counter[doc_pair])
+                    if ann not in link_counter:
+                        link_counter[ann] = defaultdict(int)
+                for coref_link in dataset_stats[doc_pair]["links"]:
+                    for ann in coref_link["annotators"]:
+                        link_counter[ann[0]][pair_counter[doc_pair]] += 1
+                        for qidx, answer in enumerate(ann[1]):
+                            if qidx not in q_counter:
+                                q_counter[qidx] = defaultdict(int)
+                            q_counter[qidx][answer] += 1
+
+        idx2pair = {v: k for k, v in pair_counter.items()}
+
+    if view_option == view_options[0]:
+        unapproved_assignments = sorted(
+            assignment_table.search(~where("ApprovalTime").exists()),
+            key=lambda x: x["SubmitTime"],
+            reverse=True,
+        )
+        counter = len(unapproved_assignments)
+        df = {}
+        for assign in unapproved_assignments:
+            df[counter] = {}
+            df[counter]["Pair"] = hit2pair[assign["HITId"]]
+            df[counter]["Worker"] = assign["WorkerId"]
+            df[counter]["SubmitTime"] = datetime.fromisoformat(assign["SubmitTime"]).ctime()
+            df[counter]["AutoApproval"] = datetime.fromisoformat(assign["AutoApprovalTime"]).ctime()
+            duration = (
+                datetime.fromisoformat(assign["SubmitTime"]) - datetime.fromisoformat(assign["AcceptTime"])
+            ).total_seconds() / 60
+            df[counter]["Duration"] = f"{duration:.2f}"
+            df[counter]["Links"] = link_counter[assign["WorkerId"]][pair_counter[hit2pair[assign["HITId"]]]]
+            answer = get_answer(assign["Answer"])
+            print(answer)
+            print(hit2secret[assign["HITId"]])
+            code_match = "Yes" if answer == hit2secret[assign["HITId"]] else "No"
+            df[counter]["Valid Code?"] = code_match
+            counter -= 1
+
+        def highlight_entry(val):
+            time_diff = (
+                datetime.strptime(val.item(), "%a %b %d %H:%M:%S %Y") - datetime.now()
+            ).total_seconds()
+            if time_diff <= 86400:
+                return ["background-color: orange"]
+            else:
+                return [""]
+
+        def highlight_code(val):
+            if val.item() == "No":
+                return ["background-color: orange"]
+            else:
+                return [""]
+
+        st.markdown("## Most Recent Assignments")
+        df = pd.DataFrame.from_dict(df, orient="index")
+        st.table(
+            df.style.apply(highlight_entry, subset="AutoApproval", axis=1).apply(
+                highlight_code, subset="Valid Code?", axis=1
+            )
+        )
 
 
 def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path=None):
@@ -381,12 +529,16 @@ def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path=Non
 
     return {
         "HIT Summary": lambda: get_hit_statistics(hit_table, assignment_table),
-        "Dataset": lambda: get_dataset_statistics(round_doc_table, dataset_json_path),
+        "Dataset": lambda: get_dataset_statistics(
+            assignment_table, past_task_table, round_doc_table, dataset_json_path
+        ),
         "Annotators": lambda: get_annotator_statistics(assignment_table, worker_table),
         "HIT Schedule": lambda: get_hit_schedule(
             round_doc_table, stack_target_table, past_task_table, hit_table
         ),
-        "Quality Control": lambda: get_quality_statistics(),
+        "Quality Control": lambda: get_quality_statistics(
+            assignment_table, past_task_table, round_doc_table, dataset_json_path
+        ),
     }[option]()
 
 
@@ -399,7 +551,9 @@ scheduler_edit_time = datetime.fromtimestamp(Path(scheduler_db_path).stat().st_m
 dataset_edit_time = datetime.fromtimestamp(Path(dataset_json_path).stat().st_mtime)
 latest = max(overview_edit_time, scheduler_edit_time, dataset_edit_time)
 latest = max(overview_edit_time, scheduler_edit_time,)
-st.write("last updated on ", latest.ctime())
+hrs, rem = divmod((datetime.now() - latest).total_seconds(), 3600)
+mins, seconds = divmod(rem, 60)
+st.write(f"last updated {hrs:.0f} hour {mins:.0f} mins ago")
 
 sidebar_options = [
     "HIT Summary",
@@ -408,8 +562,8 @@ sidebar_options = [
     "HIT Schedule",
     "Quality Control",
 ]
-# option = st.selectbox("Choose an option from the dropdown", sidebar_options)
-option = st.sidebar.radio("Choose an option", sidebar_options)
+option = st.selectbox("Choose an option from the dropdown", sidebar_options)
+# option = st.sidebar.radio("Choose an option", sidebar_options)
 
 st.markdown(f"# {option}")
 
