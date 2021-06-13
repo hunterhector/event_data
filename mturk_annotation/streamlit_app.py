@@ -15,13 +15,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 import json
+import sqlite3
 
 import hashlib
 
 NA_STR = "-"
 
 
-def get_hit_statistics(hit_table, assignment_table):
+def get_hit_statistics(hit_table, assignment_table, doc2time, hit2time):
 
     summary = {}
 
@@ -36,6 +37,10 @@ def get_hit_statistics(hit_table, assignment_table):
         reviewable_assignments += (
             hit["MaxAssignments"] - hit["NumberOfAssignmentsCompleted"] - hit["NumberOfAssignmentsAvailable"]
         )
+        if hit["NumberOfAssignmentsAvailable"] > 0:
+            print(
+                f"HITId: {hit['HITId']}\tCreation time: {hit['CreationTime']}\tExpiration time: {hit['Expiration']}"
+            )
     st.markdown("## Overview")
     summary["Released Assignments"] = released_assignments
     summary["Completed Assignments"] = completed_assignments
@@ -47,8 +52,13 @@ def get_hit_statistics(hit_table, assignment_table):
         (datetime.fromisoformat(x["SubmitTime"]) - datetime.fromisoformat(x["AcceptTime"])).seconds / 60
         for x in submitted_assigns
     ]
-    summary["Mean time per assignment (mins)"] = f"{np.mean(avg_times):.2f}"
-    summary["Median time per assignment (mins)"] = f"{np.median(avg_times):.2f}"
+    log_times = []
+    for ann in hit2time:
+        for hit_id, log_time in hit2time[ann].items():
+            log_times.append(log_time)
+
+    summary["Mean time per assignment (mins)"] = f"{np.mean(log_times):.2f}"
+    summary["Median time per assignment (mins)"] = f"{np.median(log_times):.2f}"
 
     st.table(pd.DataFrame.from_dict(summary, orient="index", columns=[""]))
 
@@ -173,6 +183,10 @@ def get_dataset_statistics(
             df = {}
             ann_counter = defaultdict(lambda: len(ann_counter))
             for assign in assignment_table.all():
+                if assign["HITId"] not in hit2pair:
+                    # skipping assignments not part of past task table
+                    continue
+
                 if assign["WorkerId"] not in link_counter:
                     continue
                 ann_idx = ann_counter[assign["WorkerId"]]
@@ -225,7 +239,7 @@ def get_dataset_statistics(
         st.table(pd.DataFrame.from_dict(docs_schedule, orient="index", columns=["Documents"],))
 
 
-def get_annotator_statistics(assignment_table, worker_table):
+def get_annotator_statistics(assignment_table, worker_table, doc2time, hit2time):
 
     view_options = [
         "Overview",
@@ -263,9 +277,21 @@ def get_annotator_statistics(assignment_table, worker_table):
                 / 60
                 for x in assigns
             ]
-            worker_summary[worker_id]["Total HIT time (mins)"] = np.sum(times)
-            worker_summary[worker_id]["Mean HIT time (mins)"] = f"{np.mean(times):.2f}"
-            worker_summary[worker_id]["Median HIT time (mins)"] = f"{np.median(times):.2f}"
+            log_times = []
+            for x in assigns:
+                if worker_id in hit2time:
+                    log_time = hit2time[worker_id].get(x["HITId"], None)
+                    if log_time:
+                        log_times.append(log_time)
+            worker_summary[worker_id][
+                "Total HIT time (mins)"
+            ] = f"{np.sum(times):.2f} ({np.sum(log_times):.2f})"
+            worker_summary[worker_id][
+                "Mean HIT time (mins)"
+            ] = f"{np.mean(times):.2f} ({np.mean(log_times):.2f})"
+            worker_summary[worker_id][
+                "Median HIT time (mins)"
+            ] = f"{np.median(times):.2f} ({np.median(log_times):.2f})"
             # ! todo: add a summary of feedback obtained
             worker_summary[worker_id]["last Active"] = datetime.strftime(
                 datetime.fromisoformat(worker["lastActive"]), "%b %d"
@@ -357,6 +383,32 @@ def get_annotator_statistics(assignment_table, worker_table):
         fig.update_yaxes(title_text="Duration (in mins)")
         st.plotly_chart(fig, use_container_width=True)
 
+        df_hits = defaultdict(list)
+        df_durations = defaultdict(list)
+        hit_counter = {}
+        all_assignments = sorted(
+            assignment_table.search(where("SubmitTime").exists()), key=lambda x: x["SubmitTime"]
+        )
+        for assign in all_assignments:
+            worker_id = assign["WorkerId"]
+            if assign["HITId"] not in hit2time[worker_id]:
+                print(f"{assign['HITId']}\t{assign['SubmitTime']}")
+                continue
+            if worker_id not in hit_counter:
+                hit_counter[worker_id] = defaultdict(lambda: len(hit_counter[worker_id]))
+            df_hits[worker_id].append(hit_counter[worker_id][assign["HITId"]])
+            df_durations[worker_id].append(hit2time[worker_id][assign["HITId"]])
+        fig = go.Figure()
+        for worker_id in df_hits:
+            fig.add_trace(
+                go.Scatter(
+                    x=df_hits[worker_id], y=df_durations[worker_id], mode="lines+markers", name=worker_id
+                )
+            )
+        fig.update_xaxes(title_text="HITs")
+        fig.update_yaxes(title_text="Log Duration (in mins)")
+        st.plotly_chart(fig, use_container_width=True)
+
 
 def get_hit_schedule(round_doc_table, stack_target_table, past_task_table, hit_table):
 
@@ -421,13 +473,13 @@ def get_hit_schedule(round_doc_table, stack_target_table, past_task_table, hit_t
 
 
 def get_answer(response_xml: str):
-    answer = re.search(r"<FreeText>(.*)</FreeText>", response_xml).group(1)
-    return answer
+    answer = re.search(r"<FreeText>(.*)</FreeText>", response_xml)
+    if answer is None:
+        return ""
+    return answer.group(1)
 
 
-def get_quality_statistics(
-    assignment_table, past_task_table, round_doc_table, dataset_json_path: Path = None
-):
+def get_quality_statistics(assignment_table, past_task_table, round_doc_table, dataset_json_path, doc2time):
     view_options = ["Assignments for Review (Manual)"]
     view_option = st.radio("Choose a view", options=view_options)
 
@@ -481,12 +533,23 @@ def get_quality_statistics(
             duration = (
                 datetime.fromisoformat(assign["SubmitTime"]) - datetime.fromisoformat(assign["AcceptTime"])
             ).total_seconds() / 60
-            df[counter]["Duration"] = f"{duration:.2f}"
-            df[counter]["Links"] = link_counter[assign["WorkerId"]][pair_counter[hit2pair[assign["HITId"]]]]
-            answer = get_answer(assign["Answer"])
-            print(answer)
-            print(hit2secret[assign["HITId"]])
+            try:
+                log_duration = doc2time[assign["WorkerId"]][hit2pair[assign["HITId"]]]
+            except:
+                print(f"{assign['WorkerId']}\t{assign['HITId']}")
+                log_duration = 0
+            df[counter]["Duration"] = f"{log_duration:.2f}"
+            if assign["WorkerId"] not in link_counter:
+                df[counter]["Links"] = 0
+            else:
+                df[counter]["Links"] = link_counter[assign["WorkerId"]][
+                    pair_counter[hit2pair[assign["HITId"]]]
+                ]
+            answer = get_answer(assign["Answer"]).strip()
             code_match = "Yes" if answer == hit2secret[assign["HITId"]] else "No"
+            if code_match == "No":
+                print(f"valid code: {hit2secret[assign['HITId']]}")
+                print(f"answer code: {answer}")
             df[counter]["Valid Code?"] = code_match
             counter -= 1
 
@@ -514,7 +577,32 @@ def get_quality_statistics(
         )
 
 
-def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path=None):
+def read_annotation_logs(stave_db_path, round_doc_table, past_task_table):
+
+    hash2pair = {}
+    for doc in round_doc_table.all():
+        hash2pair[doc["hashed"]] = doc["name"]
+    pair2hit = {}
+    for task in past_task_table.all():
+        pair2hit[hash2pair[task["hash_pair"]]] = task["HITId"]
+
+    doc2time, hit2time = {}, {}
+    con = sqlite3.connect(stave_db_path)
+    cursor = con.cursor()
+    result = cursor.execute("SELECT * FROM nlpviewer_backend_annotationlog")
+    for idx, ann_str, doc_pair, end_time, duration, start_time in result:
+        ann = ann_str.replace("stave.", "")
+        if ann not in doc2time:
+            doc2time[ann] = {}
+            hit2time[ann] = {}
+        doc2time[ann][doc_pair] = duration / 60
+        if doc_pair in pair2hit:
+            hit2time[ann][pair2hit[doc_pair]] = duration / 60
+    con.close()
+    return doc2time, hit2time
+
+
+def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path, stave_db_path):
     # this db is updated via explicit API calls to MTurk
     overview_db = TinyDB(overview_db_path)
     hit_table = overview_db.table("hit_table", cache_size=0)
@@ -527,17 +615,20 @@ def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path=Non
     past_task_table = scheduler_db.table("past_tasks", cache_size=0)
     round_doc_table = scheduler_db.table("round_doc", cache_size=0)
 
+    # read stave annotation log
+    doc2time, hit2time = read_annotation_logs(stave_db_path, round_doc_table, past_task_table)
+
     return {
-        "HIT Summary": lambda: get_hit_statistics(hit_table, assignment_table),
+        "HIT Summary": lambda: get_hit_statistics(hit_table, assignment_table, doc2time, hit2time),
         "Dataset": lambda: get_dataset_statistics(
             assignment_table, past_task_table, round_doc_table, dataset_json_path
         ),
-        "Annotators": lambda: get_annotator_statistics(assignment_table, worker_table),
+        "Annotators": lambda: get_annotator_statistics(assignment_table, worker_table, doc2time, hit2time),
         "HIT Schedule": lambda: get_hit_schedule(
             round_doc_table, stack_target_table, past_task_table, hit_table
         ),
         "Quality Control": lambda: get_quality_statistics(
-            assignment_table, past_task_table, round_doc_table, dataset_json_path
+            assignment_table, past_task_table, round_doc_table, dataset_json_path, doc2time
         ),
     }[option]()
 
@@ -545,12 +636,13 @@ def show(option: str, overview_db_path, scheduler_db_path, dataset_json_path=Non
 overview_db_path = sys.argv[1]
 scheduler_db_path = sys.argv[2]
 dataset_json_path = sys.argv[3]
+stave_db_path = sys.argv[4]
 
 overview_edit_time = datetime.fromtimestamp(Path(overview_db_path).stat().st_mtime)
 scheduler_edit_time = datetime.fromtimestamp(Path(scheduler_db_path).stat().st_mtime)
 dataset_edit_time = datetime.fromtimestamp(Path(dataset_json_path).stat().st_mtime)
-latest = max(overview_edit_time, scheduler_edit_time, dataset_edit_time)
-latest = max(overview_edit_time, scheduler_edit_time,)
+stave_edit_time = datetime.fromtimestamp(Path(stave_db_path).stat().st_mtime)
+latest = max(overview_edit_time, scheduler_edit_time, dataset_edit_time, stave_edit_time)
 hrs, rem = divmod((datetime.now() - latest).total_seconds(), 3600)
 mins, seconds = divmod(rem, 60)
 st.write(f"last updated {hrs:.0f} hour {mins:.0f} mins ago")
@@ -567,4 +659,4 @@ option = st.selectbox("Choose an option from the dropdown", sidebar_options)
 
 st.markdown(f"# {option}")
 
-show(option, overview_db_path, scheduler_db_path, dataset_json_path)
+show(option, overview_db_path, scheduler_db_path, dataset_json_path, stave_db_path)

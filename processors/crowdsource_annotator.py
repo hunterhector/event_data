@@ -6,6 +6,7 @@ import sqlite3
 import hashlib
 from argparse import ArgumentParser
 import json
+import logging
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -56,7 +57,7 @@ class CrowdSourceAnnotationModule:
             self.SCREENING_QUAL_ID = s[0]["id"]
 
         if self.is_sandbox_testing:
-            print("running sandbox")
+            logging.info("running sandbox")
             self.mturk_client = boto3.client(
                 "mturk",
                 aws_access_key_id=MTURK_ACCESS_KEY,
@@ -65,7 +66,7 @@ class CrowdSourceAnnotationModule:
                 endpoint_url=self.MTURK_SANDBOX,  # this uses Mturk's sandbox
             )
         else:
-            print("running on actual AMT")
+            logging.info("running on actual AMT")
             self.mturk_client = boto3.client(
                 "mturk",
                 aws_access_key_id=MTURK_ACCESS_KEY,
@@ -84,7 +85,7 @@ class CrowdSourceAnnotationModule:
             round_hash_reward_values += [(pair["hashed"], str(pair["reward"]))]
         return round_hash_reward_values
 
-    def publish_hit(self, website_url, reward):
+    def publish_hit(self, website_url, reward, round_num):
 
         # preparing the hit_layout
         hit_layout = HITLayout(self.config["hit_setup"]["HIT_template"], website_url)
@@ -126,9 +127,11 @@ class CrowdSourceAnnotationModule:
             #     "ActionsGuarded": "DiscoverPreviewAndAccept",
             # },
         ]
+        # release each round as a new group, by slightly changing AutoApproval
         new_hit = self.mturk_client.create_hit(
             MaxAssignments=self.config["hit_setup"]["MaxAssignments"],  # required
-            AutoApprovalDelayInSeconds=self.config["hit_setup"]["AutoApprovalDelayInSeconds"],
+            AutoApprovalDelayInSeconds=self.config["hit_setup"]["AutoApprovalDelayInSeconds"]
+            + round_num * 100,
             LifetimeInSeconds=self.config["hit_setup"]["LifetimeInSeconds"],  # life time
             AssignmentDurationInSeconds=self.config["hit_setup"][
                 "AssignmentDurationInSeconds"
@@ -143,10 +146,13 @@ class CrowdSourceAnnotationModule:
 
         if self.debug_flag:
             if self.is_sandbox_testing:
-                print("https://workersandbox.mturk.com/mturk/preview?groupId=" + new_hit["HIT"]["HITGroupId"])
+                logging.info(
+                    "https://workersandbox.mturk.com/mturk/preview?groupId=" + new_hit["HIT"]["HITGroupId"]
+                )
             else:
-                print("https://worker.mturk.com/mturk/preview?groupId=" + new_hit["HIT"]["HITGroupId"])
-            print("HITID = " + new_hit["HIT"]["HITId"] + " (Use to Get Results)")
+                logging.info("https://worker.mturk.com/mturk/preview?groupId=" + new_hit["HIT"]["HITGroupId"])
+
+            logging.info("HITID = " + new_hit["HIT"]["HITId"] + " (Use to Get Results)")
 
         # keeping a log of HIT layout
         hit_layout.write_xml(f"{self.config['hit_setup']['HIT_template']}/hit_{new_hit['HIT']['HITId']}.xml")
@@ -162,15 +168,18 @@ class CrowdSourceAnnotationModule:
             nxt_rnd_num = last_record["round_number"] + 1
 
         if self.debug_flag:
-            print("running round %s" % nxt_rnd_num)
+            logging.info("running round %s" % nxt_rnd_num)
 
         annotation_pairs = self._get_annotation_pairs_for_round_prefixed(nxt_rnd_num)
         if len(annotation_pairs) == 0:
-            print("no document pairs assigned to round %s" % nxt_rnd_num)
+            logging.error("no document pairs assigned to round %s" % nxt_rnd_num)
             return
-        print(annotation_pairs)
+
+        for idx_, ann_pair in enumerate(annotation_pairs):
+            logging.info(str(idx_) + "\t" + "\t".join(ann_pair))
 
         if is_dryrun:
+            logging.info("this was just a dry run! no HITs were released")
             return
 
         self.stack_target_table.insert(
@@ -186,7 +195,7 @@ class CrowdSourceAnnotationModule:
         for hash_value, reward in annotation_pairs:
             # prepare qualification test
             self.update_qualification_test(round_number=nxt_rnd_num)
-            hit_id = self.publish_hit(self.config["stave_url"] % (hash_value), reward,)
+            hit_id = self.publish_hit(self.config["stave_url"] % (hash_value), reward, nxt_rnd_num)
             self.past_task_table.insert(
                 {"round_number": nxt_rnd_num, "completed": False, "hash_pair": hash_value, "HITId": hit_id,}
             )
@@ -247,6 +256,7 @@ def _delete_db(mturk_db_path):
 
 
 if __name__ == "__main__":
+
     parser = ArgumentParser(description="run a round of annotation on MTurk")
     parser.add_argument("stave_db", type=str, help="path to stave db")
     parser.add_argument("mturk_db", type=str, help="path to mturk db")
@@ -254,6 +264,20 @@ if __name__ == "__main__":
     parser.add_argument("--dryrun", action="store_true", help="get annotation pairs and not create a HIT")
 
     args = parser.parse_args()
+
+    if args.dryrun:
+        logging.basicConfig(
+            format="%(asctime)s %(levelname)s: %(message)s",
+            level=logging.INFO,
+            handlers=[logging.StreamHandler()],
+        )
+    else:
+        logging.basicConfig(
+            format="%(asctime)s %(levelname)s: %(message)s",
+            level=logging.INFO,
+            handlers=[logging.FileHandler("../amt_logs/hits.log"), logging.StreamHandler()],
+        )
+
     with open(args.config, "r") as rf:
         config = json.load(rf)
 

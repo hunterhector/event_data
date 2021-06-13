@@ -17,9 +17,9 @@
         "RetryDelayInSeconds": 86400
     },
     "hit_setup": {
-        "MaxAssignments": 1,
+        "MaxAssignments": 3,
         "LifetimeInSeconds": 1209600,
-        "AssignmentDurationInSeconds": 2700,
+        "AssignmentDurationInSeconds": 3600,
         "AutoApprovalDelayInSeconds": 172800,
         "Reward": "",
         "Title": "Annotating Event Coreference in News Articles",
