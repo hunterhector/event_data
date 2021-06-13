@@ -141,8 +141,8 @@ def collect_pos_neg_pairs(subtopics: List[List], coref_pairs: Dict, doc_dict: Di
     random.shuffle(hard_candidate_negative_pairs)
     random.shuffle(soft_candidate_negative_pairs)
 
-    negative_pairs = hard_candidate_negative_pairs[: 2 * len(positive_pairs)]
-    negative_pairs += soft_candidate_negative_pairs[: 2 * len(positive_pairs)]
+    negative_pairs = hard_candidate_negative_pairs[: 5 * len(positive_pairs)]
+    negative_pairs += soft_candidate_negative_pairs[: 5 * len(positive_pairs)]
 
     train_pairs = positive_pairs + negative_pairs
 

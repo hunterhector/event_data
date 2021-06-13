@@ -79,8 +79,8 @@ def run_lemma_baseline(doc2txt, eval_data, threshold):
     for eval_sample in tqdm(eval_data):
         mention1 = re.search(r"<E> (.*) </E>", eval_sample["sentence1"]).group(1).lower()
         mention2 = re.search(r"<E> (.*) </E>", eval_sample["sentence2"]).group(1).lower()
-        mention1_head_lemma = list(spacy_en_nlp(mention1).sents)[0].root.text
-        mention2_head_lemma = list(spacy_en_nlp(mention2).sents)[0].root.text
+        mention1_head_lemma = list(spacy_en_nlp(mention1).sents)[0].root.lemma
+        mention2_head_lemma = list(spacy_en_nlp(mention2).sents)[0].root.lemma
         doc1 = eval_sample["doc1"]
         doc2 = eval_sample["doc2"]
         if (mention1_head_lemma == mention2_head_lemma) and (doc_pair_scores[(doc1, doc2)] >= threshold):
